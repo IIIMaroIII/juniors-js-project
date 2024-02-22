@@ -296,4 +296,12 @@ input {
 
 .header {
   background-color: red;
+}
+
+main {
+  background-color: orange;
+}
+
+footer {
+  background-color: teal;
 }/*# sourceMappingURL=main.css.map */
