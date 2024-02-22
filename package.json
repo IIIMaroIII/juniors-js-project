@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "start": "vite --host",
-    "build": "vite build --base=/juniors-js-project/; git add .; git commit -m 'update structure'; git push",
+    "build": "vite build --base=/juniors-js-project/; git add .; git commit -m 'update'; git push",
     "preview": "vite preview",
     "push": "git add .; git commit -m 'update'; git push"
   },
