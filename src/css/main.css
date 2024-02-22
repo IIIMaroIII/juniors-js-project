@@ -303,5 +303,7 @@ main {
 }
 
 footer {
-  background-color: teal;
+  background-color: red;
+  color: black;
+  text-align: center;
 }/*# sourceMappingURL=main.css.map */
