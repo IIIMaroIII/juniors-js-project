@@ -97,11 +97,11 @@
     transition: transform 250ms ease-in-out;
   }
 
-  &__item:hover {
+  &-item:hover {
     transform: scale(1.05);
   }
 
-  &__image {
+  &-image {
     width: 100%;
     height: 160px;
     object-fit: cover;
