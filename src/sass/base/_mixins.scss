@@ -89,7 +89,7 @@
 .gallery {
   @include flex(24px, 24px, flex-start, flex-start, wrap);
 
-  &__item {
+  &-item {
     border: 1px solid $border-normal-color;
     flex-basis: calc((100% - 2 * 24px) / 3);
 
