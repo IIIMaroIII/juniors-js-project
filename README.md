@@ -1,3 +1,28 @@
+# Создвть папку .vscode
+# Внутри этой папки создать файл settings.json
+# Положить эти настройки 
+
+{
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "expanded",
+      "extensionName": ".css",
+      "savePath": "/src/css"
+    },
+    {
+      "extensionName": ".min.css",
+      "format": "compressed",
+      "savePath": "/src/css"
+    }
+  ],
+  "liveSassCompile.settings.excludeList": ["**/node_modules/**", ".vscode/**"],
+  "liveSassCompile.settings.generateMap": true,
+  "liveSassCompile.settings.autoprefix": ["> 1%", "last 2 versions"]
+}
+
+# Установить расширение для VSCode - Live Sass Compiler
+
+
 # Vanilla App Template
 
 Цей проект було створено за допомогою Vite. Для знайомства та налаштування
