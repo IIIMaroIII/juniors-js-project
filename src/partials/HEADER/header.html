@@ -1,3 +1,55 @@
-<section class="header">
-  <h1 class="header-title">Hey header</h1>
-</section>
+<header class="header dark-mode">
+  <div class="header-container">
+    <nav class="header-nav">
+      <div class="header-logo">
+        <a href="./index.html" class="header-logo-link">
+          <div class="logo-container">
+            <img src="./img/logo-image.svg" alt="Store Icon" />
+            <img src="./img/logo-text.svg" class="logo-text" alt="Store name" />
+          </div>
+        </a>
+      </div>
+      <ul class="header-nav-elem">
+        <li><a href="./index.html" class="menu-item-home">Home</a></li>
+        <li>
+          <a href="#" class="menu-item-shop"
+            ><span>Shopping List</span>
+            <img
+              src="./img/shopping-bag.svg"
+              class="bag-icon"
+              alt="Shopping bag icon"
+          /></a>
+        </li>
+      </ul>
+      <div class="toggle-burger-menu">
+        <img
+          src="./img/light.svg"
+          class="toggle-theme"
+          alt="Toggle Page Theme "
+        />
+        <img
+          src="./img/burger-menu-icon.svg"
+          class="burger-menu"
+          alt="Burger Menu"
+        />
+      </div>
+    </nav>
+    <div class="mobile-menu">
+      <button type="submit" class="sign-up">
+        <span>Sign Up</span>
+        <img src="./img/arrow.svg" alt="Arrow" />
+      </button>
+      <ul class="mob-menu-nav">
+        <li><a href="./index.html" class="menu-item-home">Home</a></li>
+        <li>
+          <a href="#" class="menu-item-shop"
+            ><span>Shopping List</span>
+            <img src="./img/shopping-bag.svg" alt="Shopping bag icon"
+          /></a>
+        </li>
+      </ul>
+      <img src="./img/books.png" alt="Books Image" class="books-img" />
+    </div>
+  </div>
+  <script type="module" src="../scripts/header.js"></script>
+</header>
