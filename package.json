@@ -4,9 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build --base=/vanilla-app-template/",
-    "preview": "vite preview"
+    "start": "vite --host",
+    "build": "vite build --base=/juniors-js-project/; git add .; git commit -m 'update'; git push",
+    "preview": "vite preview",
+    "push": "git add .; git commit -m 'update'; git push"
   },
   "devDependencies": {
     "vite": "^4.5.2",

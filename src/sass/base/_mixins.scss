@@ -1,0 +1,74 @@
+// ================ 1st Example =================
+
+// @mixin button-styles {
+//   padding: 10px 20px;
+//   background-color: #3498db;
+//   color: #fff;
+//   border: none;
+//   border-radius: 5px;
+//   cursor: pointer;
+
+//   &:hover {
+//     background-color: #217dbb;
+//   }
+// }
+
+// .my-button {
+//   @include button-styles;
+// }
+
+// =================================================
+
+// ================ 2nd Example =================
+
+// @mixin media-query($breakpoint) {
+//   @media screen and (min-width: $breakpoint) {
+//     @content;
+//   }
+// }
+
+// .section {
+//   width: 100%;
+
+//   @include media-query(768px) {
+//     width: 80%;
+//     margin: 0 auto;
+//   }
+
+//   @include media-query(1200px) {
+//     width: 70%;
+//   }
+// }
+
+// =================================================
+
+// ================ 3rd Example =================
+
+// @mixin triangle($size, $color) {
+//   width: 0;
+//   height: 0;
+//   border-left: $size solid transparent;
+//   border-right: $size solid transparent;
+//   border-bottom: $size solid $color;
+// }
+
+// .arrow-down {
+//     @include triangle(10px, #333);
+// }
+
+// =================================================
+
+@mixin flex(
+  $row-gap,
+  $column-gap: $row-gap,
+  $justify-content: center,
+  $align-items: center,
+  $flex-wrap: nowrap
+) {
+  display: flex;
+  row-gap: $row-gap;
+  column-gap: $column-gap;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  flex-wrap: $flex-wrap;
+}
