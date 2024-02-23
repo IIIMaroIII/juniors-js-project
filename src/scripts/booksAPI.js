@@ -53,44 +53,38 @@ export class BooksAPI {
   }
 }
 
-// List of steps
+// ==============  List of steps
 
-// Create a prototype of BooksAPI()
+// ==============  Create a prototype of BooksAPI()
 
-const booksAPI = new BooksAPI();
+// const booksAPI = new BooksAPI();
 
-// Method fetchCategoryList returns you a promise, therefore use then().catch() to receive the data of response.
+// ==============  Method fetchCategoryList returns you a promise, therefore use then().catch() to receive the data of response.
 
-booksAPI
-  .fetchCategoryList()
-  .then(res => console.log(res[0]))
-  .catch(err => console.log(err));
+// booksAPI
+//   .fetchCategoryList()
+//   .then(res => console.log(res[0]))
+//   .catch(err => console.log(err));
 
-// Method fetchTopBooks returns you a promise, therefore use then().catch() to receive the TOP 5 books of EACH CATEGORY.
+// ==============  Method fetchTopBooks returns you a promise, therefore use then().catch() to receive the TOP 5 books of EACH CATEGORY.
 
-booksAPI
-  .fetchTopBooks()
-  .then(res => console.log(res[0].books[0]._id))
-  .catch(err => console.log(err));
+// booksAPI
+//   .fetchTopBooks()
+//   .then(res => console.log(res[0].books[0]._id))
+//   .catch(err => console.log(err));
 
-// Method fetchBookByID returns you a promise, therefore use then().catch().
-// also this method awaits as argument the ID of chose book as the string.
+// ==============  Method fetchBookByID returns you a promise, therefore use then().catch().
+// ==============  also this method awaits as argument the ID of chose book as the string.
 
-booksAPI
-  .fetchBookByID('643282b1e85766588626a0dc')
-  .then(res => console.log(res))
-  .catch(err => console.log(err));
+// booksAPI
+//   .fetchBookByID('643282b1e85766588626a0dc')
+//   .then(res => console.log(res))
+//   .catch(err => console.log(err));
 
-// Method fetchBooksBySelectedCategory returns you a promise, therefore use then().catch().
-// also this method awaits as argument the CATEGORY NAME which user has choosen as the string.
+// ==============  Method fetchBooksBySelectedCategory returns you a promise, therefore use then().catch().
+// ==============  also this method awaits as argument the CATEGORY NAME which user has choosen as the string.
 
-booksAPI
-  .fetchBooksBySelectedCategory('Advice How-To and Miscellaneous')
-  .then(res => console.log(res))
-  .catch(err => console.log(err));
-
-// https://books-backend.p.goit.global/books/category-list - все категории
-// https://books-backend.p.goit.global/books/top-books  - топ 5 книг во всех категориях
-// https://books-backend.p.goit.global/books/category?category=selectedCategory - 20 книг выбранной категории
-// https://books-backend.p.goit.global/books/ 'bookId' - детальная инфа про книгу по ID
-// 643282b1e85766588626a0dc
+// booksAPI
+//   .fetchBooksBySelectedCategory('Advice How-To and Miscellaneous')
+//   .then(res => console.log(res))
+//   .catch(err => console.log(err));
