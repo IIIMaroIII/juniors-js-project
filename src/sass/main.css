@@ -9,8 +9,7 @@ Use a better box model (opinionated).
 *,
 ::before,
 ::after {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
@@ -276,8 +275,7 @@ img {
 input {
   padding: 0;
   margin: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .hidden {
@@ -294,84 +292,82 @@ input {
   overflow: hidden;
 }
 
-/* General styles*/
-.header {
+/*Dark mode styles */
+body.dark-mode {
+  background-color: #333;
+}
+
+body.dark-mode .header {
+  background-color: #111;
+  border: 1.5px solid rgb(248, 246, 246);
+}
+
+body.dark-mode .burger-menu {
+  filter: invert(100%);
+}
+
+body.dark-mode .logo-text {
+  filter: invert(100%);
+}
+
+body.dark-mode .header-nav-elem span {
+  color: var(--white);
+}
+
+body.dark-mode .header-nav-elem .bag-icon {
+  filter: invert(0);
+}
+
+/*========================= */
+.header-container {
   position: relative;
   width: 100%;
   height: 64px;
   left: 0;
   top: 0;
   z-index: 900;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   border: 1.5px solid rgb(17, 17, 17);
   border-radius: 0px 0px 8px 8px;
-  background-color: white;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  background-color: var(--white);
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.header-container {
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
 }
 
 .header-nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   width: 100%;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .header-nav-elem {
   display: none;
   gap: 16px;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  justify-content: flex-start;
 }
 
 .header-nav-elem span {
-  color: #111;
+  color: var(--black);
 }
 
-.header-nav-elem .bag-icon use {
-  -webkit-filter: invert(100%);
-          filter: invert(100%);
+.header-nav-elem .bag-icon {
+  filter: invert(100%);
 }
 
 .logo-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   padding: 18px 0 18px 20px;
   gap: 8px;
 }
 
 .toggle-burger-menu {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   padding: 18px 20px 18px 0;
   gap: 14px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
 .toggle-theme,
@@ -379,8 +375,37 @@ input {
   cursor: pointer;
 }
 
-/*==========================*/
+.user-icon-img {
+  display: none;
+}
+
 /* Burger menu  */
+.sign-up {
+  visibility: hidden;
+  position: absolute;
+  top: 40px;
+  left: 20px;
+  width: 184px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 48px;
+  box-sizing: border-box;
+  border: 1.5px solid rgb(17, 17, 17);
+  border-radius: 18px;
+  background: var(--violet);
+}
+
+.sign-up span {
+  color: rgb(255, 255, 255);
+  font-family: DM Sans;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: -4%;
+  text-align: left;
+}
+
 .mobile-menu {
   position: fixed;
   top: 64px;
@@ -388,80 +413,55 @@ input {
   width: 100%;
   height: 100vh;
   z-index: 800;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  -webkit-transition: -webkit-transform 0.3s ease-in-out;
-  transition: -webkit-transform 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out;
-  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
-  -webkit-transform: translateX(100%);
-          transform: translateX(100%);
+  transform: translateX(100%);
   background: radial-gradient(194.44% 191.09% at 60% -23%, rgb(79, 46, 232) 18.027%, rgb(255, 255, 255) 100%);
 }
 
 .mob-menu-nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
   gap: 16px;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  flex: 1;
 }
 
 .menu-item-home {
+  font-family: var(--font-family);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: -0.04em;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   border-radius: 36px;
   padding: 8px 16px;
-  background: #eac645;
-  color: #111;
+  background: var(--yellow);
+  color: var(--black);
 }
 
 .menu-item-shop {
+  font-family: var(--font-family);
   font-size: 14px;
   line-height: 20px;
   font-weight: 500;
   letter-spacing: -0.04em;
   text-transform: uppercase;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  color: #fff;
+  align-items: center;
+  color: var(--white);
 }
 
 .books-img {
   width: inherit;
   margin-top: auto;
+  /* position: relative;
+  right: 0;
+  bottom: -61px; */
 }
 
 .menu-item-shop span {
@@ -469,63 +469,14 @@ input {
 }
 
 .mobile-menu.active {
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
+  transform: translateX(0);
 }
 
 /*==========================*/
-/* Checkbox styles*/
-input[type=checkbox] {
-  height: 0;
-  width: 0;
-  visibility: hidden;
-}
-
-label {
-  cursor: pointer;
-  text-indent: -9999px;
-  width: 40px;
-  height: 20px;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgb(79, 46, 232)), to(rgb(220, 220, 220)));
-  background: linear-gradient(180deg, rgb(79, 46, 232), rgb(220, 220, 220) 100%);
-  display: block;
-  border-radius: 10px;
-  position: relative;
-}
-
-label:after {
-  content: "";
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  width: 16px;
-  height: 16px;
-  background: #fff;
-  border-radius: 8px;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-
-input:checked + label {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgb(79, 46, 232)), to(rgb(104, 104, 104)));
-  background: linear-gradient(180deg, rgb(79, 46, 232), rgb(104, 104, 104) 100%);
-}
-
-input:checked + label:after {
-  left: calc(100% - 2px);
-  -webkit-transform: translateX(-100%);
-          transform: translateX(-100%);
-}
-
-label:active:after {
-  width: 26px;
-}
-
-/*=================*/
 /* Media queries*/
 @media only screen and (max-width: 767px) {
   .header {
-    width: 100%;
+    width: 100%; /* Make the header take up full width on smaller screens */
   }
 }
 @media (min-width: 768px) and (max-width: 1439px) {
@@ -533,13 +484,9 @@ label:active:after {
     margin-right: 40px;
   }
   .header-nav-elem {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     margin-right: auto;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    align-items: center;
   }
   .mobile-menu {
     display: none;
@@ -547,19 +494,19 @@ label:active:after {
   .burger-menu {
     display: none;
   }
+  .toggle-burger-menu {
+    display: block;
+    /* margin: 0 auto; */
+  }
 }
 @media only screen and (min-width: 1440px) {
   .header-logo {
     margin-right: 76px;
   }
   .header-nav-elem {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     margin-right: auto;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    align-items: center;
     gap: 24px;
   }
   .mobile-menu {
@@ -570,29 +517,6 @@ label:active:after {
   }
 }
 /*=======================*/
-body.dark-mode {
-  background-color: #333;
-}
-body.dark-mode .header {
-  background-color: #111;
-  border: 1.5px solid rgb(248, 246, 246);
-}
-body.dark-mode .burger-menu {
-  -webkit-filter: invert(100%);
-          filter: invert(100%);
-}
-body.dark-mode .logo-text {
-  -webkit-filter: invert(100%);
-          filter: invert(100%);
-}
-body.dark-mode .header-nav-elem span {
-  color: white;
-}
-body.dark-mode .header-nav-elem .bag-icon use {
-  -webkit-filter: none;
-          filter: none;
-}
-
 main {
   background-color: orange;
 }
