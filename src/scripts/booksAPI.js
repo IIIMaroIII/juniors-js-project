@@ -1,4 +1,10 @@
 import Axios from 'axios';
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
+import iconError from '../img/notification-svg/error.svg';
+import iconCaution from '../img/notification-svg/caution.svg';
+// import iconHello from '../img/notification-svg/hello.svg';
+// import iconOk from '../img/notification-svg/ok.svg';
 
 export class BooksAPI {
   constructor() {
@@ -6,6 +12,12 @@ export class BooksAPI {
     this.CATEGORY_LIST = '/category-list';
     this.TOP_BOOKS = '/top-books';
     this.URL_CATEGORY = `/category?`;
+    this.errorNotification = {
+      title: 'Error',
+      message: '',
+      backgroundColor: '#ff4e4e',
+      icon: iconError,
+    };
   }
   async fetchCategoryList() {
     const url = this.BASE_URL + this.CATEGORY_LIST;
@@ -13,7 +25,8 @@ export class BooksAPI {
       const res = await Axios.get(url);
       return res.data;
     } catch (error) {
-      console.log(error);
+      this.errorNotification.message = error;
+      this.showNotification(this.errorNotification);
     }
   }
 
@@ -23,7 +36,8 @@ export class BooksAPI {
       const res = await Axios.get(url);
       return res.data;
     } catch (error) {
-      console.log(error);
+      this.errorNotification.message = error;
+      this.showNotification(this.errorNotification);
     }
   }
 
@@ -33,7 +47,8 @@ export class BooksAPI {
       const res = await Axios.get(url);
       return res.data;
     } catch (error) {
-      console.log(error);
+      this.errorNotification.message = error;
+      this.showNotification(this.errorNotification);
     }
   }
 
@@ -48,8 +63,27 @@ export class BooksAPI {
       const res = await Axios.get(url);
       return res.data;
     } catch (error) {
-      console.log(error);
+      this.errorNotification.message = error;
+      this.showNotification(this.errorNotification);
     }
+  }
+
+  showNotification({
+    title = 'Hello',
+    message = 'Type in your message, please',
+    backgroundColor = 'white',
+    icon = iconCaution,
+  }) {
+    return iziToast.show({
+      titleSize: '16px',
+      title: `${title}`,
+      message: `${message}`,
+      messageSize: '16px',
+      closeOnEscape: true,
+      position: 'topRight',
+      backgroundColor: `${backgroundColor}`,
+      iconUrl: `${icon}`,
+    });
   }
 }
 
