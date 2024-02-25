@@ -14,12 +14,13 @@ Use a better box model (opinionated).
 
 html {
   /* Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3) */
-  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji';
   line-height: 1.15; /* 1. Correct the line height in all browsers. */
   -webkit-text-size-adjust: 100%; /* 2. Prevent adjustments of font size after orientation changes in iOS. */
   -moz-tab-size: 4; /* 3. Use a more readable tab size (opinionated). */
   -o-tab-size: 4;
-     tab-size: 4; /* 3 */
+  tab-size: 4; /* 3 */
 }
 
 /*
@@ -52,7 +53,7 @@ Add the correct text decoration in Chrome, Edge, and Safari.
 */
 abbr[title] {
   -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
+  text-decoration: underline dotted;
 }
 
 /**
@@ -71,7 +72,8 @@ code,
 kbd,
 samp,
 pre {
-  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace; /* 1 */
+  font-family: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo,
+    monospace; /* 1 */
   font-size: 1em; /* 2 */
 }
 
@@ -145,9 +147,9 @@ select {
 Correct the inability to style clickable types in iOS and Safari.
 */
 button,
-[type=button],
-[type=reset],
-[type=submit] {
+[type='button'],
+[type='reset'],
+[type='submit'] {
   -webkit-appearance: button;
 }
 
@@ -200,7 +202,7 @@ Correct the cursor style of increment and decrement buttons in Safari.
 1. Correct the odd appearance in Chrome and Safari.
 2. Correct the outline style in Safari.
 */
-[type=search] {
+[type='search'] {
   -webkit-appearance: textfield; /* 1 */
   outline-offset: -2px; /* 2 */
 }
@@ -287,59 +289,13 @@ input {
   padding: 0;
   white-space: nowrap;
   -webkit-clip-path: inset(100%);
-          clip-path: inset(100%);
+  clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
-
-<<<<<<< Updated upstream
-=======
-:root {
-  --black: #111;
-  --black-1: #202024;
-  --violet: #4f2ee8;
-  --yellow: #eac645;
-  --white: #fff;
-  --background-color: #fff;
-  --text-color: #333;
-  --font-family: "DM Sans", sans-serif;
-}
-
->>>>>>> Stashed changes
-/*Dark mode styles */
-body.dark-mode {
-  background-color: #333;
-}
-
-body.dark-mode .header {
-  background-color: #111;
-  border: 1.5px solid rgb(248, 246, 246);
-}
-
-body.dark-mode .burger-menu {
-  filter: invert(100%);
-}
-
-body.dark-mode .logo-text {
-  filter: invert(100%);
-}
-
-body.dark-mode .header-nav-elem span {
-  color: var(--white);
-}
-
-body.dark-mode .header-nav-elem .bag-icon {
-  filter: invert(0);
-}
-
-/*========================= */
-<<<<<<< Updated upstream
+/* General styles*/
 .header-container {
   position: relative;
-=======
-.header {
-  position: fixed;
->>>>>>> Stashed changes
   width: 100%;
   height: 64px;
   left: 0;
@@ -348,19 +304,14 @@ body.dark-mode .header-nav-elem .bag-icon {
   box-sizing: border-box;
   border: 1.5px solid rgb(17, 17, 17);
   border-radius: 0px 0px 8px 8px;
-  background-color: var(--white);
+  background-color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-<<<<<<< Updated upstream
-=======
 }
-
 .header-container {
->>>>>>> Stashed changes
   width: 100%;
 }
-
 .header-nav {
   display: flex;
   width: 100%;
@@ -375,7 +326,7 @@ body.dark-mode .header-nav-elem .bag-icon {
 }
 
 .header-nav-elem span {
-  color: var(--black);
+  color: #111;
 }
 
 .header-nav-elem .bag-icon {
@@ -393,44 +344,15 @@ body.dark-mode .header-nav-elem .bag-icon {
   display: flex;
   padding: 18px 20px 18px 0;
   gap: 14px;
+  align-items: center;
 }
 
 .toggle-theme,
 .toggle-burger-menu img:last-child {
   cursor: pointer;
 }
-
-.user-icon-img {
-  display: none;
-}
-
+/*==========================*/
 /* Burger menu  */
-.sign-up {
-  visibility: hidden;
-  position: absolute;
-  top: 40px;
-  left: 20px;
-  width: 184px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 48px;
-  box-sizing: border-box;
-  border: 1.5px solid rgb(17, 17, 17);
-  border-radius: 18px;
-  background: var(--violet);
-}
-
-.sign-up span {
-  color: rgb(255, 255, 255);
-  font-family: DM Sans;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 18px;
-  letter-spacing: -4%;
-  text-align: left;
-}
-
 .mobile-menu {
   position: fixed;
   top: 64px;
@@ -445,7 +367,11 @@ body.dark-mode .header-nav-elem .bag-icon {
   text-align: center;
   transition: transform 0.3s ease-in-out;
   transform: translateX(100%);
-  background: radial-gradient(194.44% 191.09% at 60% -23%, rgb(79, 46, 232) 18.027%, rgb(255, 255, 255) 100%);
+  background: radial-gradient(
+    194.44% 191.09% at 60% -23%,
+    rgb(79, 46, 232) 18.027%,
+    rgb(255, 255, 255) 100%
+  );
 }
 
 .mob-menu-nav {
@@ -465,12 +391,11 @@ body.dark-mode .header-nav-elem .bag-icon {
   display: flex;
   border-radius: 36px;
   padding: 8px 16px;
-  background: var(--yellow);
-  color: var(--black);
+  background: #eac645;
+  color: #111;
 }
 
 .menu-item-shop {
-  font-family: var(--font-family);
   font-size: 14px;
   line-height: 20px;
   font-weight: 500;
@@ -478,15 +403,12 @@ body.dark-mode .header-nav-elem .bag-icon {
   text-transform: uppercase;
   display: flex;
   align-items: center;
-  color: var(--white);
+  color: #fff;
 }
 
 .books-img {
   width: inherit;
   margin-top: auto;
-  /* position: relative;
-  right: 0;
-  bottom: -61px; */
 }
 
 .menu-item-shop span {
@@ -496,12 +418,63 @@ body.dark-mode .header-nav-elem .bag-icon {
 .mobile-menu.active {
   transform: translateX(0);
 }
-
 /*==========================*/
+/* Checkbox styles*/
+input[type='checkbox'] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+label {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 40px;
+  height: 20px;
+  background: linear-gradient(
+    180deg,
+    rgb(79, 46, 232),
+    rgb(220, 220, 220) 100%
+  );
+  display: block;
+  border-radius: 10px;
+  position: relative;
+}
+
+label:after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+input:checked + label {
+  background: linear-gradient(
+    180deg,
+    rgb(79, 46, 232),
+    rgb(104, 104, 104) 100%
+  );
+}
+
+input:checked + label:after {
+  left: calc(100% - 2px);
+  transform: translateX(-100%);
+}
+
+label:active:after {
+  width: 26px;
+}
+
+/*=================*/
 /* Media queries*/
 @media only screen and (max-width: 767px) {
   .header {
-    width: 100%; /* Make the header take up full width on smaller screens */
+    width: 100%;
   }
 }
 @media (min-width: 768px) and (max-width: 1439px) {
@@ -521,7 +494,6 @@ body.dark-mode .header-nav-elem .bag-icon {
   }
   .toggle-burger-menu {
     display: block;
-    /* margin: 0 auto; */
   }
 }
 @media only screen and (min-width: 1440px) {
@@ -550,7 +522,7 @@ footer {
   background-color: red;
   color: black;
   text-align: center;
-}/*# sourceMappingURL=main.css.map */
+} /*# sourceMappingURL=main.css.map */
 /*! modern-normalize v2.0.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
 /*
 Document
@@ -567,12 +539,13 @@ Use a better box model (opinionated).
 
 html {
   /* Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3) */
-  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji';
   line-height: 1.15; /* 1. Correct the line height in all browsers. */
   -webkit-text-size-adjust: 100%; /* 2. Prevent adjustments of font size after orientation changes in iOS. */
   -moz-tab-size: 4; /* 3. Use a more readable tab size (opinionated). */
   -o-tab-size: 4;
-     tab-size: 4; /* 3 */
+  tab-size: 4; /* 3 */
 }
 
 /*
@@ -605,7 +578,7 @@ Add the correct text decoration in Chrome, Edge, and Safari.
 */
 abbr[title] {
   -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
+  text-decoration: underline dotted;
 }
 
 /**
@@ -624,7 +597,8 @@ code,
 kbd,
 samp,
 pre {
-  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace; /* 1 */
+  font-family: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo,
+    monospace; /* 1 */
   font-size: 1em; /* 2 */
 }
 
@@ -698,9 +672,9 @@ select {
 Correct the inability to style clickable types in iOS and Safari.
 */
 button,
-[type=button],
-[type=reset],
-[type=submit] {
+[type='button'],
+[type='reset'],
+[type='submit'] {
   -webkit-appearance: button;
 }
 
@@ -753,7 +727,7 @@ Correct the cursor style of increment and decrement buttons in Safari.
 1. Correct the odd appearance in Chrome and Safari.
 2. Correct the outline style in Safari.
 */
-[type=search] {
+[type='search'] {
   -webkit-appearance: textfield; /* 1 */
   outline-offset: -2px; /* 2 */
 }
@@ -840,7 +814,7 @@ input {
   padding: 0;
   white-space: nowrap;
   -webkit-clip-path: inset(100%);
-          clip-path: inset(100%);
+  clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
@@ -853,7 +827,7 @@ input {
   --white: #fff;
   --background-color: #fff;
   --text-color: #333;
-  --font-family: "DM Sans", sans-serif;
+  --font-family: 'DM Sans', sans-serif;
 }
 
 /*Dark mode styles */
@@ -987,7 +961,11 @@ body.dark-mode .header-nav-elem .bag-icon {
   text-align: center;
   transition: transform 0.3s ease-in-out;
   transform: translateX(100%);
-  background: radial-gradient(194.44% 191.09% at 60% -23%, rgb(79, 46, 232) 18.027%, rgb(255, 255, 255) 100%);
+  background: radial-gradient(
+    194.44% 191.09% at 60% -23%,
+    rgb(79, 46, 232) 18.027%,
+    rgb(255, 255, 255) 100%
+  );
 }
 
 .mob-menu-nav {
@@ -1134,4 +1112,4 @@ footer {
   background-color: red;
   color: black;
   text-align: center;
-}/*# sourceMappingURL=main.css.map */
+} /*# sourceMappingURL=main.css.map */
