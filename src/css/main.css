@@ -605,7 +605,52 @@ body.dark-mode .header-nav-elem .bag-icon {
 }
 /*=======================*/
 main {
+  margin-top: 72px;
   background-color: orange;
+}
+
+.list {
+  padding-top: 50px;
+  width: 996px;
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+.script {
+  font-weight: 700;
+  font-size: 48px;
+}
+
+.script span {
+  color: darkmagenta;
+}
+
+.books-list {
+  width: 100%;
+  height: 426px;
+  border: green 1px solid;
+  margin-left: auto;
+  margin-bottom: 32px;
+}
+
+.books-list button {
+  display: block;
+  width: 124px;
+  height: 46px;
+  border-radius: 40px;
+  border: #4F2EE8 2px solid;
+  padding: 14px 28px 14px 28px;
+  gap: 10px;
+  font-size: 14px;
+  line-height: 1.8px;
+  letter-spacing: -0.01em;
+  margin-left: auto;
+  margin-top: 27px;
+}
+
+.book-row {
+  height: 348px;
+  border: #4F2EE8 1px solid;
 }
 
 footer {
