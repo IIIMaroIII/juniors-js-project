@@ -292,6 +292,8 @@ input {
   overflow: hidden;
 }
 
+<<<<<<< Updated upstream
+=======
 :root {
   --black: #111;
   --black-1: #202024;
@@ -303,6 +305,7 @@ input {
   --font-family: "DM Sans", sans-serif;
 }
 
+>>>>>>> Stashed changes
 /*Dark mode styles */
 body.dark-mode {
   background-color: #333;
@@ -330,6 +333,7 @@ body.dark-mode .header-nav-elem .bag-icon {
 }
 
 /*========================= */
+<<<<<<< Updated upstream
 .header-container {
   position: relative;
 =======
