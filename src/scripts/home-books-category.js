@@ -7,5 +7,11 @@ const bookSection = new BooksSection();
 categoriesSection.addEventListenerCategoryClick(onCategoryClick);
 
 function onCategoryClick(categoryName) {
-  bookSection.handleBooks(categoryName);
+  bookSection.getBooksOfClickCategory(categoryName);
+}
+
+bookSection.addEventListenerBookClick(onBookClick);
+
+function onBookClick(idBook) {
+  console.log(idBook);
 }
