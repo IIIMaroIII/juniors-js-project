@@ -535,6 +535,10 @@ main {
   background-color: white;
 }
 
+.home-books {
+  background-color: aqua;
+}
+
 .section-home-books {
   margin-top: 90px;
 }
