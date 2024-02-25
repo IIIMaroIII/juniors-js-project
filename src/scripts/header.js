@@ -16,11 +16,13 @@ burgerMenu.addEventListener('click', () => {
   }
 });
 //====================
+
 // Page theme change
 const logoTextIcon = document.querySelector('.logo-text');
 const burgerMenuIcon = document.querySelector('.burger-menu');
 const themeToggle = document.querySelector('.toggle-theme');
 let isDarkMode = false;
+
 themeToggle.addEventListener('click', function () {
   document.body.classList.toggle('dark-mode');
   isDarkMode = !isDarkMode;
