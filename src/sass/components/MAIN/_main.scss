@@ -1,6 +1,49 @@
 main {
  margin-top: 72px;
-  background-color: orange
+  background-color: white;
+}
+
+// home categories
+
+.section-home-books {
+  margin-top: 90px;
+}
+section.section-home-books {
+  position: absolute;
+  width: 356px;
+  height: 472px;
+  left: 24px;
+  right: 1060px;
+  top: 112px;
+  bottom: 718px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0px;
+}
+
+.text-style-book-category {
+  color: rgba(17, 17, 17, 0.6);
+  font-family: DM Sans;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.33em;
+  letter-spacing: -0.02em;
+  text-align: left;
+}
+
+.link-item:hover,
+.link-item:focus,
+.link.item:active {
+  color: rgb(79, 46, 232);
+  font-family: DM Sans;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: -2%;
+  text-align: left;
+  text-transform: uppercase;
 }
 .list {
   padding-top: 50px;
