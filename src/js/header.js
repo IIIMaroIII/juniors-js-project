@@ -2,16 +2,18 @@
 const burgerMenu = document.querySelector('.burger-menu');
 const mobileMenu = document.querySelector('.mobile-menu');
 const useElement = burgerMenu.querySelector('use');
+const body = document.body;
 
 burgerMenu.addEventListener('click', () => {
   mobileMenu.classList.toggle('active');
   if (mobileMenu.classList.contains('active')) {
-    useElement.setAttribute('xlink:href', './img/sprite.svg#icon-x-close');
+    body.style.overflow = 'hidden';
+    useElement.setAttribute('xlink:href', 'src/img/sprite.svg#icon-x-close');
   } else {
-    burgerMenu.src = './img/burger-menu-icon.svg';
+    body.style.overflow = 'auto';
     useElement.setAttribute(
       'xlink:href',
-      './img/sprite.svg#icon-burger-menu-icon'
+      'src/img/sprite.svg#icon-burger-menu-icon'
     );
   }
 });
