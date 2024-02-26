@@ -597,32 +597,36 @@ main {
   background-color: white;
 }
 
-.section-home-books {
-  margin-top: 90px;
+li {
+  list-style: none;
 }
 
-section.section-home-books {
-  position: absolute;
-  width: 356px;
-  height: 472px;
-  left: 24px;
-  right: 1060px;
-  top: 112px;
-  bottom: 718px;
+.section-main {
+  margin-top: 107px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+}
+
+.wrap-categories {
+  position: static;
+  width: 307px;
   padding: 0px;
+  margin: 0px 20px;
+}
+
+.item-style:nth-child(n+7) {
+  display: none;
 }
 
 .text-style-book-category {
@@ -639,15 +643,75 @@ section.section-home-books {
 .link-item:focus,
 .link.item:active {
   color: rgb(79, 46, 232);
-  font-family: DM Sans;
-  font-size: 18px;
   font-weight: 700;
-  line-height: 24px;
-  letter-spacing: -2%;
   text-align: left;
   text-transform: uppercase;
 }
 
+.wrap-books {
+  position: static;
+  width: 335px;
+  height: 535px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 40px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.wrap-books .wrap-info .info-item-author {
+  color: rgb(180, 175, 175);
+  font-style: italic;
+  font-size: 12px;
+  line-height: 1.17em;
+  letter-spacing: -0.04em;
+  text-align: left;
+}
+.wrap-books .wrap-info .info-item-name {
+  color: rgb(17, 17, 17);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.13em;
+  letter-spacing: -0.04em;
+  text-align: left;
+}
+
+@media only screen and (max-width: 767px) {
+  ul .item-style:nth-child(n+7) {
+    display: block;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .section-main {
+    max-width: 1440px;
+  }
+  ul .item-style:nth-child(n+7) {
+    display: block;
+  }
+  .wrap-categories {
+    margin: 0;
+    padding: 0;
+    width: 356px;
+    height: 462px;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+  }
+  .wrap-books {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    gap: 24px;
+  }
+  .book-item-styles {
+    width: calc((100% - 48px) / 3);
+  }
+}
 footer {
   background-color: red;
   color: black;

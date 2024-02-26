@@ -1,4 +1,4 @@
-import { BooksAPI } from './booksAPI';
+import { BooksAPI } from '../scripts/booksAPI';
 
 export class CategoriesSection {
   constructor() {
@@ -41,7 +41,7 @@ export class CategoriesSection {
   itemTemplate(item) {
     const { list_name } = item;
     return `
-              <li class="home-category-item">
+              <li class="home-category-item item-style">
                   <div class="link-item" data-category-name="${list_name}">${list_name}</div>
               </li>
           `;
