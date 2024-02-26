@@ -604,12 +604,168 @@ body.dark-mode .header-nav-elem .bag-icon {
   }
 }
 /*=======================*/
-main {
-  background-color: orange;
-}
-
 footer {
   background-color: red;
   color: black;
   text-align: center;
-}/*# sourceMappingURL=main.css.map */
+}
+
+/* ========BOOK LIST======== */
+.booklist-section {
+  width: 375px;
+  height: 748px;
+  border: 5px solid black;
+  margin-top: 78px;
+}
+
+.booklist-title {
+  font-family: DM Sans;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 38px;
+  letter-spacing: -4%;
+  text-align: left;
+  color: rgb(17, 17, 17);
+  margin-top: 40px;
+  margin-left: 20px;
+}
+
+.booklist-item-info-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.empty-title {
+  width: 244px;
+}
+
+.booklist-title-span {
+  color: rgb(79, 46, 232);
+}
+
+.booklist {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.booklist-image {
+  border-radius: 8px;
+  max-width: 100px;
+  max-height: 142px;
+  margin-right: 14px;
+  margin-left: 14px;
+}
+
+.booklist-item {
+  width: 335px;
+  height: 170px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 2px solid rgba(79, 46, 232, 0.4);
+  border-radius: 16px;
+  padding-top: 14px;
+}
+
+.booklist-item-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.booklist-item-info h1 {
+  color: rgb(17, 17, 17);
+  font-family: DM Sans;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: -4%;
+  text-align: left;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.booklist-list {
+  color: rgb(180, 175, 175);
+  font-family: DM Sans;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: 3%;
+  text-align: left;
+  margin-bottom: 8px;
+}
+
+.booklist-info-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.booklist-description {
+  color: rgb(17, 17, 17);
+  font-family: DM Sans;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: -4%;
+  text-align: left;
+}
+
+.booklist-item-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.booklist-link-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.description-box {
+  width: 193px;
+  height: 68px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.booklist-author {
+  color: rgb(180, 175, 175);
+  font-family: DM Sans;
+  font-style: italic;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: -4%;
+  text-align: left;
+}
+
+/* ========================= *//*# sourceMappingURL=main.css.map */
