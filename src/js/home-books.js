@@ -45,10 +45,11 @@ export class BooksSection {
   itemTemplate(item) {
     const { book_image, author, _id, list_name } = item;
     return `
-          <li class="book-item book-item-styles" data-id="${_id}">
-              <div class="wrap-item-img">
+    <ul>
+          <li class="book-item book-item-styles" data-id="${_id}">    
+          <div class="wrap-item-img">
                   <img class="book-img" src="${book_image}" alt="" title=""/>
-              </div>
+              
               <div class="wrap-info">
                   <p class="info-item-name">
                       ${list_name}
@@ -57,7 +58,9 @@ export class BooksSection {
                       ${author}
                   </p>
               </div>
+              </div>
           </li>
+    </ul>
       `;
   }
 
