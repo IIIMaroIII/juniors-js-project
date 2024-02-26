@@ -1,0 +1,30 @@
+body.dark-mode {
+  background-color: #333;
+
+  // Header Styles
+  .header {
+    background-color: #111;
+    border: 1.5px solid rgb(248, 246, 246);
+  }
+
+  // Burger Menu
+  .burger-menu {
+    filter: invert(100%);
+  }
+
+  // Logo
+  .logo-text {
+    filter: invert(100%);
+  }
+
+  // Navigation
+  .header-nav-elem {
+    span {
+      color: white;
+    }
+
+    .bag-icon use {
+      filter: none;
+    }
+  }
+}
