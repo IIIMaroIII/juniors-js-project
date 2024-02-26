@@ -1,4 +1,4 @@
-import { BooksAPI } from './booksAPI';
+import { BooksAPI } from '../scripts/booksAPI';
 
 export class BooksSection {
   constructor() {
@@ -43,12 +43,19 @@ export class BooksSection {
   }
 
   itemTemplate(item) {
-    const { book_image, author, _id } = item;
+    const { book_image, author, _id, list_name } = item;
     return `
-          <li class="book-item" data-id="${_id}">
-              <a class="link-item" href=""><img class="book-img" src="${book_image}" alt="" title=""/></a>
-              <div class="info">
-                  <p class="info-item"><b>Author</b><br>${author}</p>
+          <li class="book-item book-item-styles" data-id="${_id}">
+              <div class="wrap-item-img">
+                  <img class="book-img" src="${book_image}" alt="" title=""/>
+              </div>
+              <div class="wrap-info">
+                  <p class="info-item-name">
+                      ${list_name}
+                  </p>
+                   <p class="info-item-author">
+                      ${author}
+                  </p>
               </div>
           </li>
       `;
