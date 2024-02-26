@@ -8,12 +8,12 @@ burgerMenu.addEventListener('click', () => {
   mobileMenu.classList.toggle('active');
   if (mobileMenu.classList.contains('active')) {
     body.style.overflow = 'hidden';
-    useElement.setAttribute('xlink:href', 'src/img/sprite.svg#icon-x-close');
+    useElement.setAttribute('xlink:href', '../img/sprite.svg#icon-x-close');
   } else {
     body.style.overflow = 'auto';
     useElement.setAttribute(
       'xlink:href',
-      'src/img/sprite.svg#icon-burger-menu-icon'
+      '../img/sprite.svg#icon-burger-menu-icon'
     );
   }
 });
