@@ -6,20 +6,18 @@ const useElement = burgerMenu.querySelector('use');
 burgerMenu.addEventListener('click', () => {
   mobileMenu.classList.toggle('active');
   if (mobileMenu.classList.contains('active')) {
-    useElement.setAttribute('xlink:href', '../img/sprite.svg#icon-x-close');
+    useElement.setAttribute('xlink:href', './img/sprite.svg#icon-x-close');
   } else {
     burgerMenu.src = './img/burger-menu-icon.svg';
     useElement.setAttribute(
       'xlink:href',
-      '../img/sprite.svg#icon-burger-menu-icon'
+      './img/sprite.svg#icon-burger-menu-icon'
     );
   }
 });
 //====================
 
 // Page theme change
-// const logoTextIcon = document.querySelector('.logo-text');
-// const burgerMenuIcon = document.querySelector('.burger-menu');
 const themeToggle = document.querySelector('.toggle-theme');
 let isDarkMode = false;
 
