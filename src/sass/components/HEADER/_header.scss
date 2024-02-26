@@ -9,7 +9,7 @@
   box-sizing: border-box;
   border: 1.5px solid rgb(17, 17, 17);
   border-radius: 0px 0px 8px 8px;
-  background-color: white;
+  background-color: $white;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -30,7 +30,7 @@
   justify-content: flex-start;
 }
 .header-nav-elem span {
-  color: #111;
+  color: $black;
 }
 .header-nav-elem .bag-icon use {
   filter: invert(100%);
@@ -90,8 +90,8 @@
   display: flex;
   border-radius: 36px;
   padding: 8px 16px;
-  background: #eac645;
-  color: #111;
+  background: $yellow;
+  color: $black;
 }
 .menu-item-shop {
   font-size: 14px;
@@ -101,7 +101,7 @@
   text-transform: uppercase;
   display: flex;
   align-items: center;
-  color: #fff;
+  color: $white;
 }
 
 .books-img {
@@ -146,7 +146,7 @@ label:after {
   left: 2px;
   width: 16px;
   height: 16px;
-  background: #fff;
+  background: $white;
   border-radius: 8px;
   transition: 0.3s;
 }
