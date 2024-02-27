@@ -97,7 +97,7 @@ body.dark-mode .header-nav-elem .bag-icon use {
           justify-content: space-between;
   margin: 0 auto;
   width: 1392px;
-  margin-top: 40px;
+  padding-top: 40px;
   background-color: #f6f6f6;
 }
 
@@ -388,17 +388,8 @@ input {
 }
 
 .hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  -webkit-clip-path: inset(100%);
-          clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
+  display: none;
+  opacity: 0;
 }
 
 /* General styles*/
