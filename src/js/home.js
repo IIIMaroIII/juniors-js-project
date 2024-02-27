@@ -4,6 +4,7 @@ const booksAPI = new BooksAPI();
 
 const refs = {
   homeListRef: document.querySelector('.js-home-list'),
+  homePage: document.querySelector('.home-page'),
 };
 
 getRandomCategory();
