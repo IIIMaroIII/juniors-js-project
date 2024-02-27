@@ -314,7 +314,7 @@ input {
           box-sizing: border-box;
   border: 1.5px solid rgb(17, 17, 17);
   border-radius: 0px 0px 8px 8px;
-  background-color: white;
+  background-color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
