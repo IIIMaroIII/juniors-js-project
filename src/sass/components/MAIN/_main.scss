@@ -92,12 +92,41 @@ h3.home-all-categories {
 }
 
 @media only screen and (max-width: 767px) {
+  .side-bar-container {
+    width: 335px;
+    margin: auto;
+  }
+
+  .section-main {
+    max-width: 100%;
+  }
+
+  .home-page {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  ul .top-books-list {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
   // ul .item-style:nth-child(n + 7) {
   //   display: block;
   // }
 }
-// @media (min-width: 768px) and (max-width: 1439px) {
-// }
+@media (min-width: 768px) and (max-width: 1439px) {
+  .side-bar-container {
+    width: 704px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 100px;
+  }
+  .home-page {
+    width: 702px;
+  }
+}
 @media only screen and (min-width: 1440px) {
   .section-main {
     max-width: 1440px;

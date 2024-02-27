@@ -81,30 +81,75 @@ body.dark-mode .logo-text {
           filter: invert(100%);
 }
 body.dark-mode .header-nav-elem span {
-  color: white;
+  color: #fff;
 }
 body.dark-mode .header-nav-elem .bag-icon use {
   -webkit-filter: none;
           filter: none;
+}
+body.dark-mode .main-container {
+  background-color: #111;
 }
 
 .main-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   margin: 0 auto;
-  width: 1392px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   padding-top: 40px;
   background-color: #f6f6f6;
 }
 
-.side-bar-container {
-  width: 356px;
+@media only screen and (max-width: 767px) {
+  .header {
+    width: 100%;
+  }
 }
-
+@media (min-width: 768px) and (max-width: 1439px) {
+  .header-logo {
+    margin-right: 40px;
+  }
+  .header-nav-elem {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-right: auto;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .mobile-menu {
+    display: none;
+  }
+  .burger-menu {
+    display: none;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .header-logo {
+    margin-right: 76px;
+  }
+  .header-nav-elem {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-right: auto;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 24px;
+  }
+  .mobile-menu {
+    display: none;
+  }
+  .burger-menu {
+    display: none;
+  }
+}
 /*! modern-normalize v2.0.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
 /*
 Document
@@ -395,7 +440,6 @@ input {
 /* General styles*/
 .header {
   position: relative;
-  width: 100%;
   height: 64px;
   left: 0;
   top: 0;
@@ -414,11 +458,7 @@ input {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-.header-container {
   margin: 0 auto;
-  width: 1392px;
 }
 
 .header-nav {
@@ -717,8 +757,6 @@ label:active:after {
 }
 
 .top-books-img {
-  width: 180px;
-  height: 256px;
   border-radius: 8px;
   margin-bottom: 14px;
 }
@@ -831,6 +869,52 @@ h3.home-all-categories:active {
   text-align: left;
 }
 
+@media only screen and (max-width: 767px) {
+  .side-bar-container {
+    width: 335px;
+    margin: auto;
+  }
+  .section-main {
+    max-width: 100%;
+  }
+  .home-page {
+    max-width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  ul .top-books-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+@media (min-width: 768px) and (max-width: 1439px) {
+  .side-bar-container {
+    width: 704px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-bottom: 100px;
+  }
+  .home-page {
+    width: 702px;
+  }
+}
 @media only screen and (min-width: 1440px) {
   .section-main {
     max-width: 1440px;
@@ -967,9 +1051,8 @@ footer {
 
 @media only screen and (min-width: 768px) {
   .support {
-    max-width: 356px;
+    max-width: 335px;
     height: 474px;
-    margin-bottom: 40px;
     padding-top: 26px;
     padding: 24px 40px 20px;
   }
