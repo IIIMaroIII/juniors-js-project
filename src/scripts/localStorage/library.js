@@ -1,3 +1,4 @@
+
 class Library {
   #data = [];
 
@@ -13,20 +14,20 @@ class Library {
     this.#data = newObj;
   }
 
-  getObjById(id) {
-    return this.#data.find(obj => obj.id === id);
+  getObjById(_id) {
+    return this.#data.find(obj => obj._id === _id);
   }
 
-  setObjById(id, newObj) {
-    this.#data = this.#data.map(obj => (obj.id === id ? newObj : obj));
+  setObjById(_id, newObj) {
+    this.#data = this.#data.map(obj => (obj._id === _id ? newObj : obj));
   }
 
   addObj(newObj) {
     this.#data.push(newObj);
   }
 
-  removeObg(id) {
-    const index = this.#data.findIndex(obj => obj.id === id);
+  removeObj(_id) {
+    const index = this.#data.findIndex(obj => obj._id === _id);
     if (index !== -1) {
       this.#data.splice(index, 1);
     }
@@ -34,7 +35,7 @@ class Library {
 
   updateObj(newObj) {
     this.#data = this.#data.map(obj =>
-      obj.id === obj.id ? (obj.id === newObj.id ? newObj : obj) : obj
+      obj._id === obj._id ? (obj._id === newObj._id ? newObj : obj) : obj
     );
   }
 }

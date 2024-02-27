@@ -1,1 +1,3 @@
-export const KEY_LOCALSTORAGE = 'favorites';
+const KEY_LOCALSTORAGE = 'favorites';
+
+export default KEY_LOCALSTORAGE;
