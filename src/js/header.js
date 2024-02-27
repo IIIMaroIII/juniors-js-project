@@ -1,3 +1,4 @@
+import sprite from '../img/sprite.svg';
 // Burger menu
 const burgerMenu = document.querySelector('.burger-menu');
 const mobileMenu = document.querySelector('.mobile-menu');
@@ -8,13 +9,10 @@ burgerMenu.addEventListener('click', () => {
   mobileMenu.classList.toggle('active');
   if (mobileMenu.classList.contains('active')) {
     body.style.overflow = 'hidden';
-    useElement.setAttribute('xlink:href', '../img/sprite.svg#icon-x-close');
+    useElement.setAttribute('xlink:href', `${sprite}#icon-x-close`);
   } else {
     body.style.overflow = 'auto';
-    useElement.setAttribute(
-      'xlink:href',
-      '../img/sprite.svg#icon-burger-menu-icon'
-    );
+    useElement.setAttribute('xlink:href', `${sprite}#icon-burger-menu-icon`);
   }
 });
 //====================
