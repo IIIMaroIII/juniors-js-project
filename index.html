@@ -4,11 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vanilla App Template</title>
+    <link rel="stylesheet" href="./css/style.css" />
     
     <script type="module" crossorigin src="/juniors-js-project/commonHelpers.js"></script>
     <link rel="modulepreload" crossorigin href="/juniors-js-project/assets/vendor-b1ee5dfe.js">
     <link rel="stylesheet" href="/juniors-js-project/assets/vendor-e5212ee8.css">
-    <link rel="stylesheet" href="/juniors-js-project/assets/index-42a191b5.css">
+    <link rel="stylesheet" href="/juniors-js-project/assets/index-b857cd87.css">
   </head>
   <body>
     <header>
@@ -132,6 +133,38 @@
  -->
     </footer>
 
+    <div data-modal class="backdrop is-hidden">
+  <div class="modal">
+    <button type="button" class="button-close close" data-modal-close>
+      <svg class="modal-icon close" width="14" height="14">
+        <use href="./images/icons.svg#icon-close"></use>
+      </svg>
+    </button>
+    <div class="modal-wrapper">
+      <img src="./images/computer_photo.jpg" class="modal-img" />
+      <div>
+        <h2 class="book-title">Title</h2>
+        <label class="book-author"></label>
+        <p class="book-description">About book</p>
+        <ul class="shops-links list"></ul>
+      </div>
+    </div>
+    <button class="save-to-list">ADD TO SHOPPING LIST</button>
+  </div>
+</div>
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <!-- Пока разрабатываем, подключаем свои js файлы ниже main.js. -->
+    <!-- Перед сдачей проэкта скопипастим все в main.js -->
     
     
     
