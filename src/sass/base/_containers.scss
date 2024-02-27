@@ -1,0 +1,12 @@
+.main-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 1392px;
+  margin-top: 40px;
+  background-color: $bodyColor;
+}
+
+.side-bar-container {
+  width: 356px;
+}

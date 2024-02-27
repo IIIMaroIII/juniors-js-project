@@ -1,27 +1,89 @@
 # Создать папку .vscode
-# Внутри этой папки создать файл settings.json
-# Положить эти настройки 
 
-{
-  "liveSassCompile.settings.formats": [
-    {
-      "format": "expanded",
-      "extensionName": ".css",
-      "savePath": "/src/css"
-    },
-    {
-      "extensionName": ".min.css",
-      "format": "compressed",
-      "savePath": "/src/css"
-    }
-  ],
-  "liveSassCompile.settings.excludeList": ["**/node_modules/**", ".vscode/**"],
-  "liveSassCompile.settings.generateMap": true,
-  "liveSassCompile.settings.autoprefix": ["> 1%", "last 2 versions"]
-}
+# Внутри этой папки создать файл settings.json
+
+# Положить эти настройки
+
+{ "liveSassCompile.settings.formats": [ { "format": "expanded", "extensionName":
+".css", "savePath": "/src/css" }, { "extensionName": ".min.css", "format":
+"compressed", "savePath": "/src/css" } ],
+"liveSassCompile.settings.excludeList": ["**/node_modules/**", ".vscode/**"],
+"liveSassCompile.settings.generateMap": true,
+"liveSassCompile.settings.autoprefix": ["> 1%", "last 2 versions"] }
+
+# @Mixin
+
+// Usage examples // .my-custom-heading { // @include dm-sans(700); // Use the
+bold version (weight: 700) // font-size: 24px; // }
+
+// .my-custom-paragraph { // @include dm-sans(400); // Use the regular version
+(weight: 400) // font-size: 16px; // }
+
+// ================ 1st Example =================
+
+// @mixin button-styles { // padding: 10px 20px; // background-color: #3498db;
+// color: #fff; // border: none; // border-radius: 5px; // cursor: pointer;
+
+// &:hover { // background-color: #217dbb; // } // }
+
+// .my-button { // @include button-styles; // }
+
+// =================================================
+
+// ================ 2nd Example =================
+
+// @mixin media-query($breakpoint) { // @media screen and (min-width:
+$breakpoint) { // @content; // } // }
+
+// .section { // width: 100%;
+
+// @include media-query(768px) { // width: 80%; // margin: 0 auto; // }
+
+// @include media-query(1200px) { // width: 70%; // } // }
+
+// =================================================
+
+// ================ 3rd Example =================
+
+// @mixin triangle($size, $color) { // width: 0; // height: 0; // border-left:
+$size solid transparent; // border-right: $size solid transparent; //
+border-bottom: $size solid $color; // }
+
+// .arrow-down { // @include triangle(10px, #333); // }
+
+// =================================================
+
+// @mixin flex( // $row-gap, // $column-gap: $row-gap, // $justify-content:
+center, // $align-items: center, // $flex-wrap: nowrap // ) { // display: flex;
+// row-gap: $row-gap; // column-gap: $column-gap; // justify-content:
+$justify-content; // align-items: $align-items; // flex-wrap: $flex-wrap; // }
+
+// ================= Пример использования @mixin ======================
+
+// ========= Символ & просто берет имя родительского селектора и подставляет,
+======== // ========== благодаря этому можно использовать вложенность селекторов
+==========
+
+// ========= разметка для примера (глубина вложенности не имеет значения)
+===============
+
+// <ul class="gallery"> //
+<li class="gallery-item"><img src="" alt="" class="gallery-img"></li> //
+<li class="gallery-item"><img src="" alt="" class="gallery-img"></li> //
+<li class="gallery-item"><img src="" alt="" class="gallery-img"></li> // </ul>
+
+// .gallery { // @include flex(24px, 24px, flex-start, flex-start, wrap);
+
+// &-item { // border: 1px solid $border-normal-color; // flex-basis:
+calc((100% - 2 \* 24px) / 3);
+
+// transform: scale(1); // transition: transform 250ms ease-in-out; // }
+
+// &-item:hover { // transform: scale(1.05); // }
+
+// &-image { // width: 100%; // height: 160px; // object-fit: cover; // } // }
 
 # Установить расширение для VSCode - Live Sass Compiler
-
 
 # Vanilla App Template
 
