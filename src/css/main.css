@@ -6,6 +6,11 @@
   font-style: normal;
 }
 
+body,
+main {
+  background: #f6f6f6;
+}
+
 .section-title {
   font-family: "DM Sans", sans-serif;
   font-optical-sizing: auto;
@@ -93,6 +98,7 @@ body.dark-mode .header-nav-elem .bag-icon use {
   margin: 0 auto;
   width: 1392px;
   margin-top: 40px;
+  background-color: #f6f6f6;
 }
 
 .side-bar-container {
@@ -747,10 +753,6 @@ label:active:after {
 .see-more {
   display: block;
   margin-left: auto;
-}
-
-main {
-  background-color: white;
 }
 
 li {
