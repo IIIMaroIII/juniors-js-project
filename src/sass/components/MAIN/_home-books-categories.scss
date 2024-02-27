@@ -1,128 +1,128 @@
 // home categories
 // mobile version
-li {
-  list-style: none;
-}
+// li {
+//   list-style: none;
+// }
 
-.section-main {
-  margin-top: 107px; //потім видалити потрібно
-  display: block;
-  flex-direction: column;
-}
+// .section-main {
+//   margin-top: 107px; //потім видалити потрібно
+//   display: block;
+//   flex-direction: column;
+// }
 
-.wrap-categories {
-  width: 307px;
-  gap: 24px;
-}
+// .wrap-categories {
+//   width: 307px;
+//   gap: 24px;
+// }
 
-.text-style-book-category {
-  color: rgba(17, 17, 17, 0.6);
-  font-family: DM Sans;
-  font-size: 18px;
-  line-height: 1.33em;
-  letter-spacing: -0.02em;
-  text-align: left;
-  padding-bottom: 24px;
-}
+// .text-style-book-category {
+//   color: rgba(17, 17, 17, 0.6);
+//   font-family: DM Sans;
+//   font-size: 18px;
+//   line-height: 1.33em;
+//   letter-spacing: -0.02em;
+//   text-align: left;
+//   padding-bottom: 24px;
+// }
 
-.item-style {
-  padding-bottom: 24px;
-}
+// .item-style {
+//   padding-bottom: 24px;
+// }
 
-.link-item:hover,
-.link-item:focus,
-.link.item:active {
-  color: rgb(79, 46, 232);
-  font-weight: 700;
-  text-align: left;
-  text-transform: uppercase;
-}
+// .list-item:hover,
+// .list-item:focus,
+// .list.item:active {
+//   color: rgb(79, 46, 232);
+//   font-weight: 700;
+//   text-align: left;
+//   text-transform: uppercase;
+// }
 
-.hidden-title-category {
-  font-family: DM Sans;
-  font-size: 32px;
-  font-weight: 700;
-  line-height: 38/32em;
-  letter-spacing: -0.04em;
-  text-align: left;
-}
-.wrap-books {
-  display: flex;
-  gap: 40px;
-  // flex-direction: column;
+// .hidden-title-category {
+//   font-family: DM Sans;
+//   font-size: 32px;
+//   font-weight: 700;
+//   line-height: 38/32em;
+//   letter-spacing: -0.04em;
+//   text-align: left;
+// }
+// .wrap-books {
+//   display: flex;
+//   gap: 40px;
+//   // flex-direction: column;
 
-  .book-item-styles {
-  }
+//   .book-item-styles {
+//   }
 
-  .wrap-item-img {
-    width: 335px;
-    height: 571px;
-    .book-img {
-      width: 100%;
-    }
-  }
+//   .wrap-item-img {
+//     width: 335px;
+//     height: 571px;
+//     .book-img {
+//       width: 100%;
+//     }
+//   }
 
-  .wrap-info {
-    .info-item-author {
-      color: rgb(180, 175, 175);
-      font-style: italic;
-      font-size: 12px;
-      line-height: 1.17em;
-      letter-spacing: -0.04em;
-      text-align: left;
-      padding-top: 4px;
-    }
-    .info-item-name {
-      color: rgb(17, 17, 17);
-      font-size: 16px;
-      font-weight: 700;
-      line-height: 1.13em;
-      letter-spacing: -0.04em;
-      text-align: left;
-      padding-top: 14px;
-    }
-  }
-}
-//for tablet
+//   .wrap-info {
+//     .info-item-author {
+//       color: rgb(180, 175, 175);
+//       font-style: italic;
+//       font-size: 12px;
+//       line-height: 1.17em;
+//       letter-spacing: -0.04em;
+//       text-align: left;
+//       padding-top: 4px;
+//     }
+//     .info-item-name {
+//       color: rgb(17, 17, 17);
+//       font-size: 16px;
+//       font-weight: 700;
+//       line-height: 1.13em;
+//       letter-spacing: -0.04em;
+//       text-align: left;
+//       padding-top: 14px;
+//     }
+//   }
+// }
+// //for tablet
 
-@media (min-width: 768px) and (max-width: 1440px) {
-  .wrap-categories {
-    width: 309px;
-    gap: 24px;
-  }
-  .wrap-books {
-    max-width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
+// @media (min-width: 768px) and (max-width: 1440px) {
+//   .wrap-categories {
+//     width: 309px;
+//     gap: 24px;
+//   }
+//   .wrap-books {
+//     max-width: 100%;
+//     display: flex;
+//     flex-wrap: wrap;
+//     gap: 40px;
 
-    .wrap-item-img {
-      width: 218px;
-      height: 366px;
-    }
-  }
-}
+//     .wrap-item-img {
+//       width: 218px;
+//       height: 366px;
+//     }
+//   }
+// }
 
-//for computer
-@media only screen and (min-width: 1440px) {
-  .section-main {
-    margin-top: 107px; //потім видалити потрібно
-    display: flex;
-    flex-direction: row;
-  }
-  .wrap-categories {
-    width: 309px;
-    gap: 24px;
-  }
-  .wrap-books {
-    max-width: 996px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
+// //for computer
+// @media only screen and (min-width: 1440px) {
+//   .section-main {
+//     margin-top: 107px; //потім видалити потрібно
+//     display: flex;
+//     flex-direction: row;
+//   }
+//   .wrap-categories {
+//     width: 309px;
+//     gap: 24px;
+//   }
+//   .wrap-books {
+//     max-width: 996px;
+//     display: flex;
+//     flex-wrap: wrap;
+//     gap: 40px;
 
-    .wrap-item-img {
-      width: 180px;
-      height: 306px;
-    }
-  }
-}
+//     .wrap-item-img {
+//       width: 180px;
+//       height: 306px;
+//     }
+//   }
+// }
