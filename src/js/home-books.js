@@ -13,19 +13,24 @@ export class BooksSection {
   }
 
   getBooksOfClickCategory(categoryName) {
-    // also this logic in button HOME
-
     if (categoryName === this.allCategoriesName) {
       this.booksAPI
-        .fetchTopBooks()
-        .then(res => console.log(res))
-        .catch(err => console.log(err));
+        .fetchBooksByCategory(categoryName)
+        .then(res => {
+          const randomBooks = this.getRandomBooksFromList(res, 5);
+          console.log(randomBooks);
+          if (this.bookClickCallback) {
+            this.bookClickCallback(categoryName, randomBooks);
+          }
+        })
+        .catch(err => console.error(err));
       return;
     }
 
     this.booksAPI
       .fetchBooksBySelectedCategory(categoryName)
       .then(res => {
+        this.hideSection();
         console.log(res);
         this.renderListBooks(res);
         this.addBookListeners();
@@ -35,7 +40,7 @@ export class BooksSection {
 
   renderListBooks(res) {
     const html = this.itemsTemplate(res);
-    document.getElementById('books-list').innerHTML = html;
+    document.getElementById('home-category-books-list').innerHTML = html;
   }
 
   itemsTemplate(items) {
@@ -43,20 +48,24 @@ export class BooksSection {
   }
 
   itemTemplate(item) {
-    const { book_image, author, _id, list_name } = item;
+    const { book_image, author, _id, list_name, title, amazon_product_url } =
+      item;
     return `
-          <li class="book-item book-item-styles" data-id="${_id}">
-              <div class="wrap-item-img">
+          <li class="book-item book-item-styles" data-id="${_id}">  
+           
+          <div class="wrap-item-img">
                   <img class="book-img" src="${book_image}" alt="" title=""/>
-              </div>
+              
               <div class="wrap-info">
-                  <p class="info-item-name">
-                      ${list_name}
-                  </p>
-                   <p class="info-item-author">
+                  <h3 class="info-item-name ">
+                      ${title}
+                  </h3>
+                   <p class="info-item-author ">
                       ${author}
                   </p>
               </div>
+              </div>
+         
           </li>
       `;
   }
@@ -73,10 +82,14 @@ export class BooksSection {
 
   handleBookClick(event) {
     const idBook = event.currentTarget.dataset.id;
-    // console.log(idBook);
+    console.log(idBook);
 
     if (this.bookClickCallback) {
       this.bookClickCallback(idBook);
     }
+  }
+  hideSection() {
+    const sectionToHide = document.querySelector('.home-page');
+    sectionToHide.style.display = 'none';
   }
 }
