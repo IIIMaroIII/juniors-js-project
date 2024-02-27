@@ -12,6 +12,12 @@ function onCategoryClick(categoryName) {
 
 bookSection.addEventListenerBookClick(onBookClick);
 
+const allCategoriesEl = document.querySelector('.home-all-categories');
+allCategoriesEl.addEventListener('click', () => {
+  const randomCategory = categoriesSection.getRandomCategory();
+  bookSection.getBooksOfClickCategory(randomCategory);
+});
+
 function onBookClick(idBook) {
   console.log(idBook);
 }

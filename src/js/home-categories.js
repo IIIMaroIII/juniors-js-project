@@ -42,13 +42,13 @@ export class CategoriesSection {
     const { list_name } = item;
     return `
               <li class="home-category-item item-style">
-                  <div class="link-item" data-category-name="${list_name}">${list_name}</div>
+                  <div class="list-item" data-category-name="${list_name}">${list_name}</div>
               </li>
           `;
   }
 
   addCategoriesListeners() {
-    const categories = document.querySelectorAll('.link-item');
+    const categories = document.querySelectorAll('.list-item');
 
     categories.forEach(categoryEl => {
       categoryEl.addEventListener('click', event => {
@@ -61,8 +61,18 @@ export class CategoriesSection {
     const categoryName = event.currentTarget.dataset.categoryName;
     console.log(categoryName);
 
+    const categoryDisplay = document.getElementById('categoryDisplay');
+
+    categoryDisplay.textContent = categoryName;
+
     if (this.categoryClickCallback) {
       this.categoryClickCallback(categoryName);
     }
+  }
+  getRandomCategory() {
+    const categories = document.querySelectorAll('.list-item');
+    const randomIndex = Math.floor(Math.random() * categories.length);
+    const randomCategoryName = categories[randomIndex].dataset.categoryName;
+    return randomCategoryName;
   }
 }

@@ -19,7 +19,7 @@ function constructModal(bookData) {
   bookTitle.textContent = `${title}`;
   bookAuthor.textContent = `${author}`;
   bookDescription.textContent = `${description}`;
-  const markup = buy_links.map((link) => `<li><a href="${link.url} class="link"><img src="../images/book.png" alt="${link.name}"></a></li>`)
+  const markup = buy_links.map((link) => `<li><a href="${link.url} class="link" target=”_blank”><img src="../images/book.png" alt="${link.name}"></a></li>`)
   .join("");
   shopList.innerHTML = markup;
 };
