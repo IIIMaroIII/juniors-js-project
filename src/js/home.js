@@ -1,4 +1,5 @@
 import { BooksAPI } from '../scripts/booksAPI';
+import { hideExtraBooksOnMobile } from './home-books';
 
 const booksAPI = new BooksAPI();
 

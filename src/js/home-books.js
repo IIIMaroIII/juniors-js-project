@@ -93,3 +93,18 @@ export class BooksSection {
     sectionToHide.style.display = 'none';
   }
 }
+
+//Hide on Mobile
+export function hideExtraBooksOnMobile() {
+  const bookLists = document.querySelectorAll('.home-list');
+
+  bookLists.forEach(list => {
+    const listItems = list.querySelectorAll('.home-list-item');
+
+    // Hide all list items from the second one onwards
+    for (let i = 1; i < listItems.length; i++) {
+      listItems[i].classList.add('hide-on-mobile');
+    }
+  });
+}
+//============

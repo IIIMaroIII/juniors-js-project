@@ -3,7 +3,6 @@
 @import './base/common';
 @import './base/dark-theme';
 @import './base/containers';
-@import './base/media-queries';
 @import './utils/modern-normalize';
 @import './utils/reset';
 @import './utils/hidden';
@@ -14,3 +13,4 @@
 @import './components/FOOTER/footer';
 @import './components/supportUkraine/supportUkraine';
 @import './components/MODAL/modal';
+@import './base/media-queries';
