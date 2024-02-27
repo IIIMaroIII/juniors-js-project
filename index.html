@@ -8,11 +8,11 @@
     <script type="module" crossorigin src="/juniors-js-project/commonHelpers.js"></script>
     <link rel="modulepreload" crossorigin href="/juniors-js-project/assets/vendor-b1ee5dfe.js">
     <link rel="stylesheet" href="/juniors-js-project/assets/vendor-e5212ee8.css">
-    <link rel="stylesheet" href="/juniors-js-project/assets/index-8e03d8dc.css">
+    <link rel="stylesheet" href="/juniors-js-project/assets/index-06e682cf.css">
   </head>
   <body>
     <header>
-      <div class="header">
+      <div class="header header-container">
   <nav class="header-nav">
     <div class="header-logo">
       <a href="./index.html" class="header-logo-link">
@@ -75,11 +75,9 @@
 
     </header>
     <main>
-      <!-- <section class="main">
-  <h2 class="main-title">Hey main</h2>
-</section>
- -->
-      <section class="section-home-books section-main">
+      <div class="main-container">
+        <div class="side-bar-container">
+          <section class="section-home-books section-main">
   <div class="home-sidebar-nav-categories wrap-categories">
     <h3 class="home-all-categories text-style-book-category">All categories</h3>
     <ul
@@ -87,10 +85,10 @@
       id="categories-list"
     ></ul>
   </div>
-  <div class="home-books wrap-books" id="books-list"></div>
+  <!-- <div class="home-books wrap-books" id="books-list"></div> -->
 </section>
 
-      <div class="support">
+          <div class="support">
   <div class="support-title">
     <h2 class="support-title-text">Support Ukraine</h2>
     <svg class="support-svg" width="20" height="32">
@@ -114,6 +112,17 @@
   </div>
 </div>
 
+        </div>
+
+        <section class="home-page">
+  <h1 class="section-title">
+    Best Sellers
+    <span><a class="section-title-link" href="../../index.html">Books</a></span>
+  </h1>
+  <ul class="home-list js-home-list"></ul>
+</section>
+
+      </div>
     </main>
     <footer>
       <!-- <section class="footer">
@@ -122,6 +131,7 @@
  -->
     </footer>
 
+    
     
     
     
