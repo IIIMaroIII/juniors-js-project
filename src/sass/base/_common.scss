@@ -1,3 +1,48 @@
 * {
   @include dm-sans(400);
 }
+
+.section-title {
+  @include dm-sans(700);
+  font-size: 48px;
+  line-height: 1.08333;
+  letter-spacing: -0.04em;
+  color: $black;
+  margin-bottom: 40px;
+}
+
+.section-title span {
+  transform: scale(1);
+  @include anim(transform);
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.section-title-link {
+  font-weight: 700;
+  color: $violet;
+}
+
+button {
+  border: 2px solid $violet;
+  border-radius: 40px;
+  padding: 14px 28px;
+  min-width: 124px;
+  height: 46px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: $black;
+  background-color: transparent;
+  @include anim(background-color);
+  @include anim(color);
+}
+
+button:hover {
+  background: $violet;
+  color: $white;
+}

@@ -1,0 +1,64 @@
+$margin: 24px;
+$items: 5;
+
+.home-page {
+  width: 996px;
+}
+
+.home-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.top-books-list {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+.top-books-item {
+  @include flex-basis(24px, 5);
+  transform: scale(1);
+  @include anim(transform);
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.top-books-category-title {
+  font-size: 14px;
+  line-height: 1.71429;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: $subtitle;
+  margin-bottom: 18px;
+}
+
+.top-books-img {
+  width: 180px;
+  height: 256px;
+  border-radius: 8px;
+  margin-bottom: 14px;
+}
+
+.top-books-title {
+  margin-bottom: 4px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.125;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: $black;
+}
+.top-books-desc {
+  font-style: italic;
+  font-size: 12px;
+  line-height: 1.16667;
+  letter-spacing: -0.04em;
+  color: $subtitle;
+}
+
+.see-more {
+  display: block;
+  margin-left: auto;
+}
