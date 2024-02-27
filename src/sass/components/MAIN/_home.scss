@@ -1,0 +1,24 @@
+$margin: 24px;
+$items: 5;
+
+.home-page {
+  width: 996px;
+}
+
+.top-books-list {
+  display: flex;
+  gap: 24px;
+}
+.top-books-item {
+  @include flex-basis(24px, 5);
+}
+
+// .home-list-item {
+//   outline: 3px solid tomato;
+// }
+
+.top-books-img {
+  width: 180px;
+  height: 256px;
+  border-radius: 8px;
+}

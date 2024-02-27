@@ -1,3 +1,16 @@
 * {
   @include dm-sans(400);
 }
+
+.section-title {
+  @include dm-sans(700);
+  font-size: 48px;
+  line-height: 1.08333;
+  letter-spacing: -0.04em;
+  color: $black;
+}
+
+.section-title-link {
+  font-weight: 700;
+  color: $violet;
+}

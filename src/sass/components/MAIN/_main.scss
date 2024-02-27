@@ -9,7 +9,6 @@ li {
 }
 
 .section-main {
-  margin-top: 107px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -17,7 +16,6 @@ li {
 }
 
 .wrap-categories {
-  position: static;
   width: 307px;
   padding: 0px;
   margin: 0px 20px;
@@ -45,21 +43,21 @@ li {
 }
 
 .wrap-books {
-  position: static;
-  width: 335px;
-  height: 535px;
-  margin: 0 auto;
+  outline: 3px yellow;
+  // width: 335px;
+  // height: 535px;
+  // margin: 0 auto;
   display: flex;
   gap: 40px;
   flex-direction: column;
 
-  .book-item-styles {
-  }
+  // .book-item-styles {
+  // }
 
-  .wrap-item-img {
-    .book-img {
-    }
-  }
+  // .wrap-item-img {
+  //   .book-img {
+  //   }
+  // }
 
   .wrap-info {
     .info-item-author {
@@ -100,7 +98,6 @@ li {
     padding: 0;
     width: 356px;
     height: 462px;
-    position: fixed;
     height: 100%;
     overflow: auto;
   }
