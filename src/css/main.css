@@ -97,7 +97,7 @@ body.dark-mode .header-nav-elem .bag-icon use {
           justify-content: space-between;
   margin: 0 auto;
   width: 1392px;
-  margin-top: 40px;
+  padding-top: 40px;
   background-color: #f6f6f6;
 }
 
