@@ -2,6 +2,11 @@
   @include dm-sans(400);
 }
 
+body,
+main {
+  background: $bodyColor;
+}
+
 .section-title {
   @include dm-sans(700);
   font-size: 48px;
