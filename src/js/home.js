@@ -42,6 +42,7 @@ function createHomeListItemEl() {
 
 function createSeeMoreBtnEl() {
   const btnEl = document.createElement('button');
+  btnEl.classList.add('see-more');
   btnEl.setAttribute('type', 'button');
   btnEl.textContent = 'See More';
   return btnEl;
@@ -68,7 +69,7 @@ function createTopBooksListEl(arr) {
         ...rest
       }) => {
         return `<li class="top-books-item">
-   <a href='${amazon_product_url}' class="top-books-link">
+   <a href='${amazon_product_url}' target="_blank" class="top-books-link">
      <img src="${book_image}" alt="${title}" class="top-books-img" />
      <h3 class="top-books-title">${title}</h3>
      <p class="top-books-desc">${author}</p>
