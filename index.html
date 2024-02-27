@@ -67,8 +67,7 @@
             <use
               href="/juniors-js-project/assets/sprite-61614f66.svg#icon-shopping-bag"
               alt="Text logo icon"
-            ></use></svg
-        ></a>
+            ></use></svg></a>
       </li>
     </ul>
     <img src="/juniors-js-project/assets/books-077eccf9.png" alt="Books Image" class="books-img" />
@@ -127,10 +126,66 @@
       </div>
     </main>
     <footer>
-      <!-- <section class="footer">
-  <h3 class="footer-title">footer</h3>
-</section>
- -->
+      <!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'DM Sans', sans-serif;
+            overflow-x: hidden; /* Запобігає горизонтальному скролінгу */
+        }
+        .footer {
+            width: 100%;
+            padding: 20px;
+            background: rgba(255, 255, 255, 1);
+            text-align: center; /* Вирівнювання тексту по центру */
+            position: relative;
+            bottom: 0;
+            left: 0;
+        }
+        .footer p {
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 18px;
+            letter-spacing: -0.04em;
+            color: #000;
+        }
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(79, 46, 232, 1);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        @media screen and (max-width: 768px) {
+            .footer p {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="footer">
+    <p>© 2024 Team 11 JS Homework.</p>
+</div>
+<div class="scroll-to-top" onclick="scrollToTop()">↑ Scroll to top</div>
+
+<script>
+function scrollToTop() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+}
+</script>
+
+</body>
+</html>
+
+
     </footer>
 
     <div data-modal class="backdrop is-hidden">
