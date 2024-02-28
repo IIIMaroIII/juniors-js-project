@@ -95,13 +95,19 @@ body.dark-mode .main-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin: 0 auto;
+  width: 1392px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   padding-top: 40px;
   background-color: #f6f6f6;
+}
+
+.side-bar-container {
+  width: 356px;
 }
 
 /*! modern-normalize v2.0.0 | MIT License | https://github.com/sindresorhus/modern-normalize */

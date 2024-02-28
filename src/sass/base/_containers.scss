@@ -1,13 +1,13 @@
 .main-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   margin: 0 auto;
-  // width: 1392px;
+  width: 1392px;
   flex-wrap: wrap;
   padding-top: 40px;
   background-color: $bodyColor;
 }
 
 .side-bar-container {
-  // width: 356px;
+  width: 356px;
 }
