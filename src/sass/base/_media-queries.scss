@@ -188,7 +188,9 @@
 
   .main-container {
     margin: 0 auto;
-    width: 1392px;
+    padding-left: 24px;
+    padding-right: 24px;
+    min-width: 1392px;
     display: flex;
   }
 
