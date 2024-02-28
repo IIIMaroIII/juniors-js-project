@@ -1,10 +1,6 @@
 $margin: 24px;
 $items: 5;
 
-.home-page {
-  width: 996px;
-}
-
 .home-list {
   display: flex;
   flex-direction: column;
@@ -32,11 +28,12 @@ $items: 5;
   text-transform: uppercase;
   color: $subtitle;
   margin-bottom: 18px;
+  text-align: left;
 }
 
 .top-books-img {
-  // width: 180px;
-  // height: 256px;
+  width: 335px;
+  height: 485px;
   border-radius: 8px;
   margin-bottom: 14px;
 }

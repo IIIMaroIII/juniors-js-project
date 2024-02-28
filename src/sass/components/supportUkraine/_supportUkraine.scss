@@ -13,6 +13,7 @@
     rgb(255, 255, 255) 100%
   );
   max-width: 335px;
+  margin: 0 auto;
   // margin-top: 40px;
   padding: 24px 40px 26px;
   max-height: 460px;
@@ -81,7 +82,7 @@
 
 @media only screen and (min-width: 768px) {
   .support {
-    max-width: 335px;
+    // max-width: 335px;
     height: 474px;
     // margin-bottom: 40px;
     padding-top: 26px;

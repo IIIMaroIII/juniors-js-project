@@ -40,32 +40,29 @@ export class BooksSection {
 
   renderListBooks(res) {
     const html = this.itemsTemplate(res);
-    document.getElementById('home-category-books-list').innerHTML = html;
+    // document.getElementById('home-category-books-list').innerHTML = html;
+    document.querySelector('.js-home-list').innerHTML = html;
   }
 
   itemsTemplate(items) {
-    return items.map(this.itemTemplate).join('');
+    return items.map(this.itemTemplate).join('').trim();
   }
 
   itemTemplate(item) {
     const { book_image, author, _id, list_name, title, amazon_product_url } =
       item;
     return `
-          <li class="book-item book-item-styles" data-id="${_id}">  
+          <li class="book-item book-item-styles top-books-item" data-id="${_id}">  
            
-          <div class="wrap-item-img">
-                  <img class="book-img" src="${book_image}" alt="" title=""/>
-              
-              <div class="wrap-info">
-                  <h3 class="info-item-name ">
+          <div class="wrap-item-img top-books-link">
+                  <img class="book-img top-books-img" src="${book_image}" alt="" title=""/>
+                  <h3 class="info-item-name top-books-title">
                       ${title}
                   </h3>
-                   <p class="info-item-author ">
+                   <p class="info-item-author top-books-desc">
                       ${author}
                   </p>
               </div>
-              </div>
-         
           </li>
       `;
   }
@@ -90,7 +87,7 @@ export class BooksSection {
   }
   hideSection() {
     const sectionToHide = document.querySelector('.home-page');
-    sectionToHide.style.display = 'none';
+    // sectionToHide.style.display = 'none';
   }
 }
 
