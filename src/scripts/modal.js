@@ -70,7 +70,6 @@ function onModal(e) {
 
 function closeModal() {
   modal.classList.toggle("is-hidden");
-  textCongrats.remove();
   header.classList.toggle("is-hidden-head");
   body.classList.toggle("modal-on");
   window.removeEventListener('keydown', deleteEventEsc);
@@ -83,11 +82,15 @@ function changeButton() {
   if (addToShopList.textContent === "ADD TO SHOPPING LIST") {
     saveLocal(bookId);
     addToShopList.textContent = `REMOVE FROM SHOPPING LIST`;
-    modal.after(textCongrats);
+    if (textCongrats.classList.contains("is-hidden")){
+      textCongrats.classList.toggle("is-hidden");
+    }
   } else {
     removeLocal(bookId);
     addToShopList.textContent = `ADD TO SHOPPING LIST`;
-    textCongrats.remove();
+    if (!textCongrats.classList.contains("is-hidden")){
+      textCongrats.classList.toggle("is-hidden");
+    }
   }
  };
 
