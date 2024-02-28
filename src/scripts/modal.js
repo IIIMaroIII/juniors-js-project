@@ -1,4 +1,6 @@
-import {buildModal} from "./building-modal.js";
+import { buildModal } from "./building-modal.js";
+
+import { saveLocal, removeLocal } from "./localSave.js"
 
 const closeModalBtn = document.querySelector("[data-modal-close]");
 const modal = document.querySelector("[data-modal]");
@@ -10,6 +12,8 @@ const header = document.querySelector(".header");
 listArea.addEventListener("click", onModal);
 closeModalBtn.addEventListener("click", deleteEventClick);
 backdrop.addEventListener("click", deleteEventClick);
+
+let bookId;
 
 function deleteEventClick(e) {
   if (e.currentTarget === e.target || e.target.classList.contains("close")){
@@ -28,7 +32,6 @@ function deleteEventEsc(e) {
 function onModal(e) {
   e.preventDefault();
   e.stopPropagation();
-  let bookId;
   
   const nameNode = e.target.nodeName;
   if (nameNode === "IMG" || nameNode === "H3" || nameNode === "P" || nameNode === "A") {
@@ -57,22 +60,22 @@ function onModal(e) {
 
 function closeModal() {
   modal.classList.toggle("is-hidden");
+  textCongrats.remove();
   header.classList.toggle("is-hidden-head");
   body.classList.toggle("modal-on");
   window.removeEventListener('keydown', deleteEventEsc);
 };
 
 const addToShopList = document.querySelector(".save-to-list");
-const textCongrats = document.createElement("p");
-textCongrats.classList.add("shopping-list-message");
-textCongrats.textContent = `Congratulations! You have added the book to the shopping list. To
-          delete, press the button “Remove from the shopping list”.`;
+const textCongrats = document.querySelector(".shopping-list-message");
 
 function changeButton() {
   if (addToShopList.textContent === "ADD TO SHOPPING LIST") {
+    saveLocal(bookId);
     addToShopList.textContent = `REMOVE FROM SHOPPING LIST`;
-    addToShopList.after(textCongrats);
+    modal.after(textCongrats);
   } else {
+    removeLocal(bookId);
     addToShopList.textContent = `ADD TO SHOPPING LIST`;
     textCongrats.remove();
   }
