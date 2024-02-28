@@ -16,7 +16,6 @@ function onShoppingListButton(e) {
 
     let pageNumber = 1;
 
-    console.log(isMobile());
     const sidebar = document.querySelector('.home-sidebar-nav-categories');
     sidebar.style.display = "none";
     
@@ -28,7 +27,7 @@ function onShoppingListButton(e) {
     bookListTytle.insertAdjacentHTML('afterend', startMarkup);
     
     const bookList = isBooksInLS();
-    console.log(bookList);
+    
 
     if (bookList.length < 1) {
         const bookListSection = document.querySelector('.booklist');
@@ -41,7 +40,7 @@ function onShoppingListButton(e) {
 
 
 function renderBooksByPageNumber(pageNumber) {
-    console.log('start');
+    
     const bookList = isBooksInLS();
     const bookListOnPage = [];
     let numberOfBooksOnPage;
@@ -53,8 +52,6 @@ function renderBooksByPageNumber(pageNumber) {
     };
     
     let n = numberOfBooksOnPage;
-
-    console.log('number of books =', numberOfBooksOnPage);
 
     if (!isLastPage(pageNumber, n)) {
         for (let i = (pageNumber * n - n); i < (pageNumber * n); i += 1) {
@@ -78,13 +75,10 @@ homePage.addEventListener('click', getButtonId);
 function getButtonId(e) {
     const isDeleteButtonPressed = e.target.classList.contains("booklist-delete-btn");
     if (isDeleteButtonPressed) { 
-        console.log('yes');
         const selectedBookId = e.target.dataset.id;
-        console.log(selectedBookId);
+        
         deleteBookFromList(selectedBookId);
-    } else { 
-        console.log('no');
-    };
+    } else {};
 };
 
 // ==============================
@@ -93,7 +87,6 @@ function getButtonId(e) {
 function isBooksInLS() {
     const isBook = localStorage.getItem("Shopping");
     const bookList = JSON.parse(isBook);
-    console.log(bookList);
     return bookList;
 };
 
@@ -171,9 +164,7 @@ function bookTemplate({ _id, author, title, book_image, description, buy_links, 
 
 function renderBookList(bookList) { 
     const markup = bookList.map(bookTemplate).join('').trim();
-    console.log(markup);
     const bookListSection = document.querySelector('.booklist');
-    console.log(bookListSection);
     bookListSection.insertAdjacentHTML('beforeend', markup);
 }; 
 
