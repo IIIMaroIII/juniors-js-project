@@ -363,9 +363,20 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
 
-      // Функція для перевірки, чи було прокручено достатньо вниз
+      // Функція для перевірки, чи було прокручено достатньо вниз з урахуванням розміру екрану
       function checkScroll() {
-        if (window.scrollY > 250) { // Припустимо, кнопка з'являється після прокрутки на 250 пікселів вниз
+        let scrollThreshold;
+        // Встановлення порогових значень прокрутки в залежності від ширини екрану
+        if (window.innerWidth > 1024) { // Для десктопних версій
+          scrollThreshold = 500; // Припустимо, для десктопів поріг 500px
+        } else if (window.innerWidth > 768) { // Для планшетних версій
+          scrollThreshold = 300; // Для планшетів поріг 300px
+        } else { // Для мобільних версій
+          scrollThreshold = 200; // Для мобільних поріг 200px
+        }
+
+        // Відображення або приховування кнопки в залежності від прокрутки
+        if (window.scrollY > scrollThreshold) {
           document.querySelector('.scroll-to-top').style.display = 'block';
         } else {
           document.querySelector('.scroll-to-top').style.display = 'none';
@@ -374,6 +385,8 @@
 
       // Відслідковування події прокрутки сторінки
       window.addEventListener('scroll', checkScroll);
+      // Відслідковування зміни розміру вікна для перевстановлення порогу прокрутки
+      window.addEventListener('resize', checkScroll);
     </script>
   </body>
 
