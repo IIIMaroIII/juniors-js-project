@@ -1,4 +1,6 @@
 import { BooksAPI } from '../scripts/booksAPI';
+const categoryDisplay = document.getElementById('categoryDisplay');
+categoryDisplay.classList.add('hidden');
 
 export class CategoriesSection {
   constructor() {

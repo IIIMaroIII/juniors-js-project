@@ -14,15 +14,6 @@ li {
   justify-content: flex-start;
   align-items: flex-start;
 }
-.text-style-book-category {
-  @include dm-sans(400);
-  font-size: 18px;
-  line-height: 1.33333;
-  letter-spacing: -0.02em;
-  color: rgba(17, 17, 17, 0.6);
-  @include anim(color);
-  margin-bottom: 32px;
-}
 
 // .home-all-categories {
 // }
@@ -36,11 +27,11 @@ li {
 // }
 
 .link-item,
-h3.home-all-categories {
-  @include dm-sans(400);
-  font-size: 18px;
-  line-height: 1.33333;
-  letter-spacing: -0.02em;
+h3.text-style-book-category {
+  // @include dm-sans(400);
+  // font-size: 18px;
+  // line-height: 1.33333;
+  // letter-spacing: -0.02em;
   color: rgba(17, 17, 17, 0.6);
   @include anim(color);
 

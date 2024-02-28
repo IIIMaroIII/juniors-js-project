@@ -7,7 +7,8 @@
     "start": "vite --host",
     "build": "vite build --base=/juniors-js-project/; git add .; git commit -m 'update minor'; git push",
     "preview": "vite preview",
-    "push": "git add .; git commit -m 'update'; git push"
+    "push": "git add .; git commit -m 'update'; git push",
+    "merge": "git merge main; git push -u origin"
   },
   "devDependencies": {
     "glob": "^8.1.0",

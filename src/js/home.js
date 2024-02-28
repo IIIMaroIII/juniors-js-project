@@ -44,7 +44,10 @@ function createHomeListItemEl() {
 function createSeeMoreBtnEl() {
   const btnEl = document.createElement('button');
   btnEl.classList.add('see-more');
+  btnEl.classList.add('js-see-more');
   btnEl.setAttribute('type', 'button');
+  btnEl.setAttribute('id', 'see-more');
+
   btnEl.textContent = 'See More';
   return btnEl;
 }
