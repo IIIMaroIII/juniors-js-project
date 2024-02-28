@@ -5,7 +5,7 @@ shoppingListButton.addEventListener('click', onShoppingListButton);
 const emptyShoppingListMarkup = ` 
         <li class="empty-item">
             <p class="empty-title">This page is empty, add some books and proceed to order.</p>
-            <img class="empty-image" src="/src/img/shopping-list-books.png" alt="books">
+            <img class="empty-image" src="../../img/shoppinglist/emptyListBook.png" alt="books">
         </li> `;
 
 function onShoppingListButton(e) {
@@ -17,8 +17,7 @@ function onShoppingListButton(e) {
   sidebar.style.display = 'none';
 
   const homePage = document.querySelector('.home-page');
-  homePage.innerHTML =
-    '<h1 class="booklist-title">Shopping <span class="booklist-title-span">List</span></h1>';
+  homePage.innerHTML = '<h1 class="booklist-title">Shopping <span class="booklist-title-span">List</span></h1>';
 
   const bookListTytle = document.querySelector('.booklist-title');
   const startMarkup = `<div class="booklist-section"><ul class="booklist"></ul></div>`;
@@ -66,16 +65,14 @@ const homePage = document.querySelector('.home-page');
 homePage.addEventListener('click', getButtonId);
 
 function getButtonId(e) {
-  const isDeleteButtonPressed = e.target.classList.contains(
-    'booklist-delete-btn'
-  );
+  const isDeleteButtonPressed = e.target.classList.contains('booklist-delete-btn');
   if (isDeleteButtonPressed) {
     const selectedBookId = e.target.dataset.id;
-
     deleteBookFromList(selectedBookId);
   } else {
-  }
-}
+
+  };
+};
 
 // ==============================
 
@@ -133,8 +130,8 @@ function bookTemplate({
                     <h1>${title}</h1>
                     <p class="booklist-list">${list_name}</p>
                 </div>
-                <button type="button" class="booklist-delete-btn" data-id="${_id}">
-                    <img src="../../img/shoppinglist/trash-icon.png" alt="trash-icon" width="30" height="30">
+                <button type="button" class="booklist-delete-btn" data-id="${id}">
+                    <img src="../../img/shoppinglist/trash-icon.png" alt="trash-icon" width="34" height="34">
                 </button> 
             </div>
             <div class="description-box">
