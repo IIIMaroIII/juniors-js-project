@@ -1,9 +1,7 @@
 .booklist-section {
-  width: 375px;
-  height: 748px;
   border: 5px solid black;
   margin: 0 auto;
-  display: none;
+
 }
 
 .booklist-title {
@@ -122,6 +120,7 @@
   border-radius: 16px;
   padding-top: 14px;
   padding-bottom: 14px;
+
 }
 
 .booklist-item-info {
@@ -141,8 +140,26 @@
   justify-content: space-between;
 }
 
+.title-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-high-box {
+  display: flex;
+  justify-content: space-between;
+}
+
 .booklist-link-box {
   display: flex;
+  gap: 8px;
+}
+
+.booklist-delete-btn {
+  width: 30px;
+  height: 30px;
+  display: block;
+  
 }
 
 /* Media queries*/
@@ -153,8 +170,7 @@
 
 @media screen and (min-width: 768px) {
   .booklist-section {
-    width: 768px;
-    height: 748px;
+
     border: 5px solid black;
   }
 
@@ -196,6 +212,10 @@
     line-height: 24px;
     margin-bottom: 20px;
   }
+   
+  .booklist-link-box {
+    gap: 16px;
+  }
 
   .title-box {
   }
@@ -205,8 +225,7 @@
 
 @media screen and (min-width: 1440px) {
   .booklist-section {
-    width: 1440px;
-    height: 748px;
+
     border: 5px solid black;
   }
 
