@@ -34,10 +34,9 @@ function onShoppingListButton(e) {
         const bookListSection = document.querySelector('.booklist');
         bookListSection.insertAdjacentHTML('beforeend', emptyShoppingListMarkup);
     } else {
-        renderBookList(bookList);
+        
         renderBooksByPageNumber(pageNumber);
     };
-    
 }
 
 
@@ -47,27 +46,27 @@ function renderBooksByPageNumber(pageNumber) {
     const bookListOnPage = [];
     let numberOfBooksOnPage;
 
-    if (isMobile()) { 
-    numberOfBooksOnPage = 4;
+    if (isMobile()) {
+        numberOfBooksOnPage = 4;
     } else { 
-    numberOfBooksOnPage = 3;
+        numberOfBooksOnPage = 3;
     };
     
     let n = numberOfBooksOnPage;
 
     console.log('number of books =', numberOfBooksOnPage);
 
-    if (!isLastPage(pageNumber, n)) { 
-    for (let i = (pageNumber * n - n); i < (pageNumber * n); i += 1) {
+    if (!isLastPage(pageNumber, n)) {
+        for (let i = (pageNumber * n - n); i < (pageNumber * n); i += 1) {
         bookListOnPage.push(bookList[i]);
     }; 
     } else {
-    for (let i = (pageNumber * n - n); i < (bookList.length - 1); i += 1) {
+        for (let i = (pageNumber * n - n); i < (bookList.length); i += 1) {
         bookListOnPage.push(bookList[i]);
     }; 
     };
     
-    console.log("booooooklist",bookListOnPage);
+    renderBookList(bookListOnPage);
     
 };
 

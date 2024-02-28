@@ -1,5 +1,5 @@
 .booklist-section {
-  border: 5px solid black;
+ 
   margin: 0 auto;
 
 }
@@ -65,8 +65,8 @@
 
 .booklist-image {
   border-radius: 8px;
-  width: 100px;
-  height: 100px;
+  max-width: 100px;
+  max-height: 142px;
   margin-right: 14px;
   margin-left: 14px;
 }
@@ -169,10 +169,7 @@
 // ===========DESKTOP=====================
 
 @media screen and (min-width: 768px) {
-  .booklist-section {
-
-    border: 5px solid black;
-  }
+ 
 
   .booklist-item {
     width: 704px;
@@ -224,10 +221,7 @@
 // ============KOMP====================
 
 @media screen and (min-width: 1440px) {
-  .booklist-section {
 
-    border: 5px solid black;
-  }
 
   .booklist-image {
     border-radius: 8px;
