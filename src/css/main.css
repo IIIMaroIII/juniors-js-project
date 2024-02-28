@@ -1652,11 +1652,7 @@ img {
   }
 }
 .booklist-section {
-  width: 375px;
-  height: 748px;
-  border: 5px solid black;
-  margin: 0 auto;
-  display: none;
+  margin: 0 20px 0 20px;
 }
 
 .booklist-title {
@@ -1669,7 +1665,7 @@ img {
   letter-spacing: -4%;
   text-align: left;
   color: rgb(17, 17, 17);
-  margin-left: 20px;
+  margin-bottom: 40px;
 }
 
 .booklist-item-info-box {
@@ -1737,8 +1733,8 @@ img {
 
 .booklist-image {
   border-radius: 8px;
-  width: 100px;
-  height: 100px;
+  max-width: 100px;
+  max-height: 142px;
   margin-right: 14px;
   margin-left: 14px;
 }
@@ -1849,19 +1845,40 @@ img {
           justify-content: space-between;
 }
 
+.title-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.item-high-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 .booklist-link-box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  gap: 8px;
+}
+
+.booklist-delete-btn {
+  width: 30px;
+  height: 30px;
+  display: block;
 }
 
 /* Media queries*/
 @media screen and (min-width: 768px) {
-  .booklist-section {
-    width: 768px;
-    height: 748px;
-    border: 5px solid black;
-  }
   .booklist-item {
     width: 704px;
     height: 213px;
@@ -1871,7 +1888,6 @@ img {
   .booklist-title {
     font-size: 48px;
     line-height: 52px;
-    margin-left: 32px;
   }
   .booklist-list {
     margin-bottom: 14px;
@@ -1895,26 +1911,14 @@ img {
     line-height: 24px;
     margin-bottom: 20px;
   }
+  .booklist-link-box {
+    gap: 16px;
+  }
 }
 @media screen and (min-width: 1440px) {
-  .booklist-section {
-    width: 1440px;
-    height: 748px;
-    border: 5px solid black;
-  }
-  .booklist-image {
-    border-radius: 8px;
-    width: 100px;
-    height: 100px;
-    margin-right: 14px;
-    margin-left: 14px;
-  }
   .booklist-item {
     width: 996px;
     height: 213px;
-  }
-  .booklist-title {
-    margin-left: 40px;
   }
   .booklist-description {
     width: 808px;
