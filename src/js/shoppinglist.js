@@ -51,12 +51,12 @@ shoppingListButton.addEventListener('click', (e) => {
     const startMarkup = `<div class="booklist-section"><ul class="booklist"></ul></div>`;
     bookListTytle.insertAdjacentHTML('afterend', startMarkup);
 
-    const bookListSection = document.querySelector('.booklist');
-    console.log(bookListSection);
-    bookListSection.insertAdjacentHTML('beforeend', test);
+    // const bookListSection = document.querySelector('.booklist');
+    // console.log(bookListSection);
+    // bookListSection.insertAdjacentHTML('beforeend', test);
     
-    // const shit = isBooksInLS();
-    // renderBookList(shit);
+    const shit = isBooksInLS();
+    renderBookList(shit);
     
 });
 
