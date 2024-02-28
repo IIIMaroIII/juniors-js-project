@@ -1,6 +1,5 @@
 import { BooksAPI } from '../scripts/booksAPI';
 const categoryDisplay = document.getElementById('categoryDisplay');
-categoryDisplay.classList.add('hidden');
 
 export class CategoriesSection {
   constructor() {
@@ -62,10 +61,20 @@ export class CategoriesSection {
   handleCategoryClick(event) {
     const categoryName = event.currentTarget.dataset.categoryName;
     console.log(categoryName);
+    const topBooksHidden = document.querySelector('.js-title-is-hidden');
+    topBooksHidden.style.display = 'none';
 
     const categoryDisplay = document.getElementById('categoryDisplay');
-
+    categoryDisplay.style.display = 'block';
     categoryDisplay.textContent = categoryName;
+
+    categoryDisplay.innerHTML = `<h1 class="section-title">${categoryName.slice(
+      0,
+      categoryName.lastIndexOf(' ')
+    )}
+    <span class="section-title-link">${categoryName.slice(
+      categoryName.lastIndexOf(' ') + 1
+    )}</span></h1>`;
 
     if (this.categoryClickCallback) {
       this.categoryClickCallback(categoryName);
