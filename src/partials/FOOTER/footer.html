@@ -48,12 +48,25 @@
     <div class="footer">
       <p>© 2024 Team 11 JS Homework.</p>
     </div>
-    <div class="scroll-to-top" onclick="scrollToTop()">↑ Scroll to top</div>
+    <div class="scroll-to-top" onclick="scrollToTop()" style="display:none;">↑ Scroll to top</div>
 
     <script>
       function scrollToTop() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
+
+      // Функція для перевірки, чи було прокручено достатньо вниз
+      function checkScroll() {
+        if (window.scrollY > 250) { // Припустимо, кнопка з'являється після прокрутки на 250 пікселів вниз
+          document.querySelector('.scroll-to-top').style.display = 'block';
+        } else {
+          document.querySelector('.scroll-to-top').style.display = 'none';
+        }
+      }
+
+      // Відслідковування події прокрутки сторінки
+      window.addEventListener('scroll', checkScroll);
     </script>
   </body>
+
 </html>
