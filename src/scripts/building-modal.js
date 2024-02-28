@@ -7,7 +7,7 @@ const bookAuthor = document.querySelector(".book-author");
 const bookDescription = document.querySelector(".book-description");
 const shopList = document.querySelector(".shops-links");
 
-export function buildModal(bookId = "643282b1e85766588626a07e") {
+export function buildModal(bookId) {
   const Book = new BooksAPI;
   Book.fetchBookByID(bookId).then(value => constructModal(value))
 };
@@ -19,7 +19,20 @@ function constructModal(bookData) {
   bookTitle.textContent = `${title}`;
   bookAuthor.textContent = `${author}`;
   bookDescription.textContent = `${description}`;
-  const markup = buy_links.map((link) => `<li><a href="${link.url} class="link" target=”_blank”><img src="../images/book.png" alt="${link.name}"></a></li>`)
+  const markup = buy_links.map((link) => {
+    let a = `<li><a href="${link.url} class="link" target=”_blank”>`
+    switch (link.name) {
+      case "Amazon":
+        a += `<img src="../img/shops/light-amazon.png" alt="${link.name}"></a></li>`;
+        break;
+      case "Apple Books":
+        a += `<img src="../img/shops/light-apple.png" alt="${link.name}"></a></li>`;
+        break;
+      default:
+        a += `<img src="../img/shops/no-image.png" alt="${link.name}"></a></li>`;
+    }
+    return a;
+  })
   .join("");
   shopList.innerHTML = markup;
 };
