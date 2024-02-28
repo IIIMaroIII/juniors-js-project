@@ -1640,8 +1640,8 @@ img {
 
 .booklist-image {
   border-radius: 8px;
-  max-width: 100px;
-  max-height: 142px;
+  width: 100px;
+  height: 100px;
   margin-right: 14px;
   margin-left: 14px;
 }
@@ -1804,6 +1804,13 @@ img {
     width: 1440px;
     height: 748px;
     border: 5px solid black;
+  }
+  .booklist-image {
+    border-radius: 8px;
+    width: 100px;
+    height: 100px;
+    margin-right: 14px;
+    margin-left: 14px;
   }
   .booklist-item {
     width: 996px;
