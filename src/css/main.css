@@ -1151,8 +1151,9 @@ img {
   fill: #4f2ee8;
   background: none;
 }
-
-.book-title {
+.button-close-modal:active .book-title,
+.button-close-modal:hover .book-title,
+.button-close-modal:focus .book-title {
   color: #111111;
   font-size: 24px;
   font-weight: 700;
@@ -1160,8 +1161,9 @@ img {
   letter-spacing: -0.04em;
   text-align: left;
 }
-
-.book-author {
+.button-close-modal:active .book-author,
+.button-close-modal:hover .book-author,
+.button-close-modal:focus .book-author {
   color: #b4afaf;
   font-size: 14px;
   font-style: italic;
@@ -1170,8 +1172,9 @@ img {
   letter-spacing: -0.04em;
   text-align: left;
 }
-
-.book-description {
+.button-close-modal:active .book-description,
+.button-close-modal:hover .book-description,
+.button-close-modal:focus .book-description {
   color: #111111;
   font-size: 14px;
   font-weight: 400;
@@ -1180,15 +1183,17 @@ img {
   text-align: left;
   margin-bottom: 20px;
 }
-
-.shops-links {
+.button-close-modal:active .shops-links,
+.button-close-modal:hover .shops-links,
+.button-close-modal:focus .shops-links {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   gap: 20px;
 }
-
-.shopping-list-message {
+.button-close-modal:active .shopping-list-message,
+.button-close-modal:hover .shopping-list-message,
+.button-close-modal:focus .shopping-list-message {
   margin-top: 8px;
   color: rgba(17, 17, 17, 0.5019607843);
   font-size: 12px;
@@ -1197,8 +1202,9 @@ img {
   letter-spacing: -0.04em;
   text-align: center;
 }
-
-.shops-links {
+.button-close-modal:active .shops-links,
+.button-close-modal:hover .shops-links,
+.button-close-modal:focus .shops-links {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
