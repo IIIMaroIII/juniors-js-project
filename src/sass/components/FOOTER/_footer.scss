@@ -3,11 +3,13 @@ body {
   overflow-x: hidden; /* Запобігає горизонтальному скролінгу */
 }
 .footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
   width: 100%;
   padding: 20px;
   background: rgba(255, 255, 255, 1);
   text-align: center; /* Вирівнювання тексту по центру */
-  position: relative;
   bottom: 0;
   left: 0;
 }
