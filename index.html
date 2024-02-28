@@ -8,7 +8,7 @@
     <script type="module" crossorigin src="/juniors-js-project/commonHelpers.js"></script>
     <link rel="modulepreload" crossorigin href="/juniors-js-project/assets/vendor-b1ee5dfe.js">
     <link rel="stylesheet" href="/juniors-js-project/assets/vendor-e5212ee8.css">
-    <link rel="stylesheet" href="/juniors-js-project/assets/index-3e699c8d.css">
+    <link rel="stylesheet" href="/juniors-js-project/assets/index-610a8175.css">
   </head>
   <body>
     <header>
@@ -66,7 +66,8 @@
             <use
               href="/juniors-js-project/assets/sprite-61614f66.svg#icon-shopping-bag"
               alt="Text logo icon"
-            ></use></svg></a>
+            ></use></svg
+        ></a>
       </li>
     </ul>
     <img src="/juniors-js-project/assets/books-077eccf9.png" alt="Books Image" class="books-img" />
@@ -88,10 +89,10 @@
   </div>
 </section>
 
-<!-- <div class="home-books wrap-books" id="books-list">
+<div class="home-books wrap-books" id="books-list">
   <div id="categoryDisplay"></div>
   <ul class="bok" id="home-category-books-list"></ul>
-</div> -->
+</div>
 
           <div class="support">
   <div class="support-title">
@@ -118,12 +119,12 @@
 </div>
 
         </div>
-        <section class="home-page">
+        <section id="home-page" class="home-page">
   <h1 class="section-title">
     Best Sellers
     <span><a class="section-title-link" href="./index.html">Books</a></span>
   </h1>
-  <ul class="home-list js-home-list"></ul>
+  <ul class="home-list only-category js-home-list"></ul>
 </section>
 <section class="home-categories-book">
   <div class="home-books wrap-books" id="books-list">
@@ -131,73 +132,88 @@
     <ul class="bok" id="home-category-books-list"></ul>
   </div>
 </section>
+<div></div>
+<!-- <li class="book-item book-item-styles top-books-item" data-id="${_id}">  
+           
+          <div class="wrap-item-img top-books-link">
+                  <img class="book-img" src="${book_image}" alt="" title=""/>
+              
+              <div class="wrap-info">
+                  <h3 class="info-item-name ">
+                      ${title}
+                  </h3>
+                   <p class="info-item-author ">
+                      ${author}
+                  </p>
+              </div>
+              </div>
+         
+          </li> -->
 
       </div>
     </main>
     <footer>
       <!DOCTYPE html>
 <html>
-<head>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'DM Sans', sans-serif;
-            overflow-x: hidden; /* Запобігає горизонтальному скролінгу */
-        }
-        .footer {
-            width: 100%;
-            padding: 20px;
-            background: rgba(255, 255, 255, 1);
-            text-align: center; /* Вирівнювання тексту по центру */
-            position: relative;
-            bottom: 0;
-            left: 0;
-        }
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <!-- <style>
+      body {
+        font-family: 'DM Sans', sans-serif;
+        overflow-x: hidden; /* Запобігає горизонтальному скролінгу */
+      }
+      .footer {
+        width: 100%;
+        padding: 20px;
+        background: rgba(255, 255, 255, 1);
+        text-align: center; /* Вирівнювання тексту по центру */
+        position: relative;
+        bottom: 0;
+        left: 0;
+      }
+      .footer p {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 18px;
+        letter-spacing: -0.04em;
+        color: #000;
+      }
+      .scroll-to-top {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        background: rgba(79, 46, 232, 1);
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+      @media screen and (max-width: 768px) {
         .footer p {
-            font-size: 14px;
-            font-weight: 500;
-            line-height: 18px;
-            letter-spacing: -0.04em;
-            color: #000;
+          font-size: 12px;
         }
-        .scroll-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: rgba(79, 46, 232, 1);
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        @media screen and (max-width: 768px) {
-            .footer p {
-                font-size: 12px;
-            }
-        }
-    </style>
-</head>
-<body>
+      }
+    </style> -->
+  </head>
+  <body>
+    <div class="footer">
+      <p>© 2024 Team 11 JS Homework.</p>
+    </div>
+    <div class="scroll-to-top" onclick="scrollToTop()">↑ Scroll to top</div>
 
-<div class="footer">
-    <p>© 2024 Team 11 JS Homework.</p>
-</div>
-<div class="scroll-to-top" onclick="scrollToTop()">↑ Scroll to top</div>
-
-<script>
-function scrollToTop() {
-    window.scrollTo({top: 0, behavior: 'smooth'});
-}
-</script>
-
-</body>
+    <script>
+      function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    </script>
+  </body>
 </html>
 
-
-    </footer>
-
-    <div data-modal class="backdrop is-hidden">
+      <div data-modal class="backdrop is-hidden">
   <div class="modal">
     <button type="button" class="button-close-modal close" data-modal-close>
       <svg class="modal-icon close" width="14" height="14">
@@ -217,12 +233,13 @@ function scrollToTop() {
   </div>
 </div>
 
+    </footer>
 
     
     
     
     
-    <!-- <script type="module" src="./scripts/booksAPI.js"></script> -->
+    
     
     
     
