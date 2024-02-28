@@ -21,9 +21,14 @@ async function constructModal(bookData) {
 
   if (isLocal(_id)) {
     addToShopList.textContent = `REMOVE FROM SHOPPING LIST`;
+    if (textCongrats.classList.contains("is-hidden")){
+      textCongrats.classList.toggle("is-hidden");
+    }
   } else {
     addToShopList.textContent = `ADD TO SHOPPING LIST`;
-    textCongrats.remove();
+    if (!textCongrats.classList.contains("is-hidden")){
+      textCongrats.classList.toggle("is-hidden");
+    }
   }
 
   image.src = `${book_image}`;
@@ -32,16 +37,14 @@ async function constructModal(bookData) {
   bookAuthor.textContent = `${author}`;
   bookDescription.textContent = `${description}`;
   const markup = buy_links.map((link) => {
-    let a = `<li><a href="${link.url} class="link" target=”_blank”>`
+    let a = ``
     switch (link.name) {
       case "Amazon":
-        a += `<img src="../img/shops/light-amazon.png" alt="${link.name}"></a></li>`;
+        a += `<li><a href="${link.url} class="link" target=”_blank”><img src="../img/shops/light-amazon.png" alt="${link.name}" class="shops-link"></a></li>`;
         break;
       case "Apple Books":
-        a += `<img src="../img/shops/light-apple.png" alt="${link.name}"></a></li>`;
+        a += `<li><a href="${link.url} class="link" target=”_blank”><img src="../img/shops/light-apple.png" alt="${link.name}" class="shops-link"></a></li>`;
         break;
-      default:
-        a += `<img src="../img/shops/no-image.png" alt="${link.name}"></a></li>`;
     }
     return a;
   })
