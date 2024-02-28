@@ -1,6 +1,43 @@
 // ========need class of BookListButton
 const shoppingListButton = document.querySelector('.menu-item-shop');
 
+const test = `<li class="booklist-item" data-id="643282b1e85766588626a085">
+
+            <div class="booklist-item-image">
+                <img class="booklist-image" src="https://storage.googleapis.com/du-prd/books/images/9780385547345.jpg" alt="book cover" />
+            </div>
+
+            <div class="booklist-info-block">
+
+                <div class="booklist-item-info">
+                    <div class="booklist-item-info-box">
+                        <div class="title-box">
+                            <h1>LESSONS IN CHEMISTRY</h1>
+                            <p class="booklist-list">Audio Fiction</p>
+                        </div>
+
+                        </div>
+                    <div class="description-box">
+                        <p class="booklist-description">A scientist and single mother living in California in the 1960s becomes a star on a TV cooking show. Read by Miran Raison, Pandora Sykes and the author. 11 hours, 55 minutes unabridged.</p>
+                    </div>
+                </div>
+
+                <div class="booklist-item-links">
+                    <p class="booklist-author">Bonnie Garmus</p>
+                    <ul class="booklist-link-box">
+                        <li class="booklist-amazon">
+                            <a class="booklist-amazon-link" href="https://www.amazon.com/dp/038554734X?tag=NYTBSREV-20" target="_blank">Am</a>
+                        </li>
+                        <li class="booklist-apple">
+                            <a class="booklist-apple-link" href="https://goto.applebooks.apple/9780593507537?at=10lIEQ" target="_blank">Ap</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+        </li>`;
+
+
 shoppingListButton.addEventListener('click', (e) => {
     e.preventDefault();
     
@@ -11,10 +48,15 @@ shoppingListButton.addEventListener('click', (e) => {
     homePage.innerHTML = '<h1 class="booklist-title">Shopping <span class="booklist-title-span">List</span></h1>';
     
     const bookListTytle = document.querySelector('.booklist-title');
-    const startMarkup = '<div class="booklist-section"><ul class="booklist"></ul></div>';
+    const startMarkup = `<div class="booklist-section"><ul class="booklist"></ul></div>`;
     bookListTytle.insertAdjacentHTML('afterend', startMarkup);
-    const shit = isBooksInLS();
-    renderBookList(shit);
+
+    const bookListSection = document.querySelector('.booklist');
+    console.log(bookListSection);
+    bookListSection.insertAdjacentHTML('beforeend', test);
+    
+    // const shit = isBooksInLS();
+    // renderBookList(shit);
     
 });
 
