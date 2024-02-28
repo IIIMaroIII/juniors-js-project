@@ -34,22 +34,32 @@ function onModal(e) {
   e.stopPropagation();
   
   const nameNode = e.target.nodeName;
-  if (nameNode === "IMG" || nameNode === "H3" || nameNode === "P" || nameNode === "A") {
-    switch (e.target.nodeName) {
-      case "IMG":
-        bookId = e.target.parentNode.id;
-        break;
-      case "H3":
-        bookId = e.target.parentNode.id;
-        break;
-      case "P":
-        bookId = e.target.parentNode.id;
-        break;
-      case "A":
-        bookId = e.target.id;
-        break;
-      default:
+  if(listArea.firstChild.classList.contains("home-list-item")){
+    if (nameNode === "IMG" || nameNode === "H3" || nameNode === "P" || nameNode === "A") {
+      switch (e.target.nodeName) {
+        case "IMG":
+          bookId = e.target.parentNode.id;
+          break;
+        case "H3":
+          bookId = e.target.parentNode.id;
+          break;
+        case "P":
+          bookId = e.target.parentNode.id;
+          break;
+        case "A":
+          bookId = e.target.id;
+          break;
+        default:
+      }
+      buildModal(bookId);
+      body.classList.toggle("modal-on");
+      header.classList.toggle("is-hidden-head");
+      modal.classList.toggle("is-hidden");
+      window.addEventListener('keydown', deleteEventEsc);
     }
+  } else {
+    bookId = e.target.parentNode.parentNode.dataset.id;
+    console.log(bookId);
     buildModal(bookId);
     body.classList.toggle("modal-on");
     header.classList.toggle("is-hidden-head");
