@@ -20,11 +20,14 @@ body.dark-mode {
   // Navigation
   .header-nav-elem {
     span {
-      color: white;
+      color: $white;
     }
 
     .bag-icon use {
       filter: none;
     }
+  }
+  .main-container {
+    background-color: $black;
   }
 }

@@ -1,12 +1,13 @@
 import Library from './library';
 
+import KEY_LOCALSTORAGE from './constants';
 class LocalStorageLib {
   #localStorageKey = 'favorites';
   dataLibrary = [];
 
   constructor(key) {
     this.#localStorageKey = key || this.#localStorageKey;
-    this.dataLibrary = new Library([]);
+    this.dataLibrary = new Library(localStorage.getItem(this.#localStorageKey));
   }
 
   saveData() {
@@ -14,7 +15,6 @@ class LocalStorageLib {
       this.#localStorageKey,
       JSON.stringify(this.dataLibrary.data)
     );
-    alert('Data saved to Local Storage!');
   }
 
   getData() {
@@ -26,24 +26,51 @@ class LocalStorageLib {
 
   addObj(obj) {
     this.getData();
-    if (!this.isObjSaved(obj.id)) {
+    if (!this.isObjSaved(obj._id)) {
       this.dataLibrary.addObj(obj);
       this.saveData();
     }
   }
 
-  isObjSaved(id) {
+  isObjSaved(_id) {
     this.getData();
-    return this.dataLibrary.getObjById(id) !== undefined;
+    return this.dataLibrary.getObjById(_id) !== undefined;
   }
 
-  remove(obj) {
+  remove(_id) {
     this.getData();
-    if (this.isObjSaved(obj.id)) {
-      this.dataLibrary.remove(obj.id);
+    if (this.isObjSaved(_id)) {
+      this.dataLibrary.removeObj(_id);
       this.saveData();
     }
   }
 }
 
-export default LocalStorageLib;
+const Local = new LocalStorageLib(KEY_LOCALSTORAGE);
+
+export default Local;
+
+
+
+
+
+/**
+
+function addLocal() {
+  // let Obj = [
+  //   '643282b1e85766588626a0c6',
+  //   '643282b1e85766588626a07b',
+  //   '643282b1e85766588626a0a6',
+  //   '643282b2e85766588626a164',
+  // ];
+
+  if (!Local.isObjSaved(Object._id)) {
+    Local.addObj(Object);
+  } else {
+    Local.remove(Object._id);
+  }
+}
+
+addToShopList.addEventListener("click", () => { changeButton(); addLocal(); });
+
+ */
