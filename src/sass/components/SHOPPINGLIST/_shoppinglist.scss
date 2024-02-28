@@ -4,6 +4,10 @@
 
 }
 
+.booklist-apple-link {
+  filter: grayscale(100%);
+}
+
 .booklist-title {
   @include dm-sans(700);
   font-size: 32px;
