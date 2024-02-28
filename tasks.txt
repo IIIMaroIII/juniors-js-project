@@ -1,0 +1,8 @@
+1) Side-bar (all categories list) - Анна Лаптур
+2) Modal - Евгений Рыбников
+3) Support Ukraine - Богдан Федоренко
+4) Shopping list - Герасимчук Назарий
+5) Home-Page (top 5 books of each category) - Родион Матвеев
+6) Footer - Максим Боженко
+7) Header - Дмитрий Максименко
+8) Local Storage - Роман Борынець 

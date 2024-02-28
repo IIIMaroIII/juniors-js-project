@@ -1,7 +1,6 @@
 /* General styles*/
 .header {
   position: relative;
-  width: 100%;
   height: 64px;
   left: 0;
   top: 0;
@@ -13,12 +12,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-.header-container {
-  // width: 100%;
   margin: 0 auto;
-  width: 1392px;
 }
+
 .header-nav {
   display: flex;
   width: 100%;
@@ -169,45 +165,4 @@ input:checked + label:after {
 label:active:after {
   width: 26px;
 }
-
 /*=================*/
-/* Media queries*/
-@media only screen and (max-width: 767px) {
-  .header {
-    width: 100%;
-  }
-}
-@media (min-width: 768px) and (max-width: 1439px) {
-  .header-logo {
-    margin-right: 40px;
-  }
-  .header-nav-elem {
-    display: flex;
-    margin-right: auto;
-    align-items: center;
-  }
-  .mobile-menu {
-    display: none;
-  }
-  .burger-menu {
-    display: none;
-  }
-}
-@media only screen and (min-width: 1440px) {
-  .header-logo {
-    margin-right: 76px;
-  }
-  .header-nav-elem {
-    display: flex;
-    margin-right: auto;
-    align-items: center;
-    gap: 24px;
-  }
-  .mobile-menu {
-    display: none;
-  }
-  .burger-menu {
-    display: none;
-  }
-}
-/*=======================*/

@@ -1,227 +1,176 @@
-
-
 img {
-    display: block;
+  display: block;
 }
 
 .link {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .list {
-    list-style: none;
+  list-style: none;
 }
 
 .is-hidden {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    border: 0;
-    padding: 0;
-    white-space: nowrap;
-    clip-path: inset(100%);
-    clip: rect(0 0 0 0);
-    overflow: hidden;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 /* Modal */
 
 .modal-on {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .backdrop {
-    position: fixed;
-    top: 0;
+  position: fixed;
+  top: 0;
 
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 
-    background-color: $modalColor;
+  background-color: $modalColor;
 }
 
 @media (max-width: 768px) {
-    .is-hidden-head {
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-    }
+  .is-hidden-head {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
 
-    .backdrop {
-        padding: auto 20px auto 20px;
-    }
+  .backdrop {
+    padding: auto 20px auto 20px;
+  }
 
-    .modal {
-        position: absolute;
-        overflow: auto;
+  .modal {
+    position: absolute;
+    overflow: auto;
 
-        padding: 24px 40px;
+    padding: 24px 40px;
 
-        width: 100%;
-        height: 100%;
-        border-radius: 4px;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
 
-        background-color: $white;
-    }
+    background-color: $white;
+  }
 
-    .modal-wrapper {
-        max-width: 100%;
+  .modal-wrapper {
+    max-width: 100%;
 
-        margin-bottom: 40px;
-    }
+    margin-bottom: 40px;
+  }
 
-    .modal-img {
-        width: 100%;
-    }
+  .modal-img {
+    width: 100%;
+  }
 
-    .save-to-list {
-        display: block;
-        margin: auto;
-        text-align: center;
-        padding: 20px 50px;
-        border: 2px solid #4f2ee8;
-        border-radius: 40px;
-        gap: 10px;
-    }
+  .save-to-list {
+    display: block;
+    margin: auto;
+    text-align: center;
+    padding: 20px 50px;
+    border: 2px solid #4f2ee8;
+    border-radius: 40px;
+    gap: 10px;
+  }
 
-    .button-close-modal {
-        top: 12px;
-        right: 12px;
-    }
-}
-
-@media (min-width: 768px) {
-    .modal {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        width: 580px;
-        border-radius: 4px;
-
-        padding: 40px;
-
-        background-color: $white;
-    }
-
-    .modal-wrapper {
-        display: flex;
-        gap: 24px;
-        margin-bottom: 40px;
-    }
-
-    .modal-img {
-        width: 192px;
-        height: 281px;
-    }
-
-    .modal-text-img{
-        width: calc(100% - 192px - 24px);
-    }
-
-    .shops-links{
-        flex-wrap: wrap;
-    }
-
-    .save-to-list {
-        height: auto;
-        width: 500px;
-        text-align: center;
-        padding: 20px 0px;
-        border: 2px solid #4f2ee8;
-        border-radius: 40px;
-        gap: 10px;
-    }
-
-    .button-close-modal {
-        top: 24px;
-        right: 24px;
-    }
+  .button-close-modal {
+    top: 12px;
+    right: 12px;
+  }
 }
 
 .button-close-modal {
-    // в классе button и еще где то стоят ограничения на размер и высоту которые ебашат стили
-    min-width: 0;
+  // в классе button и еще где то стоят ограничения на размер и высоту которые ебашат стили
+  min-width: 0;
 
-    width: 28px;
-    height: 28px;
-    fill: black;
+  width: 28px;
+  height: 28px;
+  fill: black;
 
-    position: absolute;
+  position: absolute;
 
-    border: none;
+  border: none;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    padding: 0;
+  padding: 0;
 
-    background: transparent;
-    cursor: pointer;
+  background: transparent;
+  cursor: pointer;
 }
 
 .button-close:active,
 .button-close:hover,
 .button-close:focus {
-    .modal-ico{
-        fill: #4f2ee8;
-        border: none;
-    }
+  .modal-ico {
+    fill: #4f2ee8;
+    border: none;
+  }
 }
 
 .book-title {
-    color: #111111;
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 28px;
-    letter-spacing: -0.04em;
-    text-align: left;
+  color: #111111;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: -0.04em;
+  text-align: left;
 }
 
 .book-author {
-    color: #b4afaf;
-    font-size: 14px;
-    font-style: italic;
-    font-weight: 400;
-    line-height: 18px;
-    letter-spacing: -0.04em;
-    text-align: left;
+  color: #b4afaf;
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: -0.04em;
+  text-align: left;
 }
 
 .book-description {
-    color: #111111;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 18px;
-    letter-spacing: -0.04em;
-    text-align: left;
-    margin-bottom: 20px;
+  color: #111111;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: -0.04em;
+  text-align: left;
+  margin-bottom: 20px;
 }
 
 .shops-links {
-    display: flex;
-    gap: 20px;
+  display: flex;
+  gap: 20px;
 }
 
 .shopping-list-message {
-    margin-top: 8px;
-    color: #11111180;
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 14px;
-    letter-spacing: -0.04em;
-    text-align: center;
+  margin-top: 8px;
+  color: #11111180;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: -0.04em;
+  text-align: center;
 }
 
 .shops-links {
-    display: flex;
-    list-style: none;
+  display: flex;
+  list-style: none;
 }
