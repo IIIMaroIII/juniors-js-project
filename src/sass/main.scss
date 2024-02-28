@@ -5,6 +5,7 @@
 @import './base/containers';
 @import './utils/modern-normalize';
 @import './utils/reset';
+@import './utils/visually-hidden';
 @import './utils/hidden';
 @import './components/HEADER/header';
 @import './components/MAIN/home';
@@ -14,4 +15,4 @@
 @import './components/supportUkraine/supportUkraine';
 @import './components/MODAL/modal';
 @import './base/media-queries';
-@import './components/SHOPPINGLIST/shoppinglist'
+@import './components/SHOPPINGLIST/shoppinglist';
