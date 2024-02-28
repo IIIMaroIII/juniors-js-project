@@ -8,7 +8,7 @@
     <script type="module" crossorigin src="/juniors-js-project/commonHelpers.js"></script>
     <link rel="modulepreload" crossorigin href="/juniors-js-project/assets/vendor-b1ee5dfe.js">
     <link rel="stylesheet" href="/juniors-js-project/assets/vendor-e5212ee8.css">
-    <link rel="stylesheet" href="/juniors-js-project/assets/index-6a9120e0.css">
+    <link rel="stylesheet" href="/juniors-js-project/assets/index-4f0b098e.css">
   </head>
   <body>
     <header>
@@ -90,7 +90,6 @@
 </section>
 
 <div class="home-books wrap-books" id="books-list">
-  <div id="categoryDisplay"></div>
   <ul class="bok" id="home-category-books-list"></ul>
 </div>
 
@@ -120,15 +119,15 @@
 
         </div>
         <section id="home-page" class="home-page">
-  <h1 class="section-title">
+  <h1 class="section-title js-title-is-hidden">
     Best Sellers
     <span><a class="section-title-link" href="./index.html">Books</a></span>
   </h1>
+  <h1 class="section-title" style="display: none" id="categoryDisplay"></h1>
   <ul class="home-list only-category js-home-list"></ul>
 </section>
 <section class="home-categories-book">
   <div class="home-books wrap-books" id="books-list">
-    <div id="categoryDisplay"></div>
     <ul class="bok" id="home-category-books-list"></ul>
   </div>
 </section>
@@ -357,14 +356,27 @@
     <div class="footer">
       <p>© 2024 Team 11 JS Homework.</p>
     </div>
-    <div class="scroll-to-top" onclick="scrollToTop()">↑ Scroll to top</div>
+    <div class="scroll-to-top" onclick="scrollToTop()" style="display:none;">↑ Scroll to top</div>
 
     <script>
       function scrollToTop() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
+
+      // Функція для перевірки, чи було прокручено достатньо вниз
+      function checkScroll() {
+        if (window.scrollY > 250) { // Припустимо, кнопка з'являється після прокрутки на 250 пікселів вниз
+          document.querySelector('.scroll-to-top').style.display = 'block';
+        } else {
+          document.querySelector('.scroll-to-top').style.display = 'none';
+        }
+      }
+
+      // Відслідковування події прокрутки сторінки
+      window.addEventListener('scroll', checkScroll);
     </script>
   </body>
+
 </html>
 
       <div data-modal class="backdrop is-hidden">
