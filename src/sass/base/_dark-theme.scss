@@ -20,27 +20,14 @@ body.dark-mode {
   // Navigation
   .header-nav-elem {
     span {
-      color: white;
+      color: $white;
     }
 
     .bag-icon use {
       filter: none;
     }
   }
-  
-  // shoppinglist Styles
-
-  .booklist-title,
-  .booklist-item-info h1,
-  .booklist-description {
-    color: rgb(255, 255, 255);
-  }
-
-  .empty-title {
-    color: rgba(255, 255, 255, 0.6);
-  }
-
-  .booklist-item {
-    background: rgb(17, 17, 17);
+  .main-container {
+    background-color: $black;
   }
 }
