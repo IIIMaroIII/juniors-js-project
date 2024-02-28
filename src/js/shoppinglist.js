@@ -154,11 +154,11 @@ function bookTemplate({ _id, author, title, book_image, description, buy_links, 
             <ul class="booklist-link-box">
                 <li class="booklist-amazon">
                     <a class="booklist-amazon-link" href="${amazonBuyLink}"
-                        target="_blank">Am</a>
+                        target="_blank"><img src="../img/shops/light-amazon.png" alt=""></a>
                 </li>
                 <li class="booklist-apple">
                     <a class="booklist-apple-link" href="${appleBuyLink}"
-                        target="_blank">Ap</a>
+                        target="_blank"><img src="../img/shops/light-apple.png" alt=""></a>
                 </li>
             </ul>
 

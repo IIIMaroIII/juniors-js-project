@@ -1,6 +1,6 @@
 .booklist-section {
  
-  margin: 0 auto;
+  margin: 0 20px 0 20px;
 
 }
 
@@ -11,7 +11,8 @@
   letter-spacing: -4%;
   text-align: left;
   color: rgb(17, 17, 17);
-  margin-left: 20px;
+
+  margin-bottom: 40px;
 }
 
 .booklist-item-info-box {
@@ -181,7 +182,7 @@
   .booklist-title {
     font-size: 48px;
     line-height: 52px;
-    margin-left: 32px;
+  
   }
 
   .booklist-list {
@@ -223,13 +224,6 @@
 @media screen and (min-width: 1440px) {
 
 
-  .booklist-image {
-    border-radius: 8px;
-    width: 100px;
-    height: 100px;
-    margin-right: 14px;
-    margin-left: 14px;
-  }
 
   .booklist-item {
     width: 996px;
@@ -237,7 +231,7 @@
   }
 
   .booklist-title {
-    margin-left: 40px;
+    
   }
 
   .booklist-description {
