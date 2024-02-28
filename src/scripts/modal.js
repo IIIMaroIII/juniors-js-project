@@ -28,12 +28,28 @@ function deleteEventEsc(e) {
 function onModal(e) {
   e.preventDefault();
   e.stopPropagation();
+  let bookId;
   
   const nameNode = e.target.nodeName;
   if (nameNode === "IMG" || nameNode === "H3" || nameNode === "P" || nameNode === "A") {
-    header.classList.toggle("is-hidden-head");
+    switch (e.target.nodeName) {
+      case "IMG":
+        bookId = e.target.parentNode.id;
+        break;
+      case "H3":
+        bookId = e.target.parentNode.id;
+        break;
+      case "P":
+        bookId = e.target.parentNode.id;
+        break;
+      case "A":
+        bookId = e.target.id;
+        break;
+      default:
+    }
+    buildModal(bookId);
     body.classList.toggle("modal-on");
-    buildModal("643282b1e85766588626a07e");
+    header.classList.toggle("is-hidden-head");
     modal.classList.toggle("is-hidden");
     window.addEventListener('keydown', deleteEventEsc);
   }
