@@ -886,11 +886,12 @@ body {
 }
 
 .footer {
+  position: fixed;
+  bottom: 0;
   width: 100%;
   padding: 20px;
   background: rgb(255, 255, 255);
   text-align: center; /* Вирівнювання тексту по центру */
-  position: relative;
   bottom: 0;
   left: 0;
 }
