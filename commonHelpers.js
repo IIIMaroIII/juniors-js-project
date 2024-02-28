@@ -47,7 +47,7 @@ var tt=Object.defineProperty;var et=(e,t,o)=>t in e?tt(e,t,{enumerable:!0,config
                     <p class="booklist-list">${a}</p>
                 </div>
                 <button type="button" class="booklist-delete-btn" data-id="${e}">
-                    <img src="/src/img/shoppinglist/trash-icon.png" alt="trash-icon" width="30" height="30">
+                    <img src="../../img/shoppinglist/trash-icon.png" alt="trash-icon" width="30" height="30">
                 </button> 
             </div>
             <div class="description-box">
