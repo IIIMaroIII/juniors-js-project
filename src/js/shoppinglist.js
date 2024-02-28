@@ -8,64 +8,57 @@ const emptyShoppingListMarkup = `
             <img class="empty-image" src="/src/img/shopping-list-books.png" alt="books">
         </li> `;
 
-        
-
-
 function onShoppingListButton(e) {
-    e.preventDefault();
+  e.preventDefault();
 
-    let pageNumber = 1;
+  let pageNumber = 1;
 
-    const sidebar = document.querySelector('.home-sidebar-nav-categories');
-    sidebar.style.display = "none";
-    
-    const homePage = document.querySelector('.home-page');
-    homePage.innerHTML = '<h1 class="booklist-title">Shopping <span class="booklist-title-span">List</span></h1>';
-    
-    const bookListTytle = document.querySelector('.booklist-title');
-    const startMarkup = `<div class="booklist-section"><ul class="booklist"></ul></div>`;
-    bookListTytle.insertAdjacentHTML('afterend', startMarkup);
-    
-    const bookList = isBooksInLS();
-    
+  const sidebar = document.querySelector('.home-sidebar-nav-categories');
+  sidebar.style.display = 'none';
 
-    if (bookList.length < 1) {
-        const bookListSection = document.querySelector('.booklist');
-        bookListSection.insertAdjacentHTML('beforeend', emptyShoppingListMarkup);
-    } else {
-        
-        renderBooksByPageNumber(pageNumber);
-    };
+  const homePage = document.querySelector('.home-page');
+  homePage.innerHTML =
+    '<h1 class="booklist-title">Shopping <span class="booklist-title-span">List</span></h1>';
+
+  const bookListTytle = document.querySelector('.booklist-title');
+  const startMarkup = `<div class="booklist-section"><ul class="booklist"></ul></div>`;
+  bookListTytle.insertAdjacentHTML('afterend', startMarkup);
+
+  const bookList = isBooksInLS();
+
+  if (bookList.length < 1) {
+    const bookListSection = document.querySelector('.booklist');
+    bookListSection.insertAdjacentHTML('beforeend', emptyShoppingListMarkup);
+  } else {
+    renderBooksByPageNumber(pageNumber);
+  }
 }
 
-
 function renderBooksByPageNumber(pageNumber) {
-    
-    const bookList = isBooksInLS();
-    const bookListOnPage = [];
-    let numberOfBooksOnPage;
+  const bookList = isBooksInLS();
+  const bookListOnPage = [];
+  let numberOfBooksOnPage;
 
-    if (isMobile()) {
-        numberOfBooksOnPage = 4;
-    } else { 
-        numberOfBooksOnPage = 3;
-    };
-    
-    let n = numberOfBooksOnPage;
+  if (isMobile()) {
+    numberOfBooksOnPage = 4;
+  } else {
+    numberOfBooksOnPage = 3;
+  }
 
-    if (!isLastPage(pageNumber, n)) {
-        for (let i = (pageNumber * n - n); i < (pageNumber * n); i += 1) {
-        bookListOnPage.push(bookList[i]);
-    }; 
-    } else {
-        for (let i = (pageNumber * n - n); i < (bookList.length); i += 1) {
-        bookListOnPage.push(bookList[i]);
-    }; 
-    };
-    
-    renderBookList(bookListOnPage);
-    
-};
+  let n = numberOfBooksOnPage;
+
+  if (!isLastPage(pageNumber, n)) {
+    for (let i = pageNumber * n - n; i < pageNumber * n; i += 1) {
+      bookListOnPage.push(bookList[i]);
+    }
+  } else {
+    for (let i = pageNumber * n - n; i < bookList.length; i += 1) {
+      bookListOnPage.push(bookList[i]);
+    }
+  }
+
+  renderBookList(bookListOnPage);
+}
 
 // // ========delete button======
 
@@ -73,55 +66,61 @@ const homePage = document.querySelector('.home-page');
 homePage.addEventListener('click', getButtonId);
 
 function getButtonId(e) {
-    const isDeleteButtonPressed = e.target.classList.contains("booklist-delete-btn");
-    if (isDeleteButtonPressed) { 
-        const selectedBookId = e.target.dataset.id;
-        
-        deleteBookFromList(selectedBookId);
-    } else {};
-};
+  const isDeleteButtonPressed = e.target.classList.contains(
+    'booklist-delete-btn'
+  );
+  if (isDeleteButtonPressed) {
+    const selectedBookId = e.target.dataset.id;
+
+    deleteBookFromList(selectedBookId);
+  } else {
+  }
+}
 
 // ==============================
 
-
 function isBooksInLS() {
-    const isBook = localStorage.getItem("Shopping");
-    const bookList = JSON.parse(isBook);
-    return bookList;
-};
+  const isBook = localStorage.getItem('Shopping');
+  const bookList = JSON.parse(isBook);
+  return bookList;
+}
 
+function isLastPage(pageNumber, numberOfBooksOnPage) {
+  const bookList = isBooksInLS();
+  return pageNumber === Math.ceil(bookList.length / numberOfBooksOnPage);
+}
 
-function isLastPage(pageNumber, numberOfBooksOnPage) { 
-    const bookList = isBooksInLS();
-    return pageNumber === Math.ceil(bookList.length / numberOfBooksOnPage);
-};
-
-
-function isMobile() { 
-    return window.innerWidth <= 767;
-};
-
+function isMobile() {
+  return window.innerWidth <= 767;
+}
 
 function deleteBookFromList(id) {
-    const bookList = isBooksInLS();
-    const newBookList = bookList.filter(book => book._id != id);
-    console.log(newBookList);
-    const bookToDelete = document.querySelector(`[data-id="${id}"]`);
-    bookToDelete.remove();
-    localStorage.removeItem("Shopping");
-    localStorage.setItem("Shopping", JSON.stringify(newBookList));
-};
-
+  const bookList = isBooksInLS();
+  const newBookList = bookList.filter(book => book._id != id);
+  console.log(newBookList);
+  const bookToDelete = document.querySelector(`[data-id="${id}"]`);
+  bookToDelete.remove();
+  localStorage.removeItem('Shopping');
+  localStorage.setItem('Shopping', JSON.stringify(newBookList));
+}
 
 // =================RENDER=======================//
 
-function bookTemplate({ _id, author, title, book_image, description, buy_links, list_name }) { 
-    const bookAmazon = buy_links.find(buy_link => buy_link.name === "Amazon");
-    const amazonBuyLink = bookAmazon.url;
-    const id = _id;
-    const bookApple = buy_links.find(buy_link => buy_link.name === "Apple Books");
-    const appleBuyLink = bookApple.url;
-    return `
+function bookTemplate({
+  _id,
+  author,
+  title,
+  book_image,
+  description,
+  buy_links,
+  list_name,
+}) {
+  const bookAmazon = buy_links.find(buy_link => buy_link.name === 'Amazon');
+  const amazonBuyLink = bookAmazon.url;
+  const id = _id;
+  const bookApple = buy_links.find(buy_link => buy_link.name === 'Apple Books');
+  const appleBuyLink = bookApple.url;
+  return `
 <li class="booklist-item" data-id="${_id}">
     <div class="booklist-item-image">
         <img class="booklist-image" src="${book_image}"
@@ -135,7 +134,7 @@ function bookTemplate({ _id, author, title, book_image, description, buy_links, 
                     <p class="booklist-list">${list_name}</p>
                 </div>
                 <button type="button" class="booklist-delete-btn" data-id="${_id}">
-                    <img src="/src/img/shoppinglist/trash-icon.png" alt="trash-icon" width="30" height="30">
+                    <img src="../../img/shoppinglist/trash-icon-2.png" alt="trash-icon" width="30" height="30">
                 </button> 
             </div>
             <div class="description-box">
@@ -158,14 +157,12 @@ function bookTemplate({ _id, author, title, book_image, description, buy_links, 
         </div>
     </div>
 </li>`;
-};
+}
 
-
-
-function renderBookList(bookList) { 
-    const markup = bookList.map(bookTemplate).join('').trim();
-    const bookListSection = document.querySelector('.booklist');
-    bookListSection.insertAdjacentHTML('beforeend', markup);
-}; 
+function renderBookList(bookList) {
+  const markup = bookList.map(bookTemplate).join('').trim();
+  const bookListSection = document.querySelector('.booklist');
+  bookListSection.insertAdjacentHTML('beforeend', markup);
+}
 
 // ==================================================
