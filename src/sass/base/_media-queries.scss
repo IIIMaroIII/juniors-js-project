@@ -188,7 +188,9 @@
 
   .main-container {
     margin: 0 auto;
-    width: 1392px;
+    padding-left: 24px;
+    padding-right: 24px;
+    min-width: 1392px;
     display: flex;
   }
 
@@ -220,6 +222,7 @@
   }
   .wrap-categories {
     height: 472px;
+    margin-bottom: 86px;
   }
   .categories-list {
     height: 100%;
@@ -299,7 +302,7 @@
   .support {
     min-width: 356px;
     height: 474px;
-    margin-top: 86px;
+    // margin-top: 86px;
     padding-top: 26px;
     // padding: 24px 40px 20px;
   }
