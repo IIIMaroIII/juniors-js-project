@@ -35,19 +35,26 @@ function onModal(e) {
   
   const nameNode = e.target.nodeName;
   if(listArea.firstChild.classList.contains("home-list-item")){
-    if (nameNode === "IMG" || nameNode === "H3" || nameNode === "P" || nameNode === "A") {
+    if (nameNode === "IMG" || nameNode === "H3" || nameNode === "P" || nameNode === "A" || e.target.classList.contains("img-bgc")) {
       switch (e.target.nodeName) {
         case "IMG":
-          bookId = e.target.parentNode.id;
+          bookId = e.target.parentNode.parentNode.id;
           break;
         case "H3":
           bookId = e.target.parentNode.id;
           break;
         case "P":
-          bookId = e.target.parentNode.id;
+          if (e.target.classList.contains("img-bgc-text")) {
+            bookId = e.target.parentNode.parentNode.parentNode.id;
+          } else {
+            bookId = e.target.parentNode.id;
+          };
           break;
         case "A":
           bookId = e.target.id;
+          break;
+        case "DIV":
+          bookId = e.target.parentNode.parentNode.id;
           break;
         default:
       }
