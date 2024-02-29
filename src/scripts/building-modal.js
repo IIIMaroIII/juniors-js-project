@@ -2,6 +2,9 @@ import { BooksAPI } from './booksAPI.js';
 
 import { isLocal } from './localSave.js';
 
+import imgApple from '../img/shops/light-apple.png';
+import imgAmazon from '../img/shops/light-amazon.png';
+
 const image = document.querySelector('.modal-img');
 const bookTitle = document.querySelector('.book-title');
 const bookAuthor = document.querySelector('.book-author');
@@ -41,10 +44,10 @@ async function constructModal(bookData) {
       let a = ``;
       switch (link.name) {
         case 'Amazon':
-          a += `<li><a href="${link.url} class="link" target=”_blank”><img src="./img/shops/light-amazon.png" alt="${link.name}" class="shops-link"></a></li>`;
+          a += `<li><a href="${link.url} class="link" target=”_blank”><img src="${imgAmazon}" alt="${link.name}" class="shops-link"></a></li>`;
           break;
         case 'Apple Books':
-          a += `<li><a href="${link.url} class="link" target=”_blank”><img src="./img/shops/light-apple.png" alt="${link.name}" class="shops-link"></a></li>`;
+          a += `<li><a href="${link.url} class="link" target=”_blank”><img src="${imgApple}" alt="${link.name}" class="shops-link"></a></li>`;
           break;
       }
       return a;
