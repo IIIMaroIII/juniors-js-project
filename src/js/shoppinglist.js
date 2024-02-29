@@ -2,23 +2,27 @@
 const shoppingListButton = document.querySelector('.menu-item-shop');
 shoppingListButton.addEventListener('click', onShoppingListButton);
 
+const headerNav = document.querySelector('.header-nav');
+headerNav.addEventListener('click', onShoppingListOpened);
+
+
+
 const emptyShoppingListMarkup = ` 
         <li class="empty-item">
             <p class="empty-title">This page is empty, add some books and proceed to order.</p>
-            <img class="empty-image" src="/src/img/shopping-list-books.png" alt="books">
+            <img class="empty-image" src="../../img/shoppinglist/emptyListBook.png" alt="books">
         </li> `;
 
 function onShoppingListButton(e) {
   e.preventDefault();
-
+  
   let pageNumber = 1;
-
+  
   const sidebar = document.querySelector('.home-sidebar-nav-categories');
   sidebar.style.display = 'none';
 
   const homePage = document.querySelector('.home-page');
-  homePage.innerHTML =
-    '<h1 class="booklist-title">Shopping <span class="booklist-title-span">List</span></h1>';
+  homePage.innerHTML = '<h1 class="booklist-title">Shopping <span class="booklist-title-span">List</span></h1>';
 
   const bookListTytle = document.querySelector('.booklist-title');
   const startMarkup = `<div class="booklist-section"><ul class="booklist"></ul></div>`;
@@ -33,6 +37,26 @@ function onShoppingListButton(e) {
     renderBooksByPageNumber(pageNumber);
   }
 }
+
+
+
+function onShoppingListOpened(e) { 
+  // e.preventDefault();
+  const isShoppingListElem = e.target.innerHTML === "Shopping List";
+  // const isBookshelfElem = e.target.dataset;
+  const isHomeElem = e.target.innerHTML === "Home";
+  
+  // console.log(e.target.innerHTML === "Shopping List");
+  // console.log(e.target.innerHTML === "Home");
+  if (isShoppingListElem || isHomeElem) {
+    const supportElem = document.querySelector('.support');
+    supportElem.classList.toggle('shopping-list-opened');
+ 
+  }
+
+  // console.log(isBookshelfElem);
+  // console.log(isHomeElem);
+}; 
 
 function renderBooksByPageNumber(pageNumber) {
   const bookList = isBooksInLS();
@@ -66,16 +90,17 @@ const homePage = document.querySelector('.home-page');
 homePage.addEventListener('click', getButtonId);
 
 function getButtonId(e) {
-  const isDeleteButtonPressed = e.target.classList.contains(
-    'booklist-delete-btn'
-  );
+  const isDeleteButtonPressed = e.target.parentElement.nodeName === "BUTTON";
+  
   if (isDeleteButtonPressed) {
-    const selectedBookId = e.target.dataset.id;
-
+    const selectedBookId = e.target.parentElement.dataset.id;
     deleteBookFromList(selectedBookId);
   } else {
-  }
-}
+
+  };
+
+
+};
 
 // ==============================
 
@@ -97,12 +122,18 @@ function isMobile() {
 function deleteBookFromList(id) {
   const bookList = isBooksInLS();
   const newBookList = bookList.filter(book => book._id != id);
-  console.log(newBookList);
   const bookToDelete = document.querySelector(`[data-id="${id}"]`);
   bookToDelete.remove();
   localStorage.removeItem('Shopping');
   localStorage.setItem('Shopping', JSON.stringify(newBookList));
-}
+  const isClear = isBooksInLS();
+  if (isClear < 1) {
+    const bookListSection = document.querySelector('.booklist');
+    bookListSection.insertAdjacentHTML('beforeend', emptyShoppingListMarkup);
+  };
+};
+
+
 
 // =================RENDER=======================//
 
@@ -134,7 +165,7 @@ function bookTemplate({
                     <p class="booklist-list">${list_name}</p>
                 </div>
                 <button type="button" class="booklist-delete-btn" data-id="${_id}">
-                    <img src="../../img/shoppinglist/trash-icon.png" alt="trash-icon" width="30" height="30">
+                    <img src="../../img/shoppinglist/trash-icon.png" class="trash-icon" width="34" height="34">
                 </button> 
             </div>
             <div class="description-box">

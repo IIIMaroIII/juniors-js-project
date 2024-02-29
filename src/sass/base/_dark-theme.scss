@@ -71,5 +71,23 @@ body.dark-mode {
   .main-container {
     background-color: $black-1;
   }
+
+  // Shopping List
+
+  .booklist-title {
+    color: white;
+  }
+  
+  .booklist-item {
+    background: rgb(17, 17, 17);
+  }
+
+  .title-box h1,
+  .booklist-description {
+    color: white;
+  }
+  
+  
+
   //==============================
 }

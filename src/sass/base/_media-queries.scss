@@ -211,7 +211,65 @@
     right: 24px;
   }
 
+  // shopping List
+
+  .booklist-title {
+    font-size: 48px;
+    line-height: 52px;
+  }
+
+  .booklist-item {
+    width: 704px;
+    height: 213px;
+    padding: 24px;
+  }
+
+  .booklist-list {
+    margin-bottom: 14px;
+  }
   
+  .booklist-description {
+    width: 508px;
+    height: 53px;
+  }
+  
+  .booklist-image {
+    max-width: 116px;
+    max-height: 165px;
+  }
+
+  .booklist-link-box {
+    gap: 16px;
+  }
+
+  .booklist-delete-btn {
+    min-width: 34px;
+    min-height: 34px;
+  }
+
+  .empty-title {
+    width: 349px;
+    height: 48px;
+    margin-top: 100px;
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 20px;
+  }
+
+  .booklist-description {
+    width: 508px;
+    height: 53px;
+  }
+
+  .booklist-amazon-link img {
+    width: 48px;
+    height: 15px;
+  }
+
+  .booklist-amazon-link img {
+    width: 28px;
+    height: 27px;
+  }
 
   @media (max-width: 768px) {
     .is-hidden-head {
@@ -463,4 +521,21 @@
     height: 38px;
   }
   //==============
+
+  // ======shopping list
+
+  .booklist-item {
+    width: 996px;
+    height: 213px;
+  }
+
+  .booklist-description {
+    width: 808px;
+    height: 53px;
+  }
+
+  .booklist-description {
+    width: 996px;
+    height: 213px;
+  }
 }

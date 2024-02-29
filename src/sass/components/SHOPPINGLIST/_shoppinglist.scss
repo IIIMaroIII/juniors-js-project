@@ -13,23 +13,79 @@
   letter-spacing: -4%;
   text-align: left;
   color: rgb(17, 17, 17);
-
   margin-bottom: 40px;
 }
 
-.booklist-item-info-box {
+.booklist-title-span {
+  @include dm-sans(700);
+  color: rgb(79, 46, 232);
+}
+
+.booklist-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.booklist {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+.booklist-item {
+  width: 335px;
+  height: 170px;
+  border: 2px solid rgba(79, 46, 232, 0.4);
+  border-radius: 16px;
+  padding: 14px;
+  background: rgb(255, 255, 255);
   display: flex;
 }
 
-.booklist-item-info h1 {
+.booklist-image {
+  border-radius: 8px;
+  max-width: 100px;
+  max-height: 142px;
+  margin-right: 14px;
+}
+
+.booklist-info-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.booklist-item-info {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 8px;
+}
+
+.item-high-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.title-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.title-box h1 {
   @include dm-sans(700);
   color: rgb(17, 17, 17);
+  max-width: 144px;
   font-size: 16px;
   line-height: 18px;
   letter-spacing: -4%;
   text-align: left;
   text-transform: uppercase;
   margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .booklist-list {
@@ -40,6 +96,19 @@
   letter-spacing: 3%;
   text-align: left;
   margin-bottom: 8px;
+  max-width: 165px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;  
+}
+
+.booklist-delete-btn {
+  min-width: 28px;
+  min-height: 28px;
+  padding: 0;
+  border: none;
+  display: block;
+
 }
 
 .booklist-description {
@@ -51,27 +120,55 @@
   text-align: left;
   width: 193px;
   height: 68px;
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.booklist-item-links {
+  display: flex;
+  margin-top: auto;
+  justify-content: space-between
 }
 
 .booklist-author {
   @include dm-sans(400);
   color: rgb(180, 175, 175);
   font-style: italic;
+  max-width: 100px;
   font-size: 12px;
   line-height: 14px;
   letter-spacing: -4%;
-  text-align: left;
-  padding-top: auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.booklist-image {
-  border-radius: 8px;
-  max-width: 100px;
-  max-height: 142px;
-  margin-right: 14px;
-  margin-left: 14px;
+.booklist-link-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  
+}
+
+.booklist-amazon-link img {
+  width: 32px;
+  height: 11px;
+}
+
+.booklist-apple-link img {
+  width: 16px;
+  height: 16px;
+}
+
+.booklist-apple-link,
+.booklist-amazon-link {
+  filter: grayscale(100%);
+}
+
+.booklist-apple-link:hover,
+.booklist-amazon-link:hover {
+  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, .35));
 }
 
 .empty-title {
@@ -93,23 +190,12 @@
   align-items: center;
 }
 
-.booklist-title-span {
-  @include dm-sans(700);
-  color: rgb(79, 46, 232);
-}
 
-.booklist-trash-icon {
-  display: block;
-  color: white;
-}
+// /* Media queries*/
+// @media only screen and (max-width: 767px) {
+// }
 
-.booklist {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-}
+// // ===========DESKTOP=====================
 
 .booklist-item {
   width: 335px;
@@ -122,22 +208,8 @@
   padding-bottom: 14px;
 }
 
-.booklist-item-info {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 16px;
-}
 
-.booklist-info-block {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
 
-.booklist-item-links {
-  display: flex;
-  justify-content: space-between;
-}
 
 .title-box {
   display: flex;
@@ -164,7 +236,7 @@
 @media only screen and (max-width: 767px) {
 }
 
-// ===========DESKTOP=====================
+// // ===========DESKTOP=====================
 
 @media screen and (min-width: 768px) {
   .booklist-item {
@@ -210,7 +282,8 @@
   }
 }
 
-// ============KOMP====================
+//   .title-box {
+//   }
 
 @media screen and (min-width: 1440px) {
   .booklist-item {
