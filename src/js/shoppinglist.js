@@ -1,3 +1,10 @@
+import trashbinImg from "./../img/shoppinglist/trash-icon.png";
+
+import imgApple from './../img/shops/light-apple.png';
+import imgAmazon from './../img/shops/light-amazon.png';
+
+import emptyListImg from './../img/shoppinglist/emptyListBook.png';
+
 // ========need class of BookListButton
 const shoppingListButton = document.querySelector('.menu-item-shop');
 shoppingListButton.addEventListener('click', onShoppingListButton);
@@ -5,10 +12,12 @@ shoppingListButton.addEventListener('click', onShoppingListButton);
 const headerNav = document.querySelector('.header-nav');
 headerNav.addEventListener('click', onShoppingListOpened);
 
+
 const emptyShoppingListMarkup = ` 
         <li class="empty-item">
+
             <p class="empty-title">This page is empty, add some books and proceed to order.</p>
-            <img class="empty-image" src="./../../img/shoppinglist/emptyListBook.png" alt="books">
+            <img class="empty-image" src="${emptyListImg}" alt="books">
         </li> `;
 
 function onShoppingListButton(e) {
@@ -166,7 +175,7 @@ function bookTemplate({
                     <p class="booklist-list">${list_name}</p>
                 </div>
                 <button type="button" class="booklist-delete-btn" data-id="${_id}">
-                    <img src="./../../img/shoppinglist/trash-icon.png" class="trash-icon" width="34" height="34">
+                    <img src="${trashbinImg}" class="trash-icon" width="34" height="34">
                 </button> 
             </div>
             <div class="description-box">
@@ -178,11 +187,11 @@ function bookTemplate({
             <ul class="booklist-link-box">
                 <li class="booklist-amazon">
                     <a class="booklist-amazon-link" href="${amazonBuyLink}"
-                        target="_blank"><img src="./../img/shops/light-amazon.png" alt=""></a>
+                        target="_blank"><img src="${imgAmazon}" alt=""></a>
                 </li>
                 <li class="booklist-apple">
                     <a class="booklist-apple-link" href="${appleBuyLink}"
-                        target="_blank"><img src="./../img/shops/light-apple.png" alt=""></a>
+                        target="_blank"><img src="${imgApple}" alt=""></a>
                 </li>
             </ul>
 
