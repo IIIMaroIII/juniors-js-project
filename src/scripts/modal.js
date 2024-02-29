@@ -61,9 +61,7 @@ function onModal(e) {
       body.classList.toggle("modal-on");
       header.classList.toggle("is-hidden-head");
       modal.classList.toggle("is-hidden");
-      window.addEventListener('keydown', deleteEventEsc);
-  
-      
+      window.addEventListener('keydown', deleteEventEsc);      
     }
   } else {
     switch (e.target.nodeName) {
@@ -92,8 +90,6 @@ function onModal(e) {
         break;
       default:
     }
-
-    console.log(bookId);
     buildModal(bookId);
     body.classList.toggle("modal-on");
     header.classList.toggle("is-hidden-head");
