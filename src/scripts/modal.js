@@ -35,19 +35,25 @@ function onModal(e) {
   
   const nameNode = e.target.nodeName;
   if(listArea.firstChild.classList.contains("home-list-item")){
-    if (nameNode === "IMG" || nameNode === "H3" || nameNode === "P" || nameNode === "A") {
+    if (nameNode === "IMG" || nameNode === "H3" || nameNode === "P" || nameNode === "A" || e.target.classList.contains("img-bgc")) {
       switch (e.target.nodeName) {
         case "IMG":
-          bookId = e.target.parentNode.id;
+          bookId = e.target.parentNode.parentNode.id;
           break;
         case "H3":
           bookId = e.target.parentNode.id;
           break;
         case "P":
-          bookId = e.target.parentNode.id;
+          if (e.target.classList.contains("img-bgc-text")) {
+            bookId = e.target.parentNode.parentNode.parentNode.id;
+          } else {
+            bookId = e.target.parentNode.id;
+          };
           break;
-        case "A":
-          bookId = e.target.id;
+        case "DIV":
+          if (e.target.classList.contains("img-bgc")) {
+            bookId = e.target.parentNode.parentNode.id;
+          }
           break;
         default:
       }
@@ -55,17 +61,42 @@ function onModal(e) {
       body.classList.toggle("modal-on");
       header.classList.toggle("is-hidden-head");
       modal.classList.toggle("is-hidden");
-      window.addEventListener('keydown', deleteEventEsc);
+      window.addEventListener('keydown', deleteEventEsc);      
     }
   } else {
-    bookId = e.target.parentNode.parentNode.dataset.id;
-    console.log(bookId);
+    switch (e.target.nodeName) {
+      case "IMG":
+        bookId = e.target.parentNode.parentNode.parentNode.dataset.id;
+        break;
+      case "H3":
+        bookId = e.target.parentNode.parentNode.dataset.id;
+        break;
+      case "P":
+        if (e.target.classList.contains("img-bgc-text")) {
+          bookId = e.target.parentNode.parentNode.parentNode.parentNode.dataset.id;
+        } else {
+          bookId = e.target.parentNode.parentNode.dataset.id;
+        };
+        break;
+      case "A":
+        bookId = e.target.parentNode.parentNode.dataset.id;
+        break;
+      case "DIV":
+        if(e.target.classList.contains("wrap-item-img")){
+          bookId = e.target.parentNode.dataset.id;
+        } else if (e.target.classList.contains("img-bgc")){
+          bookId = e.target.parentNode.parentNode.parentNode.dataset.id;
+        }
+        break;
+      default:
+    }
     buildModal(bookId);
     body.classList.toggle("modal-on");
     header.classList.toggle("is-hidden-head");
     modal.classList.toggle("is-hidden");
     window.addEventListener('keydown', deleteEventEsc);
   }
+  
 }
 
 function closeModal() {

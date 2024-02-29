@@ -55,7 +55,7 @@
 /* Burger menu  */
 .mobile-menu {
   position: fixed;
-  top: 64px;
+  top: 66px;
   left: 0;
   width: 100%;
   height: 100vh;
@@ -83,13 +83,13 @@
   flex: 1;
 }
 .menu-item-home {
-  font-weight: 700;
+  // font-weight: 500;
   text-transform: uppercase;
   letter-spacing: -0.04em;
   display: flex;
-  border-radius: 36px;
-  padding: 8px 16px;
-  background: $yellow;
+  // border-radius: 36px;
+  // padding: 8px 16px;
+  // background: $yellow;
   color: $black;
 }
 .menu-item-shop {
@@ -101,6 +101,8 @@
   display: flex;
   align-items: center;
   color: $white;
+  border-radius: 36px;
+  padding: 8px 16px;
 }
 
 .books-img {
@@ -110,6 +112,27 @@
 
 .menu-item-shop span {
   margin-right: 7px;
+  font-weight: 500;
+}
+.menu-item-home {
+  border-radius: 36px;
+  padding: 8px 16px;
+  font-weight: 500;
+}
+
+.menu-item-home:hover,
+.menu-item-home:focus,
+.menu-item-home:active,
+.menu-item-shop:hover,
+.menu-item-shop:focus,
+.menu-item-shop:active {
+  font-weight: 700;
+  background-color: $yellow;
+}
+.menu-item-shop span:hover,
+.menu-item-shop span:focus,
+.menu-item-shop span:active {
+  font-weight: 700;
 }
 .mobile-menu.active {
   transform: translateX(0);
