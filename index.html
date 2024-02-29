@@ -13,7 +13,7 @@
     <script type="module" crossorigin src="/juniors-js-project/commonHelpers.js"></script>
     <link rel="modulepreload" crossorigin href="/juniors-js-project/assets/vendor-b1ee5dfe.js">
     <link rel="stylesheet" href="/juniors-js-project/assets/vendor-e5212ee8.css">
-    <link rel="stylesheet" href="/juniors-js-project/assets/index-32c7ce07.css">
+    <link rel="stylesheet" href="/juniors-js-project/assets/index-c7032b74.css">
   </head>
   <body>
     <header>
@@ -33,7 +33,10 @@
     </div>
     <ul class="header-nav-elem">
       <li>
-        <a href="./index.html" class="menu-item-home" data-header="home"
+        <a
+          href="./index.html"
+          class="menu-item-home is-active"
+          data-header="home"
           >Home</a
         >
       </li>
@@ -58,9 +61,9 @@
   </nav>
   <div class="mobile-menu">
     <ul class="mob-menu-nav">
-      <li><a href="./index.html" class="menu-item-home">Home</a></li>
+      <li><a href="./index.html" class="menu-item-home mobile">Home</a></li>
       <li>
-        <a href="#" class="menu-item-shop"
+        <a href="#" class="menu-item-shop mobile"
           ><span>Shopping List</span>
           <svg class="bag-icon" width="20" height="20">
             <use href="/juniors-js-project/assets/sprite-61614f66.svg#icon-shopping-bag"></use>
@@ -78,7 +81,9 @@
         <div class="side-bar-container">
           <section class="section-home-books section-main">
   <div class="home-sidebar-nav-categories wrap-categories">
-    <h3 class="home-all-categories text-style-book-category">All categories</h3>
+    <h3 class="home-all-categories text-style-book-category active-state">
+      All categories
+    </h3>
 
     <ul
       class="categories-list text-style-book-category"
