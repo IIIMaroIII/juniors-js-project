@@ -51,6 +51,111 @@ img {
     top: 50%;
     transform: translate(-50%, -50%);
 
+
+// @media (max-width: 767px) {
+//   .is-hidden-head {
+//     opacity: 0;
+//     visibility: hidden;
+//     pointer-events: none;
+//   }
+
+//   .backdrop {
+//     padding: auto 20px auto 20px;
+//   }
+
+//   .modal {
+//     position: absolute;
+//     overflow: auto;
+
+//     padding: 24px 40px;
+
+//     width: 100%;
+//     height: 100%;
+//   }
+
+//   .modal-wrapper {
+//     max-width: 100%;
+
+//     margin-bottom: 40px;
+//   }
+
+//   .modal-img {
+//     width: 100%;
+//   }
+
+//   .save-to-list {
+//     display: block;
+//     margin: auto;
+//     text-align: center;
+//     padding: 20px 50px;
+//     border: 2px solid #4f2ee8;
+//     border-radius: 40px;
+//     gap: 10px;
+//   }
+
+//   .button-close-modal {
+//     top: 12px;
+//     right: 12px;
+//   }
+// }
+
+// @media (min-width: 768px) {
+//   .modal {
+//     position: absolute;
+//     left: 50%;
+//     top: 50%;
+//     transform: translate(-50%, -50%);
+//     width: 580px;
+
+//     padding: 40px;
+//   }
+
+//   .modal-wrapper {
+//     display: flex;
+//     gap: 24px;
+//     margin-bottom: 40px;
+//   }
+
+//   .modal-img {
+//     width: 192px;
+//     height: 281px;
+//   }
+
+//   .modal-text-img {
+//     width: calc(100% - 192px - 24px);
+//   }
+
+//   .shops-links {
+//     flex-wrap: wrap;
+//   }
+
+//   .save-to-list {
+//     height: auto;
+//     width: 500px;
+//     text-align: center;
+//     padding: 20px 0px;
+//     border: 2px solid #4f2ee8;
+//     border-radius: 40px;
+//     gap: 10px;
+//   }
+
+//   .button-close-modal {
+//     top: 24px;
+//     right: 24px;
+//   }
+// }
+
+.button-close-modal {
+  min-width: 0;
+
+  width: 28px;
+  height: 28px;
+  fill: black;
+
+  position: absolute;
+
+  border: none;
+
     border: 2px solid $black;
     border-radius: 18px;
   }
@@ -193,6 +298,7 @@ img {
     letter-spacing: -0.04em;
     text-align: left;
 
+
     margin-bottom: 18px;
   }
 
@@ -221,15 +327,28 @@ img {
     text-align: center;
   }
 
-  .shops-links {
-    display: flex;
-    list-style: none;
-    align-items: center;
-  }
 
-  .shops-link {
-    filter: grayscale(100%);
-  }
+.shops-links {
+  display: flex;
+  gap: 20px;
+}
+// .shops-links.list li {
+//   filter: grayscale(100%);
+// }
+
+// .shops-links.list li:hover {
+//   filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
+// }
+.shopping-list-message {
+  margin-top: 8px;
+  color: #11111180;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: -0.04em;
+  text-align: center;
+}
+
 
   .shops-link:hover {
     filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, .35));
