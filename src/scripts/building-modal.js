@@ -2,8 +2,8 @@ import { BooksAPI } from './booksAPI.js';
 
 import { isLocal } from './localSave.js';
 
-import imgApple from '../img/shops/light-apple.png';
-import imgAmazon from '../img/shops/light-amazon.png';
+import imgApple from './../img/shops/light-apple.png';
+import imgAmazon from './../img/shops/light-amazon.png';
 
 const image = document.querySelector('.modal-img');
 const bookTitle = document.querySelector('.book-title');
