@@ -169,7 +169,9 @@
 
     width: 580px;
 
-    border: 2px solid $black;
+
+
+    border: 2px solid $black;    
     border-radius: 18px;
 
     padding: 40px;
@@ -225,12 +227,12 @@
   .booklist-list {
     margin-bottom: 14px;
   }
-
+  
   .booklist-description {
     width: 508px;
     height: 53px;
   }
-
+  
   .booklist-image {
     max-width: 116px;
     max-height: 165px;
@@ -300,9 +302,9 @@
     }
 
     .save-to-list {
-      border: 2px solid #4f2ee8;
-      border-radius: 40px;
-      gap: 10px;
+        border: 2px solid #4f2ee8;
+        border-radius: 40px;
+        gap: 10px;
     }
 
     .button-close-modal {
