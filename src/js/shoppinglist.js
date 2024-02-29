@@ -1,6 +1,3 @@
-
-import sprite from '../img/sprite.svg';
-
 import trashbinImg from "./../img/shoppinglist/trash-icon.png";
 
 import imgApple from './../img/shops/light-apple.png';
@@ -8,27 +5,12 @@ import imgAmazon from './../img/shops/light-amazon.png';
 
 import emptyListImg from './../img/shoppinglist/emptyListBook.png';
 
-
 // ========need class of BookListButton
-const body = document.body;
-const burgerMenu = document.querySelector('.burger-menu');
-const mobileMenu = document.querySelector('.mobile-menu');
-const useElement = burgerMenu.querySelector('use');
-const mobileMenuDiv = document.querySelector('.mobile-menu');
 const shoppingListButton = document.querySelector('.menu-item-shop');
-const shoppingListButtonMobile = document.querySelector(
-  '.menu-item-shop.mobile'
-);
-
 shoppingListButton.addEventListener('click', onShoppingListButton);
-shoppingListButtonMobile.addEventListener('click', onShoppingListButton);
+
 const headerNav = document.querySelector('.header-nav');
-// const headerMobileNav = document.querySelector('.mobile-menu-nav');
 headerNav.addEventListener('click', onShoppingListOpened);
-
-// headerMobileNav.addEventListener('click', onShoppingListOpened);
-
-
 
 
 const emptyShoppingListMarkup = ` 
@@ -40,11 +22,9 @@ const emptyShoppingListMarkup = `
 
 function onShoppingListButton(e) {
   e.preventDefault();
-  mobileMenuDiv.classList.remove('active');
-  body.style.overflow = 'auto';
-  useElement.setAttribute('xlink:href', `${sprite}#icon-burger-menu-icon`);
+  
   let pageNumber = 1;
-
+  
   const sidebar = document.querySelector('.home-sidebar-nav-categories');
   sidebar.style.display = 'none';
 
@@ -58,8 +38,7 @@ function onShoppingListButton(e) {
   };
 
   const homePage = document.querySelector('.home-page');
-  homePage.innerHTML =
-    '<h1 class="booklist-title">Shopping <span class="booklist-title-span">List</span></h1>';
+  homePage.innerHTML = '<h1 class="booklist-title">Shopping <span class="booklist-title-span">List</span></h1>';
 
   const bookListTytle = document.querySelector('.booklist-title');
   const startMarkup = `<div class="booklist-section"><ul class="booklist"></ul></div>`;
@@ -76,20 +55,17 @@ function onShoppingListButton(e) {
 }
 
 
-function onShoppingListOpened(e) {
-  // e.preventDefault();
-  const isShoppingListElem = e.target.innerHTML === 'Shopping List';
-  // const isBookshelfElem = e.target.dataset;
-  const isHomeElem = e.target.innerHTML === 'Home';
 
-  // console.log(e.target.innerHTML === "Shopping List");
-  // console.log(e.target.innerHTML === "Home");
-
+function onShoppingListOpened(e) { 
+  const isShoppingListElem = e.target.innerHTML === "Shopping List";
+  const isHomeElem = e.target.innerHTML === "Home";
+  
   if (isShoppingListElem || isHomeElem) {
     const supportElem = document.querySelector('.support');
     supportElem.classList.toggle('shopping-list-opened');
+ 
   }
-
+}; 
 
 
 function renderBooksByPageNumber(pageNumber) {
@@ -124,16 +100,15 @@ const homePage = document.querySelector('.home-page');
 homePage.addEventListener('click', getButtonId);
 
 function getButtonId(e) {
-  const isDeleteButtonPressed = e.target.parentElement.nodeName === 'BUTTON';
-
+  const isDeleteButtonPressed = e.target.parentElement.nodeName === "BUTTON";
+  
   if (isDeleteButtonPressed) {
     const selectedBookId = e.target.parentElement.dataset.id;
     deleteBookFromList(selectedBookId);
+  } else {};
 
-  } else {
-  }
-}
 
+};
 
 // ==============================
 
@@ -163,9 +138,11 @@ function deleteBookFromList(id) {
   if (isClear.length < 1) {
     const bookListSection = document.querySelector('.booklist');
     bookListSection.insertAdjacentHTML('beforeend', emptyShoppingListMarkup);
+  } else {
+    
+  };
+};
 
-  }
-}
 
 
 // =================RENDER=======================//
