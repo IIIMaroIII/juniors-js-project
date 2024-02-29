@@ -7,6 +7,41 @@ $items: 5;
   gap: 40px;
 }
 
+// .top-books-link {
+//   position: relative;
+// }
+
+.img-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.img-bgc {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 250ms ease-in-out, opacity 250ms ease-in-out;
+
+  padding: 26px 52px;
+  background-color: yellow;
+
+  width: 100%;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+
+  &-text {
+    display: block;
+    font-size: 14px;
+    line-height: 1.28571;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    color: $black;
+    text-align: center;
+  }
+}
+
 .top-books-list {
   display: flex;
   gap: 24px;
@@ -16,8 +51,14 @@ $items: 5;
   @include flex-basis(24px, 5);
   transform: scale(1);
   @include anim(transform);
-  &:hover {
+  &:hover,
+  &:focus {
     transform: scale(1.05);
+  }
+  &:hover .img-bgc,
+  &:focus .img-bgc {
+    transform: translateY(-20%);
+    opacity: 1;
   }
 }
 

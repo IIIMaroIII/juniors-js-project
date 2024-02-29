@@ -11,9 +11,7 @@ img {
 }
 
 .is-hidden {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
+  display: none;
 }
 
 .visually-hidden {
@@ -30,27 +28,29 @@ img {
 }
 
 /* Modal */
-
 .modal-on {
   overflow: hidden;
 }
 
-.backdrop {
-  position: fixed;
-  top: 0;
+  .backdrop{
 
-  width: 100%;
-  height: 100%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    
+    background-color: $modalColor;
 
-  background-color: $modalColor;
-}
+  .modal-on {
+    overflow: hidden;
+  }
 
-.modal {
-  background-color: $white;
+  .modal {
+    background-color: $white;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 
-  border: 2px solid $black;
-  border-radius: 18px;
-}
 
 // @media (max-width: 767px) {
 //   .is-hidden-head {
@@ -156,53 +156,177 @@ img {
 
   border: none;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 0;
-
-  background: transparent;
-  cursor: pointer;
-}
-
-.button-close-modal:active,
-.button-close-modal:hover,
-.button-close-modal:focus {
-  .modal-ico {
-    fill: #4f2ee8;
-    background: none;
+    border: 2px solid $black;
+    border-radius: 18px;
   }
-}
 
-.book-title {
-  color: #111111;
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 28px;
-  letter-spacing: -0.04em;
-  text-align: left;
-}
+  @media (max-width: 768px) {
+    .is-hidden-head {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
 
-.book-author {
-  color: #b4afaf;
-  font-size: 14px;
-  font-style: italic;
-  font-weight: 400;
-  line-height: 18px;
-  letter-spacing: -0.04em;
-  text-align: left;
-}
+    .modal {
+      position: absolute;
+      overflow: auto;
 
-.book-description {
-  color: #111111;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 18px;
-  letter-spacing: -0.04em;
-  text-align: left;
-  margin-bottom: 20px;
-}
+      max-width: 335px;
+
+      padding: 40px 24px;
+
+      width: 100%;
+      height: 100%;
+    }
+
+    .modal-wrapper {
+      max-width: 100%;
+
+      margin-bottom: 40px;
+    }
+
+    .modal-img {
+      width: 100%;
+    }
+
+    .save-to-list {
+      display: block;
+      margin: auto;
+      padding: 14px 22px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .button-close-modal {
+      min-height: 0;
+      top: 12px;
+      right: 12px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .modal {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 580px;
+
+      padding: 40px;
+    }
+
+    .modal-wrapper {
+      display: flex;
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .modal-img {
+      width: 192px;
+      height: 281px;
+    }
+
+    .modal-text-img {
+      width: calc(100% - 192px - 24px);
+    }
+
+    .shops-links {
+      flex-wrap: wrap;
+    }
+
+    .save-to-list {
+      height: auto;
+      width: 500px;
+      text-align: center;
+      padding: 20px 0px;
+      border: 2px solid #4f2ee8;
+      border-radius: 40px;
+      gap: 10px;
+    }
+
+    .button-close-modal {
+      top: 24px;
+      right: 24px;
+    }
+  }
+
+  .button-close-modal {
+    min-width: 0;
+
+    width: 28px;
+    height: 28px;
+    fill: black;
+
+    position: absolute;
+
+    border: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .button-close-modal:active,
+  .button-close-modal:hover,
+  .button-close-modal:focus {
+    .modal-ico {
+      fill: #4f2ee8;
+      background: none;
+    }
+  }
+
+  .book-title {
+    color: #111111;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: -0.04em;
+    text-align: left;
+  }
+
+  .book-author {
+    color: #b4afaf;
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: -0.04em;
+    text-align: left;
+
+
+    margin-bottom: 18px;
+  }
+
+  .book-description {
+    color: #111111;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: -0.04em;
+    text-align: left;
+    margin-bottom: 20px;
+  }
+
+  .shops-links {
+    display: flex;
+    gap: 20px;
+  }
+
+  .shopping-list-message {
+    margin-top: 8px;
+    color: #11111180;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: -0.04em;
+    text-align: center;
+  }
+
 
 .shops-links {
   display: flex;
@@ -225,7 +349,8 @@ img {
   text-align: center;
 }
 
-.shops-links {
-  display: flex;
-  list-style: none;
+
+  .shops-link:hover {
+    filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, .35));
+  }
 }
