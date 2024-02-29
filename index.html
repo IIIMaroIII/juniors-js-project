@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAA8CAYAAADWibxkAAAAAXNSR0IArs4c6QAAA5RJREFUaAXtW+2RmzAQdQnuIP6ZDyPoIFdAjHRp4NJBSrA7cDpIOnAJV4JL4E9mkJzMUMJlFgEWsMISCBxkPONByJJ239tdSYj1auXRh0Xphm3TJ48gmUMB8JTwJCaXF/NenrQswVPC3x6OABX8wxHQBP9QBLAoWVPCzwBa/T5ECOjAP4wH0FCcVKurZe89ICbpLxVws+w1AYzwH03AzftJCIDZl0W/oy9R+lR+oW7MbQUj6aEJFrt3SgBMNixKn2LCjzTkJxryBBNarxMZDflrTMQeyHFBiil40GMwASVoAEGJyOrg6kuO8W8hPz333KLagO8iAAzZaYwceO5mjkA31ueCrAS8yTRcbMF3EQDPCfJZIT205EtBowKvbVakoogiiolYkH4rSGv17arXhUBBQDVWTNJDLq4Py10KWP6WKJirIosy2OVVytqUTQmAMWGeWjWZsREm+w7znAq1UgAXtdSjIsuGAEp4BgRUnbXlgL/GAT/C4F8/ZO/YJlkr+uZFqGMfL9Eu+EuhLSWitU/Hxm+OA/cTEvCmJwBAk8t3DCymNFbH3qebnYxl7fKJ9pvOA7QEoLGJKWtapws1rP//4AELAZhlhtQtHiA3Iq0JFyN1CYFlEpxsH7CsArp9wLIKYJPTkLplFVhWAfw0CfOqZRkcsAzCwxhGqjYEsSc0aIwNMqROqwAyaF8PiLdijwyXV2nl+0JAF3hgwGsCboH3mgAT8N4SYAreSwKeP9mlwng1B9iC98gDRLYL/nwGQLYfDzxAZHDqbAu8bD9zAoaBBxLmTEACx+ulJfte50qAE/Bz9QBn4GdIQLZ24fZquMwqBFTFXZUXAnQnUraPwzKFpp4gdU2Uar81Li2otUDZwPDqXH4XAWW+UJEkZZgzVCZJ8aOaJNWHgEnkawjIaCh+ukmSAkL0Y2GGh4Smrj4anVuv3WS7G/LtBjNIpjBJuFDaqATkeUGhWWKFK711L0Y0bI5DQJEQpU2icAUWG+fuBMh8RPfEYmCxuiEE5Hl3xeR2D+s5kW9IgDhD4hOcuUOSlBq3arlPkhRmlXbdePJXNICUWMwFRQZnbl2AVfBYGbazNIAVAH8rhMstdZlCvjivwGoNBfO/ng3JDsPIuJUtdiVDAh9fvsiq5w0ogHvDcZNrwU0y2Fbsr2BLa8sreNzY8vM8RnJ5GVtOE3ftPg+Nelichxx31Qaf000cXI4wud7TGv8A210R7cc2BMoAAAAOZVhJZk1NACoAAAAIAAAAAAAAANJTkwAAAABJRU5ErkJggg==" />
     <title>Bookshelf</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&display=swap"
+      rel="stylesheet"
+    />
     
     <script type="module" crossorigin src="/juniors-js-project/commonHelpers.js"></script>
     <link rel="modulepreload" crossorigin href="/juniors-js-project/assets/vendor-b1ee5dfe.js">
@@ -17,29 +21,27 @@
   <nav class="header-nav">
     <div class="header-logo">
       <a href="./index.html" class="header-logo-link" data-header="bookshelf">
-        <div class="logo-container" >
+        <div class="logo-container">
           <svg class="logo-img" width="24" height="24">
             <use xlink:href="/juniors-js-project/assets/sprite-61614f66.svg#icon-logo-image"></use>
           </svg>
           <svg class="logo-text" width="77" height="13.27">
-            <use
-              xlink:href="/juniors-js-project/assets/sprite-61614f66.svg#icon-logo-text"
-              alt="Text logo icon"
-            ></use>
+            <use xlink:href="/juniors-js-project/assets/sprite-61614f66.svg#icon-logo-text"></use>
           </svg>
         </div>
       </a>
     </div>
     <ul class="header-nav-elem">
-      <li ><a href="./index.html" class="menu-item-home" data-header="home">Home</a></li>
-      <li >
+      <li>
+        <a href="./index.html" class="menu-item-home" data-header="home"
+          >Home</a
+        >
+      </li>
+      <li>
         <a href="#" class="menu-item-shop" data-header="shoppinglist"
           ><span>Shopping List</span>
           <svg class="bag-icon" width="20" height="20">
-            <use
-              xlink:href="/juniors-js-project/assets/sprite-61614f66.svg#icon-shopping-bag"
-              alt="Text logo icon"
-            ></use>
+            <use xlink:href="/juniors-js-project/assets/sprite-61614f66.svg#icon-shopping-bag"></use>
           </svg>
         </a>
       </li>
@@ -50,10 +52,7 @@
         >Toggle</label
       >
       <svg class="burger-menu" width="28" height="28">
-        <use
-          xlink:href="/juniors-js-project/assets/sprite-61614f66.svg#icon-burger-menu-icon"
-          alt="Burger menu icon"
-        ></use>
+        <use xlink:href="/juniors-js-project/assets/sprite-61614f66.svg#icon-burger-menu-icon"></use>
       </svg>
     </div>
   </nav>
@@ -64,11 +63,9 @@
         <a href="#" class="menu-item-shop"
           ><span>Shopping List</span>
           <svg class="bag-icon" width="20" height="20">
-            <use
-              href="/juniors-js-project/assets/sprite-61614f66.svg#icon-shopping-bag"
-              alt="Text logo icon"
-            ></use></svg
-        ></a>
+            <use href="/juniors-js-project/assets/sprite-61614f66.svg#icon-shopping-bag"></use>
+          </svg>
+        </a>
       </li>
     </ul>
     <img src="/juniors-js-project/assets/books-077eccf9.png" alt="Books Image" class="books-img" />
@@ -90,9 +87,9 @@
   </div>
 </section>
 
-<div class="home-books wrap-books" id="books-list">
+<!-- <div class="home-books wrap-books" id="books-list">
   <ul class="bok" id="home-category-books-list"></ul>
-</div>
+</div> -->
 
           <div class="support">
   <div class="support-title">
@@ -136,14 +133,14 @@
       </div>
     </main>
     <footer>
-      <!DOCTYPE html>
+      <!-- <!DOCTYPE html>
 <html>
   <head>
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&display=swap"
       rel="stylesheet"
-    />
-    <!-- <style>
+    /> -->
+<!-- <style>
       body {
         font-family: 'DM Sans', sans-serif;
         overflow-x: hidden; /* Запобігає горизонтальному скролінгу */
@@ -181,46 +178,51 @@
         }
       }
     </style> -->
-  </head>
-  <body>
-    <div class="footer">
-      <p>© 2024 Team 11 JS Homework.</p>
-    </div>
-    <div class="scroll-to-top" onclick="scrollToTop()" style="display:none;">↑ Scroll to top</div>
+<!-- </head>
+  <body> -->
+<div class="footer">
+  <p>© 2024 Team 11 JS Homework.</p>
+</div>
+<div class="scroll-to-top" onclick="scrollToTop()" style="display: none">
+  ↑ Scroll to top
+</div>
 
-    <script>
-      function scrollToTop() {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
+<script>
+  function scrollToTop() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  }
 
-      // Функція для перевірки, чи було прокручено достатньо вниз з урахуванням розміру екрану
-      function checkScroll() {
-        let scrollThreshold;
-        // Встановлення порогових значень прокрутки в залежності від ширини екрану
-        if (window.innerWidth > 1024) { // Для десктопних версій
-          scrollThreshold = 500; // Припустимо, для десктопів поріг 500px
-        } else if (window.innerWidth > 768) { // Для планшетних версій
-          scrollThreshold = 300; // Для планшетів поріг 300px
-        } else { // Для мобільних версій
-          scrollThreshold = 200; // Для мобільних поріг 200px
-        }
+  // Функція для перевірки, чи було прокручено достатньо вниз з урахуванням розміру екрану
+  function checkScroll() {
+    let scrollThreshold;
+    // Встановлення порогових значень прокрутки в залежності від ширини екрану
+    if (window.innerWidth > 1024) {
+      // Для десктопних версій
+      scrollThreshold = 500; // Припустимо, для десктопів поріг 500px
+    } else if (window.innerWidth > 768) {
+      // Для планшетних версій
+      scrollThreshold = 300; // Для планшетів поріг 300px
+    } else {
+      // Для мобільних версій
+      scrollThreshold = 200; // Для мобільних поріг 200px
+    }
 
-        // Відображення або приховування кнопки в залежності від прокрутки
-        if (window.scrollY > scrollThreshold) {
-          document.querySelector('.scroll-to-top').style.display = 'block';
-        } else {
-          document.querySelector('.scroll-to-top').style.display = 'none';
-        }
-      }
+    // Відображення або приховування кнопки в залежності від прокрутки
+    if (window.scrollY > scrollThreshold) {
+      document.querySelector('.scroll-to-top').style.display = 'block';
+    } else {
+      document.querySelector('.scroll-to-top').style.display = 'none';
+    }
+  }
 
-      // Відслідковування події прокрутки сторінки
-      window.addEventListener('scroll', checkScroll);
-      // Відслідковування зміни розміру вікна для перевстановлення порогу прокрутки
-      window.addEventListener('resize', checkScroll);
-    </script>
-  </body>
+  // Відслідковування події прокрутки сторінки
+  window.addEventListener('scroll', checkScroll);
+  // Відслідковування зміни розміру вікна для перевстановлення порогу прокрутки
+  window.addEventListener('resize', checkScroll);
+</script>
+<!-- </body>
 
-</html>
+</html> -->
 
       <div data-modal class="backdrop is-hidden">
   <div class="modal">
