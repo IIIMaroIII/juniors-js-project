@@ -1,4 +1,3 @@
-import sprite from '../img/sprite.svg';
 // ========need class of BookListButton
 const body = document.body;
 const burgerMenu = document.querySelector('.burger-menu');
@@ -15,11 +14,12 @@ shoppingListButtonMobile.addEventListener('click', onShoppingListButton);
 const headerNav = document.querySelector('.header-nav');
 // const headerMobileNav = document.querySelector('.mobile-menu-nav');
 headerNav.addEventListener('click', onShoppingListOpened);
-// headerMobileNav.addEventListener('click', onShoppingListOpened);
+
 const emptyShoppingListMarkup = ` 
         <li class="empty-item">
+
             <p class="empty-title">This page is empty, add some books and proceed to order.</p>
-            <img class="empty-image" src="../../img/shoppinglist/emptyListBook.png" alt="books">
+            <img class="empty-image" src="${emptyListImg}" alt="books">
         </li> `;
 
 function onShoppingListButton(e) {
@@ -31,6 +31,14 @@ function onShoppingListButton(e) {
 
   const sidebar = document.querySelector('.home-sidebar-nav-categories');
   sidebar.style.display = 'none';
+
+  const screenWidth = window.innerWidth;
+  const supportElem = document.querySelector('.support');
+  const sideBarContainer = document.querySelector('.side-bar-container');
+  if (screenWidth < 1440) {
+    supportElem.style.display = 'none';
+    sideBarContainer.style.display = 'none';
+  }
 
   const homePage = document.querySelector('.home-page');
   homePage.innerHTML =
@@ -71,8 +79,8 @@ function renderBooksByPageNumber(pageNumber) {
   const bookList = isBooksInLS();
   const bookListOnPage = [];
   let numberOfBooksOnPage;
-
-  if (isMobile()) {
+  const screenWidth = window.innerWidth;
+  if (screenWidth < 767) {
     numberOfBooksOnPage = 4;
   } else {
     numberOfBooksOnPage = 3;
@@ -133,7 +141,7 @@ function deleteBookFromList(id) {
   localStorage.removeItem('Shopping');
   localStorage.setItem('Shopping', JSON.stringify(newBookList));
   const isClear = isBooksInLS();
-  if (isClear < 1) {
+  if (isClear.length < 1) {
     const bookListSection = document.querySelector('.booklist');
     bookListSection.insertAdjacentHTML('beforeend', emptyShoppingListMarkup);
   }
@@ -169,7 +177,7 @@ function bookTemplate({
                     <p class="booklist-list">${list_name}</p>
                 </div>
                 <button type="button" class="booklist-delete-btn" data-id="${_id}">
-                    <img src="../../img/shoppinglist/trash-icon.png" class="trash-icon" width="34" height="34">
+                    <img src="${trashbinImg}" class="trash-icon" width="34" height="34">
                 </button> 
             </div>
             <div class="description-box">
@@ -181,11 +189,11 @@ function bookTemplate({
             <ul class="booklist-link-box">
                 <li class="booklist-amazon">
                     <a class="booklist-amazon-link" href="${amazonBuyLink}"
-                        target="_blank"><img src="../img/shops/light-amazon.png" alt=""></a>
+                        target="_blank"><img src="${imgAmazon}" alt=""></a>
                 </li>
                 <li class="booklist-apple">
                     <a class="booklist-apple-link" href="${appleBuyLink}"
-                        target="_blank"><img src="../img/shops/light-apple.png" alt=""></a>
+                        target="_blank"><img src="${imgApple}" alt=""></a>
                 </li>
             </ul>
 
