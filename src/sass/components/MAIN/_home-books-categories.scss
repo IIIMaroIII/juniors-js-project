@@ -21,6 +21,18 @@ li {
   flex-direction: column;
   gap: 24px;
 }
+//Active state
+// .active-state {
+//   font-weight: 700;
+//   color: $violet;
+// }
+
+h3.active-state {
+  font-weight: 700;
+  color: $violet;
+  text-transform: uppercase;
+}
+//============
 
 .text-style-book-category {
   @include dm-sans(400);

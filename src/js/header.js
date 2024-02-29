@@ -26,3 +26,16 @@ themeToggle.addEventListener('click', function () {
   isDarkMode = !isDarkMode;
 });
 //=========================
+//Active state for nav elements
+function toggleActive(event) {
+  // Remove 'active' class from any other item:
+  const navItems = document.querySelectorAll('.header-nav-elem li a');
+  navItems.forEach(item => item.classList.remove('is-active'));
+
+  // Add 'active' class to the clicked item:
+  event.target.closest('a').classList.add('is-active');
+}
+const navLinks = document.querySelectorAll('.header-nav-elem li a');
+navLinks.forEach(link => link.addEventListener('click', toggleActive));
+
+//====================

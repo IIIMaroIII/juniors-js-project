@@ -13,8 +13,9 @@ const headerNav = document.querySelector('.header-nav');
 headerNav.addEventListener('click', onShoppingListOpened);
 
 
+const emptyShoppingListMarkup = ` 
+        <li class="empty-item">
 
-const emptyShoppingListMarkup = `<li class="empty-item">
             <p class="empty-title">This page is empty, add some books and proceed to order.</p>
             <img class="empty-image" src="${emptyListImg}" alt="books">
         </li> `;
@@ -26,6 +27,15 @@ function onShoppingListButton(e) {
   
   const sidebar = document.querySelector('.home-sidebar-nav-categories');
   sidebar.style.display = 'none';
+
+  const screenWidth = window.innerWidth;
+  const supportElem = document.querySelector('.support');
+  const sideBarContainer = document.querySelector('.side-bar-container');
+  if (screenWidth < 1440) { 
+    supportElem.style.display = 'none';
+    sideBarContainer.style.display = 'none';
+
+  };
 
   const homePage = document.querySelector('.home-page');
   homePage.innerHTML = '<h1 class="booklist-title">Shopping <span class="booklist-title-span">List</span></h1>';
@@ -41,35 +51,29 @@ function onShoppingListButton(e) {
     bookListSection.insertAdjacentHTML('beforeend', emptyShoppingListMarkup);
   } else {
     renderBooksByPageNumber(pageNumber);
-  }
+  };
 }
 
 
 
 function onShoppingListOpened(e) { 
-  // e.preventDefault();
   const isShoppingListElem = e.target.innerHTML === "Shopping List";
-  // const isBookshelfElem = e.target.dataset;
   const isHomeElem = e.target.innerHTML === "Home";
   
-  // console.log(e.target.innerHTML === "Shopping List");
-  // console.log(e.target.innerHTML === "Home");
   if (isShoppingListElem || isHomeElem) {
     const supportElem = document.querySelector('.support');
     supportElem.classList.toggle('shopping-list-opened');
  
   }
-
-  // console.log(isBookshelfElem);
-  // console.log(isHomeElem);
 }; 
+
 
 function renderBooksByPageNumber(pageNumber) {
   const bookList = isBooksInLS();
   const bookListOnPage = [];
   let numberOfBooksOnPage;
-
-  if (isMobile()) {
+  const screenWidth = window.innerWidth;
+  if (screenWidth < 767) {
     numberOfBooksOnPage = 4;
   } else {
     numberOfBooksOnPage = 3;
@@ -101,9 +105,7 @@ function getButtonId(e) {
   if (isDeleteButtonPressed) {
     const selectedBookId = e.target.parentElement.dataset.id;
     deleteBookFromList(selectedBookId);
-  } else {
-
-  };
+  } else {};
 
 
 };
@@ -133,9 +135,11 @@ function deleteBookFromList(id) {
   localStorage.removeItem('Shopping');
   localStorage.setItem('Shopping', JSON.stringify(newBookList));
   const isClear = isBooksInLS();
-  if (isClear < 1) {
+  if (isClear.length < 1) {
     const bookListSection = document.querySelector('.booklist');
     bookListSection.insertAdjacentHTML('beforeend', emptyShoppingListMarkup);
+  } else {
+    
   };
 };
 
