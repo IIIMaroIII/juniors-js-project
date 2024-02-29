@@ -105,6 +105,9 @@ body.dark-mode div.list-item,
 body.dark-mode h3.text-style-book-category {
   color: rgba(255, 255, 255, 0.6);
 }
+body.dark-mode h3.text-style-book-category {
+  color: #eac645;
+}
 body.dark-mode .header {
   background-color: #111;
   border: 1.5px solid rgb(248, 246, 246);
@@ -595,6 +598,12 @@ input {
   color: #111;
 }
 
+.mob-menu-nav .menu-item-home {
+  border-radius: 36px;
+  background-color: #eac645;
+  font-weight: 700;
+}
+
 .menu-item-shop {
   font-size: 14px;
   line-height: 20px;
@@ -627,14 +636,9 @@ input {
   font-weight: 500;
 }
 
-.menu-item-home:hover,
-.menu-item-home:focus,
-.menu-item-home:active,
-.menu-item-shop:hover,
-.menu-item-shop:focus,
-.menu-item-shop:active {
-  font-weight: 700;
+.is-active {
   background-color: #eac645;
+  font-weight: 700;
 }
 
 .menu-item-shop span:hover,
@@ -893,6 +897,12 @@ li {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 24px;
+}
+
+h3.active-state {
+  font-weight: 700;
+  color: #4f2ee8;
+  text-transform: uppercase;
 }
 
 .text-style-book-category {
