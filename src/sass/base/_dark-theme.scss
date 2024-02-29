@@ -43,6 +43,9 @@ body.dark-mode {
     color: #ffffff99;
   }
 
+  h3.text-style-book-category {
+    color: $yellow;
+  }
   // Header Styles
   .header {
     background-color: $black;
@@ -77,7 +80,7 @@ body.dark-mode {
   .booklist-title {
     color: white;
   }
-  
+
   .booklist-item {
     background: rgb(17, 17, 17);
   }
@@ -86,8 +89,6 @@ body.dark-mode {
   .booklist-description {
     color: white;
   }
-  
-  
 
   //==============================
 }

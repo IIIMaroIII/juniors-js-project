@@ -36,3 +36,25 @@ allCategoriesEl.addEventListener('click', () => {
 function onBookClick(idBook) {
   console.log(idBook);
 }
+
+//Active state for categories
+function toggleCategoryActive(event) {
+  // Remove 'active-state' from any other category and "All Categories":
+  const categories = document.querySelectorAll(
+    '.categories-list .home-category-item, .home-all-categories'
+  );
+  categories.forEach(category => category.classList.remove('active-state'));
+
+  // Add 'active-state' class to the clicked category:
+  event.target.closest('.home-category-item').classList.add('active-state');
+}
+
+// Attach event listeners to categories
+const categoryLinks = document.querySelectorAll(
+  '.categories-list .home-category-item'
+);
+categoryLinks.forEach(link =>
+  link.addEventListener('click', toggleCategoryActive)
+);
+
+//============================

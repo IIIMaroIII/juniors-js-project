@@ -92,6 +92,11 @@
   // background: $yellow;
   color: $black;
 }
+.mob-menu-nav .menu-item-home {
+  border-radius: 36px;
+  background-color: $yellow;
+  font-weight: 700;
+}
 .menu-item-shop {
   font-size: 14px;
   line-height: 20px;
@@ -120,15 +125,19 @@
   font-weight: 500;
 }
 
-.menu-item-home:hover,
-.menu-item-home:focus,
-.menu-item-home:active,
-.menu-item-shop:hover,
-.menu-item-shop:focus,
-.menu-item-shop:active {
-  font-weight: 700;
+.is-active {
   background-color: $yellow;
+  font-weight: 700;
 }
+// .menu-item-home:hover,
+// .menu-item-home:focus,
+// .menu-item-home:active,
+// .menu-item-shop:hover,
+// .menu-item-shop:focus,
+// .menu-item-shop:active {
+//   font-weight: 700;
+//   background-color: $yellow;
+// }
 .menu-item-shop span:hover,
 .menu-item-shop span:focus,
 .menu-item-shop span:active {
