@@ -55,7 +55,9 @@ export class BooksSection {
           <li class="book-item book-item-styles top-books-item" data-id="${_id}">  
            
           <div class="wrap-item-img top-books-link">
-                  <img class="book-img top-books-img" src="${book_image}" alt="" title=""/>
+                  <div class="img-wrapper"><img class="book-img top-books-img" src="${book_image}" alt="" title=""/><div class="img-bgc">
+                  <p class="img-bgc-text">QUICK VIEW</p>
+</div></div>
                   <h3 class="info-item-name top-books-title">
                       ${title}
                   </h3>

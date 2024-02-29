@@ -1,7 +1,5 @@
 .booklist-section {
- 
   margin: 0 20px 0 20px;
-
 }
 
 .booklist-apple-link {
@@ -113,9 +111,6 @@
   gap: 20px;
 }
 
-.booklist-item-image {
-}
-
 .booklist-item {
   width: 335px;
   height: 170px;
@@ -125,7 +120,6 @@
   border-radius: 16px;
   padding-top: 14px;
   padding-bottom: 14px;
-
 }
 
 .booklist-item-info {
@@ -164,7 +158,6 @@
   width: 30px;
   height: 30px;
   display: block;
-  
 }
 
 /* Media queries*/
@@ -174,8 +167,6 @@
 // ===========DESKTOP=====================
 
 @media screen and (min-width: 768px) {
- 
-
   .booklist-item {
     width: 704px;
     height: 213px;
@@ -186,7 +177,6 @@
   .booklist-title {
     font-size: 48px;
     line-height: 52px;
-  
   }
 
   .booklist-list {
@@ -214,28 +204,18 @@
     line-height: 24px;
     margin-bottom: 20px;
   }
-   
+
   .booklist-link-box {
     gap: 16px;
-  }
-
-  .title-box {
   }
 }
 
 // ============KOMP====================
 
 @media screen and (min-width: 1440px) {
-
-
-
   .booklist-item {
     width: 996px;
     height: 213px;
-  }
-
-  .booklist-title {
-    
   }
 
   .booklist-description {

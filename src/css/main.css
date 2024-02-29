@@ -640,6 +640,38 @@ label:active:after {
   gap: 40px;
 }
 
+.img-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.img-bgc {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  opacity: 0;
+  -webkit-transition: opacity 250ms ease-in-out, -webkit-transform 250ms ease-in-out;
+  transition: opacity 250ms ease-in-out, -webkit-transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out, opacity 250ms ease-in-out;
+  transition: transform 250ms ease-in-out, opacity 250ms ease-in-out, -webkit-transform 250ms ease-in-out;
+  padding: 26px 52px;
+  background-color: yellow;
+  width: 100%;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+.img-bgc-text {
+  display: block;
+  font-size: 14px;
+  line-height: 1.28571;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: #111;
+  text-align: center;
+}
+
 .top-books-list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -658,9 +690,14 @@ label:active:after {
   transition: transform 250ms ease-in-out;
   transition: transform 250ms ease-in-out, -webkit-transform 250ms ease-in-out;
 }
-.top-books-item:hover {
+.top-books-item:hover, .top-books-item:focus {
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
+}
+.top-books-item:hover .img-bgc, .top-books-item:focus .img-bgc {
+  -webkit-transform: translateY(-20%);
+          transform: translateY(-20%);
+  opacity: 1;
 }
 
 .top-books-category-title {
@@ -1097,6 +1134,10 @@ img {
 }
 
 /* Modal */
+.modal-on {
+  overflow: hidden;
+}
+
 .backdrop {
   position: fixed;
   top: 0;
@@ -1514,6 +1555,8 @@ img {
     padding-top: 26px;
     padding: 24px 40px 20px;
   }
+}
+@media (min-width: 768px) and (max-width: 1439px) {
   .support-title-text {
     font-weight: 700;
     font-size: 22px;
@@ -1521,6 +1564,8 @@ img {
     letter-spacing: -0.04em;
     color: #fff;
   }
+}
+@media (min-width: 768px) and (max-width: 1439px) {
   .support-arrow {
     width: 38px;
     height: 38px;
@@ -1653,6 +1698,11 @@ img {
 }
 .booklist-section {
   margin: 0 20px 0 20px;
+}
+
+.booklist-apple-link {
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
 }
 
 .booklist-title {

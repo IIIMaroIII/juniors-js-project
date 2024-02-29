@@ -75,7 +75,10 @@ function createTopBooksListEl(arr) {
       }) => {
         return `<li class="top-books-item">
    <a id="${_id}" href='${amazon_product_url}' target="_blank" class="top-books-link">
-     <img src="${book_image}" alt="${title}" class="top-books-img" />
+     <div class="img-wrapper"><img src="${book_image}" alt="${title}" class="top-books-img" /><div class="img-bgc">
+  <p class="img-bgc-text">QUICK VIEW</p>
+</div></div>
+     
      <h3 class="top-books-title">${title}</h3>
      <p class="top-books-desc">${author}</p>
    </a>
