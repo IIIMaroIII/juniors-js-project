@@ -1,30 +1,31 @@
 <div class="header">
   <nav class="header-nav">
     <div class="header-logo">
-      <a href="./index.html" class="header-logo-link">
+      <a href="./index.html" class="header-logo-link" data-header="bookshelf">
         <div class="logo-container">
           <svg class="logo-img" width="24" height="24">
             <use xlink:href="./img/sprite.svg#icon-logo-image"></use>
           </svg>
           <svg class="logo-text" width="77" height="13.27">
-            <use
-              xlink:href="./img/sprite.svg#icon-logo-text"
-              alt="Text logo icon"
-            ></use>
+            <use xlink:href="./img/sprite.svg#icon-logo-text"></use>
           </svg>
         </div>
       </a>
     </div>
     <ul class="header-nav-elem">
-      <li><a href="./index.html" class="menu-item-home">Home</a></li>
       <li>
-        <a href="#" class="menu-item-shop"
+        <a
+          href="./index.html"
+          class="menu-item-home is-active"
+          data-header="home"
+          >Home</a
+        >
+      </li>
+      <li>
+        <a href="#" class="menu-item-shop" data-header="shoppinglist"
           ><span>Shopping List</span>
           <svg class="bag-icon" width="20" height="20">
-            <use
-              xlink:href="./img/sprite.svg#icon-shopping-bag"
-              alt="Text logo icon"
-            ></use>
+            <use xlink:href="./img/sprite.svg#icon-shopping-bag"></use>
           </svg>
         </a>
       </li>
@@ -35,25 +36,20 @@
         >Toggle</label
       >
       <svg class="burger-menu" width="28" height="28">
-        <use
-          xlink:href="./img/sprite.svg#icon-burger-menu-icon"
-          alt="Burger menu icon"
-        ></use>
+        <use xlink:href="./img/sprite.svg#icon-burger-menu-icon"></use>
       </svg>
     </div>
   </nav>
   <div class="mobile-menu">
     <ul class="mob-menu-nav">
-      <li><a href="./index.html" class="menu-item-home">Home</a></li>
+      <li><a href="./index.html" class="menu-item-home mobile">Home</a></li>
       <li>
-        <a href="#" class="menu-item-shop"
+        <a href="#" class="menu-item-shop mobile"
           ><span>Shopping List</span>
           <svg class="bag-icon" width="20" height="20">
-            <use
-              href="./img/sprite.svg#icon-shopping-bag"
-              alt="Text logo icon"
-            ></use></svg
-        ></a>
+            <use href="./img/sprite.svg#icon-shopping-bag"></use>
+          </svg>
+        </a>
       </li>
     </ul>
     <img src="./img/books.png" alt="Books Image" class="books-img" />

@@ -1,25 +1,67 @@
 body.dark-mode {
-  background-color: #333;
+  .footer {
+    background-color: $black;
+    color: $white;
+  }
+  .footer p {
+    color: $subtitle;
+  }
 
+  p.shopping-list-message {
+    color: #ffffff80;
+  }
+
+  .list-item:hover,
+  .list-item:focus,
+  .list.item:active,
+  h3.text-style-book-category:hover,
+  h3.text-style-book-category:focus,
+  h3.text-style-book-category:active {
+    color: $yellow;
+  }
+
+  h1,
+  h3.top-books-title,
+  button.see-more,
+  div.scroll-to-top,
+  h2.book-title,
+  p.book-description,
+  button.save-to-list {
+    color: $white;
+  }
+
+  .modal {
+    background-color: $black-1;
+    border: 2px solid rgb(255, 255, 255);
+  }
+
+  .modal-icon.close use {
+    filter: invert(1);
+  }
+  div.list-item,
+  h3.text-style-book-category {
+    color: #ffffff99;
+  }
+
+  h3.text-style-book-category {
+    color: $yellow;
+  }
   // Header Styles
   .header {
-    background-color: #111;
+    background-color: $black;
     border: 1.5px solid rgb(248, 246, 246);
   }
 
   // Burger Menu
-  .burger-menu {
-    filter: invert(100%);
-  }
-
-  // Logo
+  .burger-menu,
   .logo-text {
     filter: invert(100%);
   }
 
   // Navigation
   .header-nav-elem {
-    span {
+    span,
+    .menu-item-home {
       color: $white;
     }
 
@@ -27,7 +69,30 @@ body.dark-mode {
       filter: none;
     }
   }
+  //============================
+  //Main container (home and sidebar)
   .main-container {
-    background-color: $black;
+    background-color: $black-1;
   }
+
+  // Shopping List
+
+  .booklist-title {
+    color: white;
+  }
+
+  .booklist-item {
+    background: rgb(17, 17, 17);
+  }
+
+  .title-box h1,
+  .booklist-description {
+    color: white;
+  }
+
+  
+  .empty-title {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
 }

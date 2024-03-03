@@ -1,24 +1,44 @@
+import trashbinImg from "./../img/shoppinglist/trash-icon.png";
+
+import imgApple from './../img/shops/light-apple.png';
+import imgAmazon from './../img/shops/light-amazon.png';
+
+import emptyListImg from './../img/shoppinglist/emptyListBook.png';
+
 // ========need class of BookListButton
 const shoppingListButton = document.querySelector('.menu-item-shop');
 shoppingListButton.addEventListener('click', onShoppingListButton);
 
+const headerNav = document.querySelector('.header-nav');
+headerNav.addEventListener('click', onShoppingListOpened);
+
+
 const emptyShoppingListMarkup = ` 
         <li class="empty-item">
+
             <p class="empty-title">This page is empty, add some books and proceed to order.</p>
-            <img class="empty-image" src="/src/img/shopping-list-books.png" alt="books">
+            <img class="empty-image" src="${emptyListImg}" alt="books">
         </li> `;
 
 function onShoppingListButton(e) {
   e.preventDefault();
-
+  
   let pageNumber = 1;
-
+  
   const sidebar = document.querySelector('.home-sidebar-nav-categories');
   sidebar.style.display = 'none';
 
+  const screenWidth = window.innerWidth;
+  const supportElem = document.querySelector('.support');
+  const sideBarContainer = document.querySelector('.side-bar-container');
+  if (screenWidth < 1440) { 
+    supportElem.style.display = 'none';
+    sideBarContainer.style.display = 'none';
+
+  };
+
   const homePage = document.querySelector('.home-page');
-  homePage.innerHTML =
-    '<h1 class="booklist-title">Shopping <span class="booklist-title-span">List</span></h1>';
+  homePage.innerHTML = '<h1 class="booklist-title">Shopping <span class="booklist-title-span">List</span></h1>';
 
   const bookListTytle = document.querySelector('.booklist-title');
   const startMarkup = `<div class="booklist-section"><ul class="booklist"></ul></div>`;
@@ -31,15 +51,29 @@ function onShoppingListButton(e) {
     bookListSection.insertAdjacentHTML('beforeend', emptyShoppingListMarkup);
   } else {
     renderBooksByPageNumber(pageNumber);
-  }
+  };
 }
+
+
+
+function onShoppingListOpened(e) { 
+  const isShoppingListElem = e.target.innerHTML === "Shopping List";
+  const isHomeElem = e.target.innerHTML === "Home";
+  
+  if (isShoppingListElem || isHomeElem) {
+    const supportElem = document.querySelector('.support');
+    supportElem.classList.toggle('shopping-list-opened');
+ 
+  }
+}; 
+
 
 function renderBooksByPageNumber(pageNumber) {
   const bookList = isBooksInLS();
   const bookListOnPage = [];
   let numberOfBooksOnPage;
-
-  if (isMobile()) {
+  const screenWidth = window.innerWidth;
+  if (screenWidth < 767) {
     numberOfBooksOnPage = 4;
   } else {
     numberOfBooksOnPage = 3;
@@ -66,16 +100,15 @@ const homePage = document.querySelector('.home-page');
 homePage.addEventListener('click', getButtonId);
 
 function getButtonId(e) {
-  const isDeleteButtonPressed = e.target.classList.contains(
-    'booklist-delete-btn'
-  );
+  const isDeleteButtonPressed = e.target.parentElement.nodeName === "BUTTON";
+  
   if (isDeleteButtonPressed) {
-    const selectedBookId = e.target.dataset.id;
-
+    const selectedBookId = e.target.parentElement.dataset.id;
     deleteBookFromList(selectedBookId);
-  } else {
-  }
-}
+  } else {};
+
+
+};
 
 // ==============================
 
@@ -97,12 +130,20 @@ function isMobile() {
 function deleteBookFromList(id) {
   const bookList = isBooksInLS();
   const newBookList = bookList.filter(book => book._id != id);
-  console.log(newBookList);
   const bookToDelete = document.querySelector(`[data-id="${id}"]`);
   bookToDelete.remove();
   localStorage.removeItem('Shopping');
   localStorage.setItem('Shopping', JSON.stringify(newBookList));
-}
+  const isClear = isBooksInLS();
+  if (isClear.length < 1) {
+    const bookListSection = document.querySelector('.booklist');
+    bookListSection.insertAdjacentHTML('beforeend', emptyShoppingListMarkup);
+  } else {
+    
+  };
+};
+
+
 
 // =================RENDER=======================//
 
@@ -134,7 +175,7 @@ function bookTemplate({
                     <p class="booklist-list">${list_name}</p>
                 </div>
                 <button type="button" class="booklist-delete-btn" data-id="${_id}">
-                    <img src="../../img/shoppinglist/trash-icon.png" alt="trash-icon" width="30" height="30">
+                    <img src="${trashbinImg}" class="trash-icon" width="34" height="34">
                 </button> 
             </div>
             <div class="description-box">
@@ -146,11 +187,11 @@ function bookTemplate({
             <ul class="booklist-link-box">
                 <li class="booklist-amazon">
                     <a class="booklist-amazon-link" href="${amazonBuyLink}"
-                        target="_blank"><img src="../img/shops/light-amazon.png" alt=""></a>
+                        target="_blank"><img src="${imgAmazon}" alt=""></a>
                 </li>
                 <li class="booklist-apple">
                     <a class="booklist-apple-link" href="${appleBuyLink}"
-                        target="_blank"><img src="../img/shops/light-apple.png" alt=""></a>
+                        target="_blank"><img src="${imgApple}" alt=""></a>
                 </li>
             </ul>
 
