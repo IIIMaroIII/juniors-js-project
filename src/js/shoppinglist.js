@@ -1,8 +1,11 @@
+
 import trashbinImg from './../img/shoppinglist/trash-icon.png';
 import sprite from '../img/sprite.svg';
+
 import imgApple from './../img/shops/light-apple.png';
 import imgAmazon from './../img/shops/light-amazon.png';
 import emptyListImg from './../img/shoppinglist/emptyListBook.png';
+
 // ========need class of BookListButton
 const burgerMenu = document.querySelector('.burger-menu');
 const useElement = burgerMenu.querySelector('use');
@@ -21,6 +24,7 @@ const headerNav = document.querySelector('.header-nav');
 headerNav.addEventListener('click', onShoppingListOpened);
 headerMobileNav.addEventListener('click', onShoppingListOpened);
 
+
 const emptyShoppingListMarkup = ` 
         <li class="empty-item">
 
@@ -30,12 +34,13 @@ const emptyShoppingListMarkup = `
 
 function onShoppingListButton(e) {
   e.preventDefault();
+
   mobileMenuDiv.classList.remove('active');
   body.style.overflow = 'auto';
   useElement.setAttribute('xlink:href', `${sprite}#icon-burger-menu-icon`);
 
   let pageNumber = 1;
-
+  
   const sidebar = document.querySelector('.home-sidebar-nav-categories');
   sidebar.style.display = 'none';
 
@@ -48,8 +53,7 @@ function onShoppingListButton(e) {
   }
 
   const homePage = document.querySelector('.home-page');
-  homePage.innerHTML =
-    '<h1 class="booklist-title">Shopping <span class="booklist-title-span">List</span></h1>';
+  homePage.innerHTML = '<h1 class="booklist-title">Shopping <span class="booklist-title-span">List</span></h1>';
 
   const bookListTytle = document.querySelector('.booklist-title');
   const startMarkup = `<div class="booklist-section"><ul class="booklist"></ul></div>`;
@@ -65,15 +69,20 @@ function onShoppingListButton(e) {
   }
 }
 
+
 function onShoppingListOpened(e) {
   const isShoppingListElem = e.target.innerHTML === 'Shopping List';
   const isHomeElem = e.target.innerHTML === 'Home';
 
+
   if (isShoppingListElem || isHomeElem) {
     const supportElem = document.querySelector('.support');
     supportElem.classList.toggle('shopping-list-opened');
+ 
   }
+
 }
+
 
 function renderBooksByPageNumber(pageNumber) {
   const bookList = isBooksInLS();
@@ -107,14 +116,16 @@ const homePage = document.querySelector('.home-page');
 homePage.addEventListener('click', getButtonId);
 
 function getButtonId(e) {
-  const isDeleteButtonPressed = e.target.parentElement.nodeName === 'BUTTON';
-
+  const isDeleteButtonPressed = e.target.parentElement.nodeName === "BUTTON";
+  
   if (isDeleteButtonPressed) {
     const selectedBookId = e.target.parentElement.dataset.id;
     deleteBookFromList(selectedBookId);
+
   } else {
   }
 }
+
 
 // ==============================
 
@@ -145,8 +156,10 @@ function deleteBookFromList(id) {
     const bookListSection = document.querySelector('.booklist');
     bookListSection.insertAdjacentHTML('beforeend', emptyShoppingListMarkup);
   } else {
+
   }
 }
+
 
 // =================RENDER=======================//
 
