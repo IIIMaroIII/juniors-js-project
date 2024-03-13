@@ -1,16 +1,28 @@
-import trashbinImg from "./../img/shoppinglist/trash-icon.png";
+
+import trashbinImg from './../img/shoppinglist/trash-icon.png';
+import sprite from '../img/sprite.svg';
 
 import imgApple from './../img/shops/light-apple.png';
 import imgAmazon from './../img/shops/light-amazon.png';
-
 import emptyListImg from './../img/shoppinglist/emptyListBook.png';
 
 // ========need class of BookListButton
+const burgerMenu = document.querySelector('.burger-menu');
+const useElement = burgerMenu.querySelector('use');
+const body = document.body;
+const mobileMenuDiv = document.querySelector('.mobile-menu');
+const headerMobileNav = document.querySelector('.mobile-menu-nav');
+
 const shoppingListButton = document.querySelector('.menu-item-shop');
+const shoppingListButtonMobile = document.querySelector(
+  '.menu-item-shop.mobile'
+);
 shoppingListButton.addEventListener('click', onShoppingListButton);
+shoppingListButtonMobile.addEventListener('click', onShoppingListButton);
 
 const headerNav = document.querySelector('.header-nav');
 headerNav.addEventListener('click', onShoppingListOpened);
+headerMobileNav.addEventListener('click', onShoppingListOpened);
 
 
 const emptyShoppingListMarkup = ` 
@@ -22,7 +34,11 @@ const emptyShoppingListMarkup = `
 
 function onShoppingListButton(e) {
   e.preventDefault();
-  
+
+  mobileMenuDiv.classList.remove('active');
+  body.style.overflow = 'auto';
+  useElement.setAttribute('xlink:href', `${sprite}#icon-burger-menu-icon`);
+
   let pageNumber = 1;
   
   const sidebar = document.querySelector('.home-sidebar-nav-categories');
@@ -31,11 +47,10 @@ function onShoppingListButton(e) {
   const screenWidth = window.innerWidth;
   const supportElem = document.querySelector('.support');
   const sideBarContainer = document.querySelector('.side-bar-container');
-  if (screenWidth < 1440) { 
+  if (screenWidth < 1440) {
     supportElem.style.display = 'none';
     sideBarContainer.style.display = 'none';
-
-  };
+  }
 
   const homePage = document.querySelector('.home-page');
   homePage.innerHTML = '<h1 class="booklist-title">Shopping <span class="booklist-title-span">List</span></h1>';
@@ -51,21 +66,22 @@ function onShoppingListButton(e) {
     bookListSection.insertAdjacentHTML('beforeend', emptyShoppingListMarkup);
   } else {
     renderBooksByPageNumber(pageNumber);
-  };
+  }
 }
 
 
+function onShoppingListOpened(e) {
+  const isShoppingListElem = e.target.innerHTML === 'Shopping List';
+  const isHomeElem = e.target.innerHTML === 'Home';
 
-function onShoppingListOpened(e) { 
-  const isShoppingListElem = e.target.innerHTML === "Shopping List";
-  const isHomeElem = e.target.innerHTML === "Home";
-  
+
   if (isShoppingListElem || isHomeElem) {
     const supportElem = document.querySelector('.support');
     supportElem.classList.toggle('shopping-list-opened');
  
   }
-}; 
+
+}
 
 
 function renderBooksByPageNumber(pageNumber) {
@@ -105,10 +121,11 @@ function getButtonId(e) {
   if (isDeleteButtonPressed) {
     const selectedBookId = e.target.parentElement.dataset.id;
     deleteBookFromList(selectedBookId);
-  } else {};
 
+  } else {
+  }
+}
 
-};
 
 // ==============================
 
@@ -139,10 +156,9 @@ function deleteBookFromList(id) {
     const bookListSection = document.querySelector('.booklist');
     bookListSection.insertAdjacentHTML('beforeend', emptyShoppingListMarkup);
   } else {
-    
-  };
-};
 
+  }
+}
 
 
 // =================RENDER=======================//
