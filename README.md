@@ -1,3 +1,18 @@
+!!! Important !!!
+
+Needs to fix:
+- rearrange from Javascript to React (IMPORTANT)
+- apply Redux Toolkit as a state manager (IMPORTANT)
+- 
+
+
+
+
+
+
+
+
+
 # Создать папку .vscode
 
 # Внутри этой папки создать файл settings.json
